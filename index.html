@@ -1,150 +1,100 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ryan N.'s portfolio: data analysis, APIs, web projects and a little about life outside class.">
-    <title>Ryan N. | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ryan N. builds with data, APIs and web tools, and keeps a shelf of stories, music and games close by.">
+  <meta name="theme-color" content="#f2ebdd">
+  <title>Ryan N. — work, stories & everything between</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Ryan N., back to top">ryan<span class="brand-star">✳</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="outside.html">The shelf</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to after hours theme" aria-pressed="false"><span aria-hidden="true">◐</span> <span data-theme-label>After hours</span></button>
+    </div>
+  </header>
 
-    <header class="site-header" id="top">
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Ryan N., back to top">Ryan N<span>.</span></a>
-        <nav aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="outside.html">Outside class</a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ryan N. / Mumbai / 2026</p>
+        <h1 id="hero-title">Curious about<br><em>everything.</em><br>Building a little<br>of it.</h1>
+        <p class="hero-lead">I like making things work, then figuring out what actually made them work.</p>
+        <p class="hero-small">Third-year MBA Tech Data Science student at NMIMS MPSTME. Currently spending a lot of time with Linux and cloud.</p>
+        <div class="hero-actions">
+          <a class="button button-solid" href="#work">See what I’ve built <span aria-hidden="true">↗</span></a>
+          <a class="button button-text" href="outside.html">Meet the other half <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-    </header>
-
-    <main id="main">
-      <section class="intro container" aria-labelledby="intro-title">
-        <div class="intro-main">
-          <p class="eyebrow">Ryan N. <span aria-hidden="true">/</span> Mumbai, India</p>
-          <h1 id="intro-title">Hi, I’m Ryan<span class="title-stop">.</span></h1>
-          <p class="intro-lead">I work with data, build web projects and like understanding what makes the whole thing run.</p>
-          <p class="intro-copy">Third-year MBA Tech Data Science student at NMIMS MPSTME. My projects range from a normalized data pipeline and an API to a real-time game prototype.</p>
-          <a class="text-link" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="intro-aside" aria-label="A quick introduction">
-          <span class="aside-mark" aria-hidden="true">R.</span>
-          <p>Currently learning more about <strong>Linux, cloud and the systems behind applications.</strong></p>
-          <span class="aside-index">01 — 05 / selected work</span>
-        </div>
-      </section>
-
-      <section class="section section-lined" id="about" aria-labelledby="about-title">
-        <div class="container section-grid">
-          <div class="section-label"><span class="section-number">01 /</span><h2 id="about-title">About me</h2></div>
-          <div class="section-body prose">
-            <p>I’m interested in the stretch between an idea and a working version: cleaning the data, choosing how to structure it, wiring up the interface, and figuring out why something broke. I’ve tried those pieces in different combinations through coursework and my own experiments.</p>
-            <p>Lately I’ve been spending more time with Linux and cloud fundamentals. I want to understand how the apps I build run beyond my laptop, while getting better at the practical details in front of me.</p>
-            <a class="elsewhere-link" href="outside.html">
-              <span class="elsewhere-label">Another side of me / 02</span>
-              <span class="elsewhere-title">Films, anime, music, books and games I keep coming back to.</span>
-              <span class="elsewhere-action">Outside class <span aria-hidden="true">↗</span></span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-lined" id="projects" aria-labelledby="projects-title">
-        <div class="container">
-          <div class="section-heading">
-            <div class="section-label"><span class="section-number">02 /</span><h2 id="projects-title">Selected work</h2></div>
-            <p>Five projects at different stages, from analysis to working local builds.</p>
-          </div>
-          <div class="project-list">
-            <article class="project-card">
-              <div class="project-meta"><span class="project-num">01</span><span class="project-type">Data pipeline & dashboard</span></div>
-              <div class="project-detail">
-                <h3>Netflix analytics dashboard</h3>
-                <p>I took a Netflix CSV through a normalized SQLite database, a FastAPI backend and a Streamlit dashboard. The interface lets you search titles and explore genres, actors, directors and countries.</p>
-                <p class="project-tools">Python <span>·</span> SQLite <span>·</span> FastAPI <span>·</span> Streamlit</p>
-                <a class="project-link" href="https://github.com/RyanCfe/Netflix-analytics-dashboard">View the code <span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-meta"><span class="project-num">02</span><span class="project-type">Machine learning API</span></div>
-              <div class="project-detail">
-                <h3>Iris prediction API</h3>
-                <p>A Django REST Framework API that loads a trained scikit-learn Iris model and returns a prediction from JSON input. I worked through token authentication, PostgreSQL configuration and migrations, then tested it locally.</p>
-                <p class="project-tools">Python <span>·</span> Django REST Framework <span>·</span> scikit-learn <span>·</span> PostgreSQL</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-meta"><span class="project-num">03</span><span class="project-type">Real-time prototype</span></div>
-              <div class="project-detail">
-                <h3>Socket game playground</h3>
-                <p>I built a multiplayer playground prototype with rooms and shared boards using Socket.IO. It was a chance to work through real-time events and state between players; some game modes are still early experiments.</p>
-                <p class="project-tools">JavaScript <span>·</span> Node.js <span>·</span> Express <span>·</span> Socket.IO <span>·</span> Firebase Admin</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-meta"><span class="project-num">04</span><span class="project-type">Financial analysis</span></div>
-              <div class="project-detail">
-                <h3>Gold ETF comparison</h3>
-                <p>I compared SBI Gold ETF, HDFC Gold ETF and Nippon Gold BeES across March 2025–March 2026. In Excel, I calculated cumulative return, annualized volatility and Sharpe ratios to look at risk alongside return.</p>
-                <p class="project-tools">Excel <span>·</span> Statistics <span>·</span> Risk and return</p>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-meta"><span class="project-num">05</span><span class="project-type">Local infrastructure build</span></div>
-              <div class="project-detail">
-                <h3>Containerized web stack</h3>
-                <p>I put together a local multi-service setup with a FastAPI backend, Next.js frontend, PostgreSQL and Nginx using Docker Compose. The useful part was learning how the services connect and troubleshooting them when they did not.</p>
-                <p class="project-tools">FastAPI <span>·</span> Next.js <span>·</span> PostgreSQL <span>·</span> Nginx <span>·</span> Docker Compose</p>
-              </div>
-            </article>
-          </div>
-          <p class="project-note">These are selected builds and coursework, including prototypes and local experiments. The Netflix project has public code linked above.</p>
-        </div>
-      </section>
-
-      <section class="section section-lined" id="skills" aria-labelledby="skills-title">
-        <div class="container section-grid">
-          <div class="section-label"><span class="section-number">03 /</span><h2 id="skills-title">What I use</h2></div>
-          <div class="section-body">
-            <p class="skills-intro">A working toolkit gathered from the projects above and coursework. I’m still learning plenty of it as I go.</p>
-            <div class="skills-list">
-              <div class="skill-group"><h3>Data & analysis</h3><p>Python, SQL, pandas, Excel, Power BI, statistics, scikit-learn</p></div>
-              <div class="skill-group"><h3>Web & APIs</h3><p>HTML, CSS, JavaScript, React / Next.js, FastAPI, Django REST Framework, Node.js, Express, Socket.IO</p></div>
-              <div class="skill-group"><h3>Databases & tools</h3><p>PostgreSQL, MySQL, SQLite, Git / GitHub, Docker Compose, Nginx</p></div>
-              <div class="skill-group"><h3>Learning now</h3><p>Linux commands and shell scripting; AWS and cloud fundamentals. I completed AWS Cloud Technical Essentials.</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-lined contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container section-grid">
-          <div class="section-label"><span class="section-number">04 /</span><h2 id="contact-title">Get in touch</h2></div>
-          <div class="section-body">
-            <p>Want to talk about a project, send a cloud tip or recommend a film? I’d like to hear from you.</p>
-            <a class="contact-link" href="mailto:ryanneshar1@gmail.com">ryanneshar1@gmail.com <span aria-hidden="true">↗</span></a>
-            <a class="github-link" href="https://github.com/RyanCfe">GitHub profile <span aria-hidden="true">↗</span></a>
-            <div class="copy-row">
-              <button id="copy-email" type="button">Copy email</button>
-              <span id="copy-status" role="status" aria-live="polite"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>© 2026 Ryan N.</span>
-        <span>Built with HTML, CSS & JavaScript.</span>
-        <a href="#top">Back to top ↑</a>
+      <div class="hero-board" aria-label="Three things on Ryan's mind">
+        <div class="board-grid" aria-hidden="true"></div>
+        <span class="board-label board-label-top">A small window into my head</span>
+        <a class="board-card board-card-manga" href="outside.html#manga" aria-label="Read about Haikyu manga on the shelf">
+          <img src="haikyu-manga.png" alt="" width="365" height="547" decoding="async">
+          <span>one more chapter / 4 am</span>
+        </a>
+        <a class="board-card board-card-music" href="outside.html#music" aria-label="Read about Your Name soundtrack on the shelf">
+          <img src="your-name-soundtrack.png" alt="" width="447" height="447" decoding="async">
+          <span>the song brings it all back</span>
+        </a>
+        <div class="board-note"><span>ON MY DESK</span><strong>Linux commands.<br>Too many tabs.<br>A question about cloud.</strong></div>
+        <span class="board-label board-label-bottom">work / stories / what comes next</span>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <div class="marquee-line" aria-hidden="true"><div class="container">DATA <span>✳</span> STORIES <span>✳</span> SYSTEMS <span>✳</span> MUSIC <span>✳</span> MUMBAI <span>✳</span> STILL LEARNING</div></div>
+
+    <section class="section now-section" aria-labelledby="now-title">
+      <div class="container">
+        <div class="section-top"><p class="eyebrow">01 / Right now</p><h2 id="now-title">A few things in motion<span class="period">.</span></h2></div>
+        <div class="now-grid">
+          <article class="note-card"><span class="note-index">01 — LEARNING</span><h3>Beyond my laptop</h3><p>I finished AWS Cloud Technical Essentials. Right now I’m working through Linux and trying to understand how an app runs when it leaves my machine.</p><span class="note-mark" aria-hidden="true">↗</span></article>
+          <article class="note-card"><span class="note-index">02 — BUILDING</span><h3>One piece at a time</h3><p>A dashboard, an API, a game with shared boards. The best part is when the pieces finally talk to each other after I’ve spent ages finding out why they didn’t.</p><span class="note-mark" aria-hidden="true">⌘</span></article>
+          <article class="note-card"><span class="note-index">03 — AFTER HOURS</span><h3>Stories that linger</h3><p>Andor for its people. Haikyu!! when I should be asleep. The <em>Your Name</em> soundtrack when I want the whole film back in a few notes.</p><a href="outside.html" class="small-link">Open the shelf ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-top section-top-split"><div><p class="eyebrow">02 / Selected work</p><h2 id="work-title">Things I’ve made<span class="period">.</span></h2></div><p>Coursework and experiments, with little maps of how the parts fit together. I’m still learning by building.</p></div>
+        <div class="work-list">
+          <article class="work-item"><div class="work-number">01 / DATA</div><div class="work-content"><p class="work-type">Pipeline · API · dashboard</p><h3>Netflix analytics dashboard</h3><p>A Netflix CSV became a normalized SQLite database, a FastAPI backend and a Streamlit dashboard. Search titles and explore genres, cast, directors and countries.</p><p class="work-thought">The CSV looked simple until one title had several people, genres and countries attached to it. I liked making those relationships usable.</p><div class="work-bottom"><span>Python / SQLite / FastAPI / Streamlit</span><a href="https://github.com/RyanCfe/Netflix-analytics-dashboard" target="_blank" rel="noopener noreferrer">View code ↗</a></div></div><figure class="work-visual visual-pipeline"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">THE ROUTE</span><div class="pipeline-nodes"><span>CSV</span><b>→</b><span>DB</span><b>→</b><span>API</span><b>→</b><span>UI</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><figcaption>From rows to something you can explore.</figcaption></figure></article>
+          <article class="work-item"><div class="work-number">02 / API</div><div class="work-content"><p class="work-type">Machine learning · backend</p><h3>Iris prediction API</h3><p>A Django REST Framework endpoint that loads a trained scikit-learn model and predicts from JSON. I worked through token authentication, PostgreSQL and migrations, then tested it locally.</p><p class="work-thought">Training the model was one step. Getting authentication, the database and the endpoint to work together was the part I learned from.</p><div class="work-bottom"><span>Python / Django REST / scikit-learn / PostgreSQL</span></div></div><figure class="work-visual visual-api"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">REQUEST → RESPONSE</span><div class="api-line"><b>POST</b> /api/predict</div><div class="api-code">{ features: [ … ] }<br><span>↓</span><br>{ prediction: … }</div></div><figcaption>A model inside a working endpoint.</figcaption></figure></article>
+          <article class="work-item"><div class="work-number">03 / LIVE</div><div class="work-content"><p class="work-type">Real-time prototype</p><h3>Socket game playground</h3><p>A multiplayer playground with rooms and shared boards using Socket.IO. Some game modes are still experiments, but working through shared state was the point.</p><p class="work-thought">This made “works on my screen” a pretty useless test. A move has to make sense on yours too.</p><div class="work-bottom"><span>JavaScript / Node / Express / Socket.IO / Firebase</span></div></div><figure class="work-visual visual-socket"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">ROOM 01 · 2 ONLINE</span><div class="board-mini"><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i></div><div class="socket-sync">PLAYER A ⇄ PLAYER B</div></div><figcaption>One move, two screens.</figcaption></figure></article>
+          <article class="work-item"><div class="work-number">04 / RISK</div><div class="work-content"><p class="work-type">Financial analysis</p><h3>Gold ETF comparison</h3><p>I compared SBI Gold ETF, HDFC Gold ETF and Nippon Gold BeES over March 2025–March 2026 using cumulative return, annualized volatility and Sharpe ratios in Excel.</p><p class="work-thought">Looking at the Sharpe ratio changed how I read the returns. I wanted the risk right beside the number that looked good.</p><div class="work-bottom"><span>Excel / statistics / risk & return</span></div></div><figure class="work-visual visual-etf"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">THREE FUNDS / THREE LENSES</span><div class="fund-lines"><span>SBI Gold ETF</span><span>HDFC Gold ETF</span><span>Nippon Gold BeES</span></div><div class="metric-line">RETURN <b>·</b> VOLATILITY <b>·</b> SHARPE</div></div><figcaption>Reading performance with risk in view.</figcaption></figure></article>
+          <article class="work-item"><div class="work-number">05 / SYSTEMS</div><div class="work-content"><p class="work-type">Local infrastructure</p><h3>Containerized web stack</h3><p>A FastAPI backend, Next.js frontend, PostgreSQL and Nginx brought together with Docker Compose. It taught me a lot about how services connect and how to debug them.</p><p class="work-thought">Putting these services in one stack is what got me asking how I’d run the whole thing beyond my laptop.</p><div class="work-bottom"><span>FastAPI / Next.js / PostgreSQL / Nginx / Docker</span></div></div><figure class="work-visual visual-stack"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">DOCKER COMPOSE</span><div class="stack-services"><span>Nginx</span><span>Next.js</span><span>FastAPI</span><span>Postgres</span></div></div><figcaption>Four services, one local stack.</figcaption></figure></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-title"><p class="eyebrow">03 / A little about me</p><h2 id="about-title">I want to know what happens behind the screen<span class="period">.</span></h2><span class="about-scribble" aria-hidden="true">↝</span></div>
+        <div class="about-prose"><p>I’ve built dashboards and APIs, and lately I keep coming back to a new question: what happens after an app works on my laptop? Putting a frontend, API, database and Nginx together with Docker Compose made me want to learn Linux and cloud properly.</p><p>I’m still figuring out where I want to take that. For now I like getting my hands on each part, breaking something, reading the error, and trying again until it makes sense.</p><p>Outside that, I can spend hours on the strategy in <em>The Ravages of Time</em>, come back to the quiet of <em>Violet Evergarden</em>, or put on a soundtrack and remember exactly how a film felt.</p><a class="inline-arrow" href="outside.html">See the things I keep coming back to <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="section skills-section" aria-labelledby="skills-title">
+      <div class="container"><div class="section-top section-top-split"><div><p class="eyebrow">04 / Toolkit</p><h2 id="skills-title">What I use<span class="period">.</span></h2></div><p>Built through projects and class. There’s plenty I’m still learning.</p></div>
+        <div class="skill-lines"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST Framework · Node.js · Express · Socket.IO</p></div><div><h3>Databases & tools</h3><p>PostgreSQL · MySQL · SQLite · Git / GitHub · Docker Compose · Nginx</p></div><div><h3>Learning now</h3><p>Linux commands and shell scripting · AWS and cloud fundamentals</p></div></div>
+      </div>
+    </section>
+
+    <section class="shelf-door" aria-labelledby="shelf-door-title"><div class="container shelf-door-inner"><div><p class="eyebrow">05 / Outside class</p><h2 id="shelf-door-title">The things I carry<br>out of the screen<span class="period">.</span></h2><p>A very personal shelf of shows, movies, anime, music, books, games and manga. No ratings. Just what I love about them.</p><a class="button button-light" href="outside.html">Step inside the shelf <span aria-hidden="true">↗</span></a></div><div class="door-covers" aria-hidden="true"><img src="andor.png" alt="" width="272" height="376" loading="lazy"><img src="violet-evergarden.png" alt="" width="597" height="335" loading="lazy"><img src="yotsuba.png" alt="" width="365" height="547" loading="lazy"></div></div></section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><p class="eyebrow">06 / Say hello</p><h2 id="contact-title">A project, a question,<br>or a film I should watch?</h2><p>I’d like to hear about it.</p></div><div class="contact-actions"><a class="contact-email" href="mailto:ryanneshar1@gmail.com">ryanneshar1@gmail.com ↗</a><a class="inline-arrow" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><button type="button" class="copy-button" id="copy-email">Copy email</button><span id="copy-status" role="status" aria-live="polite"></span></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>Ryan N. / Mumbai</span><span>Made with HTML, CSS & JavaScript.</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
 </html>

@@ -1,17 +1,17 @@
 # Ryan N. — Portfolio
 
-I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings together some projects I've worked on and a page for the shows, music, books, games and manga I keep coming back to.
+I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings together projects I've worked on and a shelf for the shows, movies, anime, music, books, games and manga I keep coming back to.
 
 **Live site:** [ryancfe.github.io/Personal_Portfolio](https://ryancfe.github.io/Personal_Portfolio/)
 
 ## Pages
 
-- **Home (`index.html`)** — about, selected projects, skills and contact.
-- **Outside class (`outside.html`)** — TV, anime, music, books, games and manga. The category buttons keep the page easy to browse without making the homepage too long.
+- **Home (`index.html`)** — projects, what I'm learning, a little about me and contact.
+- **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code
 
-The site uses HTML, CSS and a small amount of JavaScript. `styles.css` handles the layout and phone sizes. `script.js` switches the media categories and runs the copy-email button. The 31 PNG images are stored beside the HTML files. `dev-server.js` is a local preview server; the published site itself is static.
+The site uses HTML, CSS and a small amount of JavaScript. `styles.css` handles the layouts, themes and phone sizes. The project maps are small HTML/CSS illustrations of each build, rather than screenshots. `script.js` switches the media categories, moves the gallery, remembers the day/after-hours theme, picks a random shelf item and runs the copy-email button. The 37 PNG images are stored beside the HTML files. They are shown at smaller sizes to keep the supplied artwork from being stretched beyond its original resolution. `dev-server.js` is a local preview server; the site itself is static.
 
 ## Artwork credits
 
@@ -24,7 +24,13 @@ The images on the Outside class page were selected for this portfolio. The links
 | `over-the-garden-wall.png` | [Over the Garden Wall — Cartoon Network](https://www.youtube.com/watch?v=MchGCjJMv3E) |
 | `arcane.png` | [Arcane — Riot Games, Fortiche and Netflix](https://www.netflix.com/tudum/arcane) |
 | `moon-knight.png` | [Moon Knight — Marvel Studios / Disney](https://news.disney.com/marvel-studios-moon-knight) |
+| `interstellar.png` | [Interstellar — Paramount Pictures / Warner Bros.](https://ir.paramount.com/news-releases/news-release-details/paramount-pictures-and-warner-bros-pictures-announce-start) |
+| `ford-v-ferrari.png` | [Ford v Ferrari — 20th Century Studios](https://www.20thcenturystudios.com/movies/ford-v-ferrari) |
+| `spirited-away.png` | [Spirited Away — Hayao Miyazaki / Studio Ghibli](https://www.ghibli.jp/works/chihiro/) |
+| `the-shawshank-redemption.png` | [The Shawshank Redemption — Castle Rock / Warner Bros.](https://www.wbppcs.com/picture-projects/the-shawshank-redemption-1994/) |
+| `avatar.png` | [Avatar — 20th Century Studios](https://www.20thcenturystudios.com/movies/avatar) |
 | `attack-on-titan.png` | [Attack on Titan — official anime portal](https://aot-portal.com/about/) |
+| `march-comes-in-like-a-lion.png` | [March Comes in Like a Lion — Chica Umino / Shaft / production committee](https://3lion-anime.com/cast_staff/) |
 | `violet-evergarden.png` | [Violet Evergarden — Kyoto Animation](https://tv.violet-evergarden.jp/) |
 | `one-piece.png` | [One Piece — official anime site](https://one-piece.com/anime/index.html) |
 | `haikyu.png` | [Haikyu!! — official anime site](https://haikyu.jp/) |

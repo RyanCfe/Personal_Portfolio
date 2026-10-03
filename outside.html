@@ -1,47 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ryan's favourite shows, anime, music, books, games and manga, with spoiler-free notes.">
-    <title>Outside class | Ryan N.</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html#top" aria-label="Ryan N., back to portfolio">Ryan N<span>.</span></a>
-        <nav aria-label="Main navigation">
-          <a href="index.html#about">About</a>
-          <a href="index.html#projects">Projects</a>
-          <a href="index.html#skills">Skills</a>
-          <a href="outside.html" aria-current="page">Outside class</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ryan's shelf of shows, films, anime, music, books, games and manga, with notes on why they stayed.">
+  <meta name="theme-color" content="#f2ebdd">
+  <title>The shelf — Ryan N.</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="shelf-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Ryan N., back to portfolio">ryan<span class="brand-star">✳</span></a><nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="outside.html" aria-current="page">The shelf</a><a href="index.html#contact">Contact</a></nav><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to after hours theme" aria-pressed="false"><span aria-hidden="true">◐</span> <span data-theme-label>After hours</span></button></div></header>
+  <main id="main">
+    <section class="shelf-hero container" aria-labelledby="page-title">
+      <div><a class="back-link" href="index.html">← Back to the portfolio</a><p class="eyebrow">The other half of the portfolio</p><h1 id="page-title">The shelf<span class="period">.</span></h1><p class="shelf-lead">The things that stayed with me after the screen went dark.</p><p class="shelf-small">The Haikyu!! chapter that turned into 4 am. A film I first saw at home in 2020. A soundtrack that brings the whole story back. These are my notes on why they matter. Spoiler-free.</p></div>
+      <div class="shelf-gallery" aria-label="Swipe through a few favourites">
+        <div class="gallery-top"><span>FRAMES &amp; COVERS</span><span id="gallery-count" aria-live="polite">01 / 07</span></div>
+        <div class="gallery-track" id="gallery-track" tabindex="0" aria-label="Swipeable gallery of favourites">
+          <figure class="gallery-slide"><div class="gallery-image"><img src="march-comes-in-like-a-lion.png" alt="March Comes in Like a Lion animated cast at a food stall" width="1280" height="825"></div><figcaption><span>ANIME / 01</span><strong>March Comes in Like a Lion</strong><a href="#anime" data-open-category="anime">See anime ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="interstellar.png" alt="Interstellar artwork of a spacecraft near a planet" width="693" height="442"></div><figcaption><span>MOVIES / 02</span><strong>Interstellar</strong><a href="#movies" data-open-category="movies">See movies ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="spirited-away.png" alt="Spirited Away poster showing Chihiro" width="455" height="673"></div><figcaption><span>MOVIES / 03</span><strong>Spirited Away</strong><a href="#movies" data-open-category="movies">See movies ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="south-of-the-circle.png" alt="South of the Circle artwork" width="590" height="338"></div><figcaption><span>GAMES / 04</span><strong>South of the Circle</strong><a href="#games" data-open-category="games">See games ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="ford-v-ferrari.png" alt="Ford v Ferrari poster with drivers and racing cars" width="387" height="516"></div><figcaption><span>MOVIES / 05</span><strong>Ford v Ferrari</strong><a href="#movies" data-open-category="movies">See movies ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="avatar.png" alt="Avatar poster showing a Na'vi face" width="365" height="547"></div><figcaption><span>MOVIES / 06</span><strong>Avatar</strong><a href="#movies" data-open-category="movies">See movies ↗</a></figcaption></figure>
+          <figure class="gallery-slide"><div class="gallery-image"><img src="the-shawshank-redemption.png" alt="The Shawshank Redemption poster with Andy and Red" width="365" height="547"></div><figcaption><span>MOVIES / 07</span><strong>The Shawshank Redemption</strong><a href="#movies" data-open-category="movies">See movies ↗</a></figcaption></figure>
+        </div>
+        <div class="gallery-controls"><span>Swipe to explore</span><div><button type="button" id="gallery-prev" aria-label="Previous image" disabled>←</button><button type="button" id="gallery-next" aria-label="Next image">→</button></div></div>
       </div>
-    </header>
-
-    <main id="main">
-      <section class="shelf-hero container" aria-labelledby="page-title">
-        <a class="back-link" href="index.html#about">← Back to the portfolio</a>
-        <p class="eyebrow">Outside class / a few favourites</p>
-        <h1 id="page-title">Stories I carry<br>with me<span class="title-stop">.</span></h1>
-        <p class="intro-copy">A glimpse at the shows, anime, music, books, games and manga I keep coming back to. Some are here for the characters, some for a single song or scene I can't forget. This is just my shelf.</p>
-      </section>
-
-      <section class="section section-lined shelf-section" aria-label="Browse my interests">
-        <div class="container">
-          <div class="category-picker" aria-label="Choose a category">
-            <button type="button" data-category="tv" aria-controls="tv" aria-pressed="true">TV</button>
-            <button type="button" data-category="anime" aria-controls="anime" aria-pressed="false">Anime</button>
-            <button type="button" data-category="music" aria-controls="music" aria-pressed="false">Music</button>
-            <button type="button" data-category="books" aria-controls="books" aria-pressed="false">Books</button>
-            <button type="button" data-category="games" aria-controls="games" aria-pressed="false">Games</button>
-            <button type="button" data-category="manga" aria-controls="manga" aria-pressed="false">Manga</button>
-          </div>
-
+    </section>
+    <section class="shelf-content" aria-label="Browse my interests"><div class="container">
+      <div class="shelf-intro"><div><p class="eyebrow">Browse / seven shelves</p><h2>What stayed with me<span class="period">.</span></h2></div><p>Nothing here is ranked. I just know I like these a lot.</p></div>
+      <div class="shelf-toolbar"><div class="category-picker" aria-label="Choose a category"><button type="button" data-category="tv" aria-controls="tv" aria-pressed="true">TV</button><button type="button" data-category="movies" aria-controls="movies" aria-pressed="false">Movies</button><button type="button" data-category="anime" aria-controls="anime" aria-pressed="false">Anime</button><button type="button" data-category="music" aria-controls="music" aria-pressed="false">Music</button><button type="button" data-category="books" aria-controls="books" aria-pressed="false">Books</button><button type="button" data-category="games" aria-controls="games" aria-pressed="false">Games</button><button type="button" data-category="manga" aria-controls="manga" aria-pressed="false">Manga</button></div><button class="shuffle-button" type="button" id="shelf-pick">Surprise me ↗</button></div>
+      <p class="pick-message" id="pick-message" role="status" aria-live="polite"></p>
           <section class="media-panel" id="tv" data-category-panel aria-labelledby="tv-title">
             <div class="media-heading"><p class="eyebrow">01 / Watch</p><h2 id="tv-title">On the screen</h2><p>Some are tense, some are playful, but they all make their worlds feel bigger than the screen. These notes stay clear of plot twists.</p></div>
           <div class="media-grid">
@@ -50,7 +41,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Series · Star Wars</p>
                 <h3>Andor</h3>
-                <p>What I love is how human the rebellion feels. It’s people making hard choices, not just a big Star Wars battle.</p>
+                <p>The writing in this is some of the best Star Wars has ever had, right up there with Episode III and The Clone Wars for me. Cassian, Luthen, Bix, Mon Mothma and so many others believe in the rebellion while carrying their own darkness. Both seasons had me completely hooked. And knowing it connects to Rogue One, another peak film, makes it even better.</p>
               </div>
             </article>
             <article class="media-card">
@@ -58,7 +49,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Miniseries · Drama</p>
                 <h3>Chernobyl</h3>
-                <p>It’s terrifying without trying too hard. I kept thinking about how much worse things get when people are afraid to tell the truth.</p>
+                <p>Terrifying, but also deeply sad. Watching Valery Legasov and Boris Shcherbina understand what they were up against, then keep pushing through the government's denial, was haunting. They knew the cost and still fought to make the truth impossible to ignore. A series that leaves you quiet after it ends.</p>
               </div>
             </article>
             <article class="media-card">
@@ -66,7 +57,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Animated miniseries</p>
                 <h3>Over the Garden Wall</h3>
-                <p>This feels like wandering into an old storybook: weird, a bit eerie, and somehow comforting at the same time.</p>
+                <p>The art brought back that childhood feeling of getting lost in a cartoon, but the story is anything but childish. It's whimsical one minute and genuinely frightening the next. The journey, the strange world and the antagonist make it feel like an old tale you somehow remember from childhood. So good to experience.</p>
               </div>
             </article>
             <article class="media-card">
@@ -74,7 +65,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Animated series</p>
                 <h3>Arcane</h3>
-                <p>The art and music pulled me in, but the people and their messy choices are what made it stay with me.</p>
+                <p>The art style is beautiful, but the story is what kept me there. It's messy, unpredictable and full of characters making choices you understand even when they hurt. Almost every episode gave me something to think about or a scene I wanted to watch again. Definitely a must-watch.</p>
               </div>
             </article>
             <article class="media-card">
@@ -82,21 +73,47 @@
               <div class="media-card-text">
                 <p class="media-kind">Series · Marvel</p>
                 <h3>Moon Knight</h3>
-                <p>I like the identity mystery as much as the action. It feels stranger and more personal than a usual superhero show.</p>
+                <p>Oscar Isaac was so good in this. The shifts in identity made everything feel unpredictable, and the Egyptian mythology gave it an atmosphere I hadn't seen in a Marvel show before. It gets strange, dark and funny at different points, but somehow it all works. Really wanted more of this world.</p>
               </div>
             </article>
           </div>
           </section>
 
+          <section class="media-panel" id="movies" data-category-panel aria-labelledby="movies-title" hidden>
+            <div class="media-heading"><p class="eyebrow">02 / Watch</p><h2 id="movies-title">Movies</h2><p>Some of these were first watches I can still place in a room and a year. Others were films I went into knowing almost nothing. All of them stuck.</p></div>
+            <div class="media-grid">
+              <article class="media-card media-card--feature">
+                <div class="media-art"><img src="interstellar.png" alt="Interstellar artwork of a spacecraft near a planet" width="693" height="442" loading="lazy" decoding="async"></div>
+                <div class="media-card-text"><p class="media-kind">Film · Science fiction</p><h3>Interstellar</h3><p>First watched this at home in 2020, during the Covid years, and it absolutely blew me away. The scale of space, the music, the way time and family pull at the story — everything felt massive and personal at once. The kind of film that makes you sit there when the credits roll. Still the goat for me.</p></div>
+              </article>
+              <article class="media-card">
+                <div class="media-art"><img src="ford-v-ferrari.png" alt="Ford v Ferrari poster with drivers and racing cars" width="387" height="516" loading="lazy" decoding="async"></div>
+                <div class="media-card-text"><p class="media-kind">Film · Racing drama</p><h3>Ford v Ferrari</h3><p>Matt Damon and Christian Bale were peak in this. The story of real people trying to build something extraordinary is already great, then the racing scenes make your heart pound. Even away from the track, the politics and the fight to be heard kept me hooked. The ending made it one of my favourites.</p></div>
+              </article>
+              <article class="media-card">
+                <div class="media-art"><img src="spirited-away.png" alt="Spirited Away poster showing Chihiro" width="455" height="673" loading="lazy" decoding="async"></div>
+                <div class="media-card-text"><p class="media-kind">Film · Studio Ghibli</p><h3>Spirited Away</h3><p>My first Ghibli film, so it will always be close to my heart. The hand-drawn world feels alive in every corner, and the soundtrack makes it even harder to leave. Chihiro's journey and her growth made all that wonder feel personal. Absolutely fantastic from beginning to end.</p></div>
+              </article>
+              <article class="media-card">
+                <div class="media-art"><img src="the-shawshank-redemption.png" alt="The Shawshank Redemption poster with Andy and Red" width="365" height="547" loading="lazy" decoding="async"></div>
+                <div class="media-card-text"><p class="media-kind">Film · Drama</p><h3>The Shawshank Redemption</h3><p>Went into this expecting almost nothing, and Andy completely blew me away. The patience, the friendship, and that refusal to lose hope stay with you through the whole film. By the ending I had no words. One of those movies that makes you understand why people keep talking about it.</p></div>
+              </article>
+              <article class="media-card">
+                <div class="media-art"><img src="avatar.png" alt="Avatar poster showing a Na'vi face" width="365" height="547" loading="lazy" decoding="async"></div>
+                <div class="media-card-text"><p class="media-kind">Film · Science fiction</p><h3>Avatar</h3><p>This is where it started. I was four when Dad brought a CD home in 2010 and played it on the TV, and Pandora left such a deep imprint that I still remember that first watch. The world is gorgeous, but the way people take land and resources from others mirrors the real world too. That part only hit harder as I grew up.</p></div>
+              </article>
+            </div>
+          </section>
+
           <section class="media-panel" id="anime" data-category-panel aria-labelledby="anime-title" hidden>
-            <div class="media-heading"><p class="eyebrow">02 / Watch</p><h2 id="anime-title">Anime</h2><p>I love how animation can make scale, place and emotion feel immediate, whether the story is intimate or enormous.</p></div>
+            <div class="media-heading"><p class="eyebrow">03 / Watch</p><h2 id="anime-title">Anime</h2><p>From the first series that got me into anime to the quiet ones that left me speechless. These are the stories I kept thinking about long after an episode ended.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="attack-on-titan.png" alt="Attack on Titan artwork" width="466" height="657" loading="lazy" decoding="async"></div>
               <div class="media-card-text">
                 <p class="media-kind">Anime series</p>
                 <h3>Attack on Titan</h3>
-                <p>The scale keeps growing, but it never stops feeling about people. I love how it makes me think about freedom from different sides.</p>
+                <p>My introduction to anime, and still one of the greatest things I've watched. So much about it would be ruined by explaining too much, but the way it changes your view of war stayed with me. What you believe can depend on which side of the wall you're standing on. Wow, what a series.</p>
               </div>
             </article>
             <article class="media-card">
@@ -104,7 +121,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Anime series</p>
                 <h3>Violet Evergarden</h3>
-                <p>The letters get me because they say things people struggle to say themselves. Even the quiet moments feel huge with that music.</p>
+                <p>Episodes 9 and 10 had me emotional in a way I wasn't ready for. Violet's journey from being treated like a weapon to understanding herself as a person is so beautiful, especially as she helps others find the words they couldn't say. The art, the opening and ending songs, Evan Call's score — it all left me speechless.</p>
               </div>
             </article>
             <article class="media-card">
@@ -112,7 +129,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Anime series</p>
                 <h3>One Piece</h3>
-                <p>The world is massive, but the crew is why I stay. They’ve been through enough together that every place feels connected.</p>
+                <p>The first time I started this, I was hooked. Luffy setting out from a small town, building the crew one person at a time, the fights, the humour, the emotional moments — somehow the journey keeps getting bigger without losing its heart. I watched so many episodes because I just wanted to see where they'd go next. Goated.</p>
               </div>
             </article>
             <article class="media-card">
@@ -120,7 +137,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Anime series</p>
                 <h3>Haikyu!!</h3>
-                <p>It somehow makes a single point feel enormous. I like seeing the work and trust behind it, not only the win.</p>
+                <p>Peak sports anime. Every player gets a reason to matter, the matches make a single point feel enormous, and the soundtrack knows exactly when to hit. Karasuno was always my team, though. Seeing Hinata keep chasing his dream despite his height made it impossible not to root for him.</p>
               </div>
             </article>
             <article class="media-card">
@@ -128,7 +145,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Anime series</p>
                 <h3>Code Geass</h3>
-                <p>I enjoy the mind games, but what stays is the weight behind each decision. Clever plans don’t come free.</p>
+                <p>The politics, the sacrifices, the characters and the mecha — this had everything I wanted. Lelouch can be brilliant and infuriating in the same episode, which is why he's one of my favourite main characters ever. The story keeps making its choices count, and that ending was so good.</p>
               </div>
             </article>
             <article class="media-card">
@@ -136,21 +153,25 @@
               <div class="media-card-text">
                 <p class="media-kind">Anime series · Space opera</p>
                 <h3>Legend of the Galactic Heroes</h3>
-                <p>I like that it gives people on different sides room to be human. The politics feel big without making everything simple.</p>
+                <p>Still watching this, but every episode has me glued to the screen. The scale of the politics and the conflict is huge, yet the people on both sides are what make it so interesting. No one gets reduced to a simple side to cheer for. There's so much here to sit with.</p>
               </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="march-comes-in-like-a-lion.png" alt="March Comes in Like a Lion animated cast at a food stall" width="1280" height="825" loading="lazy" decoding="async"></div>
+              <div class="media-card-text"><p class="media-kind">Anime series · Drama</p><h3>March Comes in Like a Lion</h3><p>This was pure bliss, even when it hurt. The animation makes the quietest moments beautiful, and the characters have so much going on beneath what they say. Their growth took me through a whole whirlwind of emotions. By the end, masterpiece was the only word for it.</p></div>
             </article>
           </div>
           </section>
 
           <section class="media-panel" id="music" data-category-panel aria-labelledby="music-title" hidden>
-            <div class="media-heading"><p class="eyebrow">03 / Listen</p><h2 id="music-title">Music</h2><p>I usually notice melody first. Soundtracks and songs can bring an entire mood back in seconds, and an album can be its own place to spend time.</p></div>
+            <div class="media-heading"><p class="eyebrow">04 / Listen</p><h2 id="music-title">Music</h2><p>I usually notice melody first. Soundtracks and songs can bring an entire mood back in seconds, and an album can be its own place to spend time.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="shelter.png" alt="Shelter animated short artwork" width="452" height="678" loading="lazy" decoding="async"></div>
               <div class="media-card-text">
                 <p class="media-kind">Song · Porter Robinson &amp; Madeon</p>
                 <h3>Shelter</h3>
-                <p>The melody hits first, then the animated short adds another feeling to it. I always come back for that mix.</p>
+                <p>The song is beautiful on its own, but the animated short gives it so much more weight. The music and visuals feel made for each other; one part always brings back the other. It's short, yet it leaves behind this huge feeling. Playing the track usually turns into watching the whole thing again.</p>
               </div>
             </article>
             <article class="media-card">
@@ -158,7 +179,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Song · Casting Crowns</p>
                 <h3>Who Am I</h3>
-                <p>This one makes me stop and think for a minute. It’s simple and sincere in a way I keep returning to.</p>
+                <p>There's something so sincere about this song. The question in it sounds simple, but it gives me a lot to sit with every time. The way the vocals build without losing that sincerity is what makes it land. One of those songs that makes everything slow down for a minute.</p>
               </div>
             </article>
             <article class="media-card">
@@ -166,7 +187,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Score · Evan Call</p>
                 <h3>The Love That Binds Us</h3>
-                <p>No lyrics needed here. The melody carries the feeling on its own, and it brings Violet Evergarden right back to me.</p>
+                <p>A few notes and Violet Evergarden is right there again. The score carries so much of the tenderness and sadness of Violet's journey without needing a single word. After seeing how much the series made me feel, this piece brings it all rushing back. Evan Call really did something special here.</p>
               </div>
             </article>
             <article class="media-card">
@@ -174,7 +195,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Album · Daft Punk</p>
                 <h3>Random Access Memories</h3>
-                <p>I love the detail in the production, but it still feels warm and alive. I want to hear the whole album, not skip around.</p>
+                <p>This album has so much going on, and somehow it still feels effortless to listen to. The production, the little details, the way each song has its own identity — it makes me want to hear it from beginning to end. It feels warm and alive every time, which is why I keep returning to it.</p>
               </div>
             </article>
             <article class="media-card">
@@ -182,21 +203,21 @@
               <div class="media-card-text">
                 <p class="media-kind">Soundtrack album · RADWIMPS</p>
                 <h3>Your Name</h3>
-                <p>Lowkey one of the best soundtracks I've heard. It's so emotional that a few notes are enough to bring the whole film back.</p>
+                <p>Lowkey one of the best and most emotional soundtracks I've heard. The songs are so tied to Your Name that a few notes can bring an entire scene and its feeling back. Even away from the film, the music is beautiful on its own. It really stays with you.</p>
               </div>
             </article>
           </div>
           </section>
 
           <section class="media-panel" id="books" data-category-panel aria-labelledby="books-title" hidden>
-            <div class="media-heading"><p class="eyebrow">04 / Read</p><h2 id="books-title">Books</h2><p>I like having more time with a world and its people. Some of these I found through the films, then wanted to read the books too.</p></div>
+            <div class="media-heading"><p class="eyebrow">05 / Read</p><h2 id="books-title">Books</h2><p>I like having more time with a world and its people. Some of these I found through the films, then wanted to read the books too.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="the-hunger-games.png" alt="The Hunger Games artwork" width="363" height="550" loading="lazy" decoding="async"></div>
               <div class="media-card-text">
                 <p class="media-kind">Book series · Suzanne Collins</p>
                 <h3>The Hunger Games</h3>
-                <p>The tension kept me reading, but the people trying to protect each other are what stayed with me.</p>
+                <p>The tension had me turning pages, but the series has a lot more on its mind than survival. The unfairness of its world, the pressure on the characters and the ways they try to protect each other all stayed with me. It's exciting to read, then you catch yourself thinking about it afterward.</p>
               </div>
             </article>
             <article class="media-card">
@@ -204,7 +225,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Novel · Marcia Willett</p>
                 <h3>A Week in Winter</h3>
-                <p>It’s quieter than most things on this shelf. I like settling into the house and all the history between the people there.</p>
+                <p>A much quieter book than the others here, and that's exactly why it belongs. Spending time with the house and the people connected to it feels like slowly learning someone's history. Nothing needs to rush. It's the kind of story where settling into the lives of the characters is the whole pleasure.</p>
               </div>
             </article>
             <article class="media-card">
@@ -212,7 +233,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Book series · C. S. Lewis</p>
                 <h3>The Chronicles of Narnia</h3>
-                <p>I love that feeling of opening another door into a place I already know. Seven books make it somewhere to return.</p>
+                <p>Stepping through something ordinary into an entire other world is a feeling that never gets old. Narnia has the wonder and adventure I want from a story like this, but it also has sadness and difficult choices. That mix gives the world weight. It feels like somewhere worth returning to.</p>
               </div>
             </article>
             <article class="media-card">
@@ -220,7 +241,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Book trilogy · J. R. R. Tolkien</p>
                 <h3>The Lord of the Rings</h3>
-                <p>I enjoyed the movies so much, then got to spend even longer in that world through the books. The journey and the friendships just don't get old for me.</p>
+                <p>The films made me love Middle-earth, and the books let me stay there for so much longer. The scale of the journey is incredible, but the friendships are what really hold it together for me. All those small acts of courage matter just as much as the huge battles. Loved experiencing both versions.</p>
               </div>
             </article>
             <article class="media-card">
@@ -228,21 +249,21 @@
               <div class="media-card-text">
                 <p class="media-kind">Book series · James Dashner</p>
                 <h3>The Maze Runner</h3>
-                <p>I had a great time with both the movies and the books. I love that feeling of trying to work out the mystery along with the characters.</p>
+                <p>Both the books and the movies were such a good time. Being thrown into a mystery with the characters and trying to make sense of each new piece had me hooked. There's always this urge to go one chapter or one film further just to get an answer. Really enjoyed that whole experience.</p>
               </div>
             </article>
           </div>
           </section>
 
           <section class="media-panel" id="games" data-category-panel aria-labelledby="games-title" hidden>
-            <div class="media-heading"><p class="eyebrow">05 / Play</p><h2 id="games-title">Games</h2><p>I like games that let me sit with the characters and choices for a while, even after I'm done playing.</p></div>
+            <div class="media-heading"><p class="eyebrow">06 / Play</p><h2 id="games-title">Games</h2><p>I like games that let me sit with the characters and choices for a while, even after I'm done playing.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="the-house-in-fata-morgana.png" alt="The House in Fata Morgana artwork" width="250" height="354" loading="lazy" decoding="async"></div>
               <div class="media-card-text">
                 <p class="media-kind">Visual novel</p>
                 <h3>The House in Fata Morgana</h3>
-                <p>I like stories that change how I see their characters as they go. The gothic atmosphere makes this one hard to shake.</p>
+                <p>This is so hard to talk about without giving anything away. The gothic atmosphere pulls you in, then the story keeps changing how you see its characters and everything around them. It asks you to stay with it, and the payoff makes that time feel worth it. Really difficult to forget afterward.</p>
               </div>
             </article>
             <article class="media-card">
@@ -250,7 +271,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Narrative game · State of Play</p>
                 <h3>South of the Circle</h3>
-                <p>The art looks calm, but the choices feel heavy. I like that contrast and how much it leaves me thinking afterward.</p>
+                <p>The art is gorgeous and almost calming, while the choices underneath it feel anything but easy. There's a quiet, human quality to the story that made its moments linger for me. It never needed to be loud to have an impact. By the end, I was still thinking about what those choices meant.</p>
               </div>
             </article>
             <article class="media-card">
@@ -258,7 +279,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Narrative game · AdHoc Studio</p>
                 <h3>Dispatch</h3>
-                <p>The superhero setup is fun, but it’s the team, banter and choices that make me care.</p>
+                <p>The superhero setup is fun, but the team completely makes this game. The banter is great, everyone has a personality, and the choices mean more once you start caring about the people involved. It can be funny one minute and surprisingly sincere the next. That mix had me invested.</p>
               </div>
             </article>
             <article class="media-card">
@@ -266,7 +287,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Choice-driven game · Quantic Dream</p>
                 <h3>Detroit: Become Human</h3>
-                <p>I love how much the choices matter. Even a small decision had me stopping to think about what I'd actually do.</p>
+                <p>This game kept making me pause before choosing anything. Even a small decision felt like it could change where someone ended up, so it was hard to play without thinking about what I'd actually do. The different perspectives make the story more interesting too. Seeing the consequences of my choices was the best part.</p>
               </div>
             </article>
             <article class="media-card">
@@ -274,21 +295,21 @@
               <div class="media-card-text">
                 <p class="media-kind">Psychological horror · Wrong Organ</p>
                 <h3>Mouthwashing</h3>
-                <p>This one gets under my skin. The atmosphere is so unsettling, and it trusts you to sit with what the story is saying.</p>
+                <p>Genuinely unsettling in the best way a horror story can be. The atmosphere makes everything feel wrong before you can even put a reason to it, and the game doesn't rush to make you comfortable. Its characters and what's left unsaid sit in your head afterward. Not an easy experience, but a memorable one.</p>
               </div>
             </article>
           </div>
           </section>
 
           <section class="media-panel" id="manga" data-category-panel aria-labelledby="manga-title" hidden>
-            <div class="media-heading"><p class="eyebrow">06 / Read</p><h2 id="manga-title">Manga &amp; manhua</h2><p>These are the ones I wanted to keep reading long after I should've gone to sleep.</p></div>
+            <div class="media-heading"><p class="eyebrow">07 / Read</p><h2 id="manga-title">Manga &amp; manhua</h2><p>These are the ones I wanted to keep reading long after I should've gone to sleep.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="haikyu-manga.png" alt="Haikyu!! manga volume cover" width="365" height="547" loading="lazy" decoding="async"></div>
               <div class="media-card-text">
                 <p class="media-kind">Manga · Haruichi Furudate</p>
                 <h3>Haikyu!!</h3>
-                <p>Absolutely loved reading it. I stayed up till 4 just to keep going; somehow every rally makes me care more about everyone on the court.</p>
+                <p>Absolutely loved reading this. 'One more chapter' somehow turned into staying up until 4, and every rally made it harder to stop. It's not only Hinata and Karasuno either; the manga gives you reasons to care about so many people on the court. One of my favourite reading experiences, easily.</p>
               </div>
             </article>
             <article class="media-card">
@@ -296,7 +317,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Manhua · Chan Mou</p>
                 <h3>The Ravages of Time</h3>
-                <p>The strategy and the way people play each other is so good. The Xiapi arc was peak for me; I couldn't put it down.</p>
+                <p>The strategy in this is insane. Watching these characters try to outthink each other makes even a conversation feel like a battle, and one decision can stay in my head for ages. The Xiapi arc was peak for me. I was completely locked in and had to see where it went.</p>
               </div>
             </article>
             <article class="media-card">
@@ -304,7 +325,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Manga · Kazuhiro Fujita</p>
                 <h3>Karakuri Circus</h3>
-                <p>The story and characters are so good, and that ending felt biblical to me. It all comes together in a way I still think about.</p>
+                <p>The story goes through so much, but it's the characters who make you want to go through all of it with them. Their journeys, the connections between them, and then the way everything comes together at the end — biblical is honestly the word. That payoff still comes to mind.</p>
               </div>
             </article>
             <article class="media-card">
@@ -312,7 +333,7 @@
               <div class="media-card-text">
                 <p class="media-kind">Manga · Kiyohiko Azuma</p>
                 <h3>Yotsuba&amp;!</h3>
-                <p>Such a wonderful slice of life. It makes ordinary days feel funny and special without needing anything huge to happen.</p>
+                <p>Such a wonderful slice of life. Yotsuba can turn an ordinary day into something funny, surprising or just really lovely to spend time with. Nothing huge has to happen for a chapter to work. That's what makes it so good: it gets you to pay attention to the little things too.</p>
               </div>
             </article>
             <article class="media-card">
@@ -320,21 +341,13 @@
               <div class="media-card-text">
                 <p class="media-kind">Manga · Asao Takamori &amp; Tetsuya Chiba</p>
                 <h3>Ashita no Joe</h3>
-                <p>Joe is a peak main character. The story earns every high and low, and the ending is one of those I'll never forget.</p>
+                <p>Peak main character, peak story, peak ending. Joe is so compelling through both the highs and the lows, and the story makes you feel the weight of everything he goes through. It earns its big moments instead of just handing them to you. That ending is staying with me for a long time.</p>
               </div>
             </article>
           </div>
           </section>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>© 2026 Ryan N.</span>
-        <span>Artwork supplied for this personal portfolio; titles belong to their creators.</span>
-        <a href="index.html#top">Back to portfolio ↑</a>
-      </div>
-    </footer>
-  </body>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>Ryan N. / The shelf</span><span>Artwork belongs to its creators. Credits are in the README.</span><a href="index.html">Back to portfolio ↑</a></div></footer>
+</body>
 </html>
