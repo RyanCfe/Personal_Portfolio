@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A glimpse into Ryan's TV, anime, music, books and games, with artwork and spoiler-free notes.">
+    <meta name="description" content="Ryan's favourite shows, anime, music, books, games and manga, with spoiler-free notes.">
     <title>Outside class | Ryan N.</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -28,7 +28,7 @@
         <a class="back-link" href="index.html#about">← Back to the portfolio</a>
         <p class="eyebrow">Outside class / a few favourites</p>
         <h1 id="page-title">Stories I carry<br>with me<span class="title-stop">.</span></h1>
-        <p class="intro-copy">A glimpse at the shows, anime, music, books and games I spend time with. I’m drawn to worlds that linger, characters worth thinking about and music that brings a scene back. Just a personal shelf, not a ranking.</p>
+        <p class="intro-copy">A glimpse at the shows, anime, music, books, games and manga I keep coming back to. Some are here for the characters, some for a single song or scene I can't forget. This is just my shelf.</p>
       </section>
 
       <section class="section section-lined shelf-section" aria-label="Browse my interests">
@@ -37,7 +37,9 @@
             <button type="button" data-category="tv" aria-controls="tv" aria-pressed="true">TV</button>
             <button type="button" data-category="anime" aria-controls="anime" aria-pressed="false">Anime</button>
             <button type="button" data-category="music" aria-controls="music" aria-pressed="false">Music</button>
-            <button type="button" data-category="books" aria-controls="books" aria-pressed="false">Books &amp; games</button>
+            <button type="button" data-category="books" aria-controls="books" aria-pressed="false">Books</button>
+            <button type="button" data-category="games" aria-controls="games" aria-pressed="false">Games</button>
+            <button type="button" data-category="manga" aria-controls="manga" aria-pressed="false">Manga</button>
           </div>
 
           <section class="media-panel" id="tv" data-category-panel aria-labelledby="tv-title">
@@ -175,12 +177,19 @@
                 <p>I love the detail in the production, but it still feels warm and alive. I want to hear the whole album, not skip around.</p>
               </div>
             </article>
+            <article class="media-card">
+              <div class="media-art"><img src="your-name-soundtrack.png" alt="Your Name soundtrack artwork showing a comet across the night sky" width="447" height="447" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Soundtrack album · RADWIMPS</p>
+                <h3>Your Name</h3>
+                <p>Lowkey one of the best soundtracks I've heard. It's so emotional that a few notes are enough to bring the whole film back.</p>
+              </div>
+            </article>
           </div>
           </section>
 
           <section class="media-panel" id="books" data-category-panel aria-labelledby="books-title" hidden>
-            <div class="media-heading"><p class="eyebrow">04 / Read & play</p><h2 id="books-title">Books &amp; games</h2><p>Longer stories give me time to settle into their worlds. I’m especially drawn to choices, relationships and places that feel like they have a history.</p></div>
-            <h3 class="media-subheading">Books</h3>
+            <div class="media-heading"><p class="eyebrow">04 / Read</p><h2 id="books-title">Books</h2><p>I like having more time with a world and its people. Some of these I found through the films, then wanted to read the books too.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="the-hunger-games.png" alt="The Hunger Games artwork" width="363" height="550" loading="lazy" decoding="async"></div>
@@ -206,8 +215,27 @@
                 <p>I love that feeling of opening another door into a place I already know. Seven books make it somewhere to return.</p>
               </div>
             </article>
+            <article class="media-card">
+              <div class="media-art"><img src="the-lord-of-the-rings.png" alt="The Lord of the Rings artwork with the Dark Tower" width="365" height="547" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Book trilogy · J. R. R. Tolkien</p>
+                <h3>The Lord of the Rings</h3>
+                <p>I enjoyed the movies so much, then got to spend even longer in that world through the books. The journey and the friendships just don't get old for me.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="the-maze-runner.png" alt="The Maze Runner book cover" width="364" height="549" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Book series · James Dashner</p>
+                <h3>The Maze Runner</h3>
+                <p>I had a great time with both the movies and the books. I love that feeling of trying to work out the mystery along with the characters.</p>
+              </div>
+            </article>
           </div>
-            <h3 class="media-subheading">Games</h3>
+          </section>
+
+          <section class="media-panel" id="games" data-category-panel aria-labelledby="games-title" hidden>
+            <div class="media-heading"><p class="eyebrow">05 / Play</p><h2 id="games-title">Games</h2><p>I like games that let me sit with the characters and choices for a while, even after I'm done playing.</p></div>
           <div class="media-grid">
             <article class="media-card media-card--feature">
               <div class="media-art"><img src="the-house-in-fata-morgana.png" alt="The House in Fata Morgana artwork" width="250" height="354" loading="lazy" decoding="async"></div>
@@ -231,6 +259,68 @@
                 <p class="media-kind">Narrative game · AdHoc Studio</p>
                 <h3>Dispatch</h3>
                 <p>The superhero setup is fun, but it’s the team, banter and choices that make me care.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="detroit-become-human.png" alt="Detroit: Become Human artwork" width="299" height="168" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Choice-driven game · Quantic Dream</p>
+                <h3>Detroit: Become Human</h3>
+                <p>I love how much the choices matter. Even a small decision had me stopping to think about what I'd actually do.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="mouthwashing.png" alt="Mouthwashing artwork showing an orange sunset in a room" width="620" height="349" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Psychological horror · Wrong Organ</p>
+                <h3>Mouthwashing</h3>
+                <p>This one gets under my skin. The atmosphere is so unsettling, and it trusts you to sit with what the story is saying.</p>
+              </div>
+            </article>
+          </div>
+          </section>
+
+          <section class="media-panel" id="manga" data-category-panel aria-labelledby="manga-title" hidden>
+            <div class="media-heading"><p class="eyebrow">06 / Read</p><h2 id="manga-title">Manga &amp; manhua</h2><p>These are the ones I wanted to keep reading long after I should've gone to sleep.</p></div>
+          <div class="media-grid">
+            <article class="media-card media-card--feature">
+              <div class="media-art"><img src="haikyu-manga.png" alt="Haikyu!! manga volume cover" width="365" height="547" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Manga · Haruichi Furudate</p>
+                <h3>Haikyu!!</h3>
+                <p>Absolutely loved reading it. I stayed up till 4 just to keep going; somehow every rally makes me care more about everyone on the court.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="the-ravages-of-time.png" alt="The Ravages of Time volume cover" width="367" height="544" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Manhua · Chan Mou</p>
+                <h3>The Ravages of Time</h3>
+                <p>The strategy and the way people play each other is so good. The Xiapi arc was peak for me; I couldn't put it down.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="karakuri-circus.png" alt="Karakuri Circus manga volume cover" width="371" height="539" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Manga · Kazuhiro Fujita</p>
+                <h3>Karakuri Circus</h3>
+                <p>The story and characters are so good, and that ending felt biblical to me. It all comes together in a way I still think about.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="yotsuba.png" alt="Yotsuba&amp;! manga volume one cover" width="365" height="547" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Manga · Kiyohiko Azuma</p>
+                <h3>Yotsuba&amp;!</h3>
+                <p>Such a wonderful slice of life. It makes ordinary days feel funny and special without needing anything huge to happen.</p>
+              </div>
+            </article>
+            <article class="media-card">
+              <div class="media-art"><img src="ashita-no-joe.png" alt="Ashita no Joe: Fighting for Tomorrow volume one cover" width="380" height="500" loading="lazy" decoding="async"></div>
+              <div class="media-card-text">
+                <p class="media-kind">Manga · Asao Takamori &amp; Tetsuya Chiba</p>
+                <h3>Ashita no Joe</h3>
+                <p>Joe is a peak main character. The story earns every high and low, and the ending is one of those I'll never forget.</p>
               </div>
             </article>
           </div>

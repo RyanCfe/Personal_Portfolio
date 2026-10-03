@@ -1,17 +1,17 @@
 # Ryan N. — Portfolio
 
-I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings together some projects I've worked on and a page for the shows, music, books and games I keep coming back to.
+I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings together some projects I've worked on and a page for the shows, music, books, games and manga I keep coming back to.
 
 **Live site:** [ryancfe.github.io/Personal_Portfolio](https://ryancfe.github.io/Personal_Portfolio/)
 
 ## Pages
 
 - **Home (`index.html`)** — about, selected projects, skills and contact.
-- **Outside class (`outside.html`)** — TV, anime, music, books and games. The category buttons keep the page easy to browse without making the homepage too long.
+- **Outside class (`outside.html`)** — TV, anime, music, books, games and manga. The category buttons keep the page easy to browse without making the homepage too long.
 
 ## Code
 
-The site uses HTML, CSS and a small amount of JavaScript. `styles.css` handles the layout and phone sizes. `script.js` switches the media categories and runs the copy-email button. The 21 PNG images are stored beside the HTML files. `dev-server.js` is a local preview server; the published site itself is static.
+The site uses HTML, CSS and a small amount of JavaScript. `styles.css` handles the layout and phone sizes. `script.js` switches the media categories and runs the copy-email button. The 31 PNG images are stored beside the HTML files. `dev-server.js` is a local preview server; the published site itself is static.
 
 ## Artwork credits
 
@@ -40,3 +40,13 @@ The images on the Outside class page were selected for this portfolio. The links
 | `the-house-in-fata-morgana.png` | [The House in Fata Morgana — NOVECT](https://novect.net/fatamorgana/) |
 | `south-of-the-circle.png` | [South of the Circle — State of Play / 11 bit studios](https://11bitstudios.com/games/south-of-the-circle/) |
 | `dispatch.png` | [Dispatch — AdHoc Studio](https://adhocstudio.com/) |
+| `your-name-soundtrack.png` | [Your Name soundtrack — RADWIMPS](https://radwimps.jp/en/music/12801/); supplied image is film artwork |
+| `the-lord-of-the-rings.png` | [The Lord of the Rings — J. R. R. Tolkien / Tolkien Estate](https://www.tolkienestate.com/) ; supplied image is film artwork |
+| `the-maze-runner.png` | [The Maze Runner — James Dashner / Penguin Random House](https://www.penguinrandomhouse.com/books/36941/the-maze-runner-by-james-dashner/9780385737951/) |
+| `detroit-become-human.png` | [Detroit: Become Human — Quantic Dream](https://www.quanticdream.com/en/detroit-become-human) |
+| `mouthwashing.png` | [Mouthwashing — Wrong Organ / CRITICAL REFLEX](https://store.steampowered.com/app/2475490/Mouthwashing/) |
+| `haikyu-manga.png` | [Haikyu!! — Haruichi Furudate / VIZ](https://www.viz.com/haikyu) |
+| `the-ravages-of-time.png` | [The Ravages of Time (火鳳燎原) — Chan Mou / Tong Li](https://www.tongli.com.tw/BooksDetail.aspx?BD=TC16703) |
+| `karakuri-circus.png` | [Karakuri Circus — Kazuhiro Fujita / Shogakukan](https://shogakukan-comic.jp/book?isbn=9784091286277) |
+| `yotsuba.png` | [Yotsuba&! — Kiyohiko Azuma / Yen Press](https://yenpress.com/titles/9780316217941-yotsuba-vol-1) |
+| `ashita-no-joe.png` | [Ashita no Joe: Fighting for Tomorrow — Asao Takamori, Tetsuya Chiba / Kodansha](https://kodansha.us/series/ashita-no-joe-fighting-for-tomorrow/) |
