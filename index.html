@@ -3,98 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ryan N. builds with data, APIs and web tools, and keeps a shelf of stories, music and games close by.">
-  <meta name="theme-color" content="#f2ebdd">
-  <title>Ryan N. — work, stories & everything between</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <meta name="description" content="An experimental, explorable world for Ryan N.'s portfolio.">
+  <meta name="theme-color" content="#101928">
+  <title>Ryan N. / The Night Route</title>
+  <link rel="stylesheet" href="world.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Ryan N., back to top">ryan<span class="brand-star">✳</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="outside.html">The shelf</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to after hours theme" aria-pressed="false"><span aria-hidden="true">◐</span> <span data-theme-label>After hours</span></button>
-    </div>
+  <a href="#main" class="skip">Skip to content</a><div class="grain" aria-hidden="true"></div><div id="progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE NIGHT ROUTE</span></a>
+    <nav aria-label="Main navigation"><a href="#world">World</a><a href="#work">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
+    <button class="sky-toggle" id="sky-toggle" type="button" aria-pressed="false">☾ &nbsp; Dawn mode</button>
   </header>
-
   <main id="main">
-    <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ryan N. / Mumbai / 2026</p>
-        <h1 id="hero-title">Curious about<br><em>everything.</em><br>Building a little<br>of it.</h1>
-        <p class="hero-lead">I like making things work, then figuring out what actually made them work.</p>
-        <p class="hero-small">Third-year MBA Tech Data Science student at NMIMS MPSTME. Currently spending a lot of time with Linux and cloud.</p>
-        <div class="hero-actions">
-          <a class="button button-solid" href="#work">See what I’ve built <span aria-hidden="true">↗</span></a>
-          <a class="button button-text" href="outside.html">Meet the other half <span aria-hidden="true">→</span></a>
-        </div>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas id="stars" aria-hidden="true"></canvas><div class="moon" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Mumbai, 2026 / Somewhere between work and wonder</p>
+        <h1 id="hero-title">Come<br><em>take a walk.</em></h1>
+        <p class="intro">I’m Ryan. I build things with data and code, keep asking what happens behind the screen, and never seem to run out of stories I want to talk about.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#world">Explore the world <span>↘</span></a><a class="button button-ghost" href="#work">I’m here for the work ↗</a></div>
       </div>
-      <div class="hero-board" aria-label="Three things on Ryan's mind">
-        <div class="board-grid" aria-hidden="true"></div>
-        <span class="board-label board-label-top">A small window into my head</span>
-        <a class="board-card board-card-manga" href="outside.html#manga" aria-label="Read about Haikyu manga on the shelf">
-          <img src="haikyu-manga.png" alt="" width="365" height="547" decoding="async">
-          <span>one more chapter / 4 am</span>
-        </a>
-        <a class="board-card board-card-music" href="outside.html#music" aria-label="Read about Your Name soundtrack on the shelf">
-          <img src="your-name-soundtrack.png" alt="" width="447" height="447" decoding="async">
-          <span>the song brings it all back</span>
-        </a>
-        <div class="board-note"><span>ON MY DESK</span><strong>Linux commands.<br>Too many tabs.<br>A question about cloud.</strong></div>
-        <span class="board-label board-label-bottom">work / stories / what comes next</span>
+      <div class="scene" id="world" tabindex="0" aria-label="Explore four landmarks. Click a building, or use left and right arrows to move Ryan and Enter to visit the nearest place.">
+        <svg class="world-svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A cinematic illustrated night town with an archive, systems building, cinema, and signal tower">
+          <defs>
+            <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#45666b"/><stop offset="1" stop-color="#172c37"/></linearGradient>
+            <linearGradient id="earth" x2="0" y2="1"><stop stop-color="#506a62"/><stop offset=".45" stop-color="#263e42"/><stop offset="1" stop-color="#152936"/></linearGradient>
+            <linearGradient id="water" x2="0" y2="1"><stop stop-color="#385b69"/><stop offset="1" stop-color="#111e2d"/></linearGradient>
+            <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#ffdc9c"/><stop offset="1" stop-color="#b87764"/></linearGradient>
+            <pattern id="brick" width="30" height="18" patternUnits="userSpaceOnUse"><path d="M0 0H30M0 9H30M15 0V9M0 9V18M30 9V18" fill="none" stroke="#e7b77c" stroke-opacity=".1"/></pattern>
+          </defs>
+          <g fill="#d6c8bc" opacity=".3" class="cloud"><ellipse cx="310" cy="134" rx="125" ry="20"/><ellipse cx="370" cy="114" rx="80" ry="29"/><ellipse cx="985" cy="119" rx="135" ry="16"/></g>
+          <g fill="#d8bcb3" opacity=".2" class="cloud second"><ellipse cx="1150" cy="168" rx="118" ry="15"/><ellipse cx="1245" cy="148" rx="80" ry="23"/></g>
+          <path d="M0 409Q122 335 240 390T470 357T730 400T990 338T1260 375T1600 335V730H0Z" fill="#2e4a58" opacity=".53"/>
+          <path d="M0 483Q130 396 280 461T570 412T890 445T1210 415T1600 456V740H0Z" fill="url(#hill)"/>
+          <g opacity=".45" fill="#132936"><path d="M18 480h16v-60h9v60h16v-85h10v85h20v-37h12v37h30v90H18Z"/><path d="M390 472h15v-49h11v49h20v-72h18v72h8v-32h20v32h27v85H390Z"/><path d="M1060 482h28v-57h12v57h21v-87h13v87h24v-38h19v38h27v91h-144Z"/></g>
+          <path d="M0 545Q280 521 600 554T1120 532T1600 550V760H0Z" fill="url(#water)"/>
+          <g class="waterline" fill="none" stroke="#e6c49a" stroke-width="2" stroke-linecap="round" opacity=".4"><path d="M26 587h111m100 25h180m80 15h68m195-36h200m72 29h140m76-24h160m90 37h81"/><path d="M55 656h228m185 35h133m235-28h194m80 30h183"/></g>
+          <path d="M0 620Q320 582 745 611T1600 594V760H0Z" fill="url(#earth)"/>
+          <path d="M0 632Q340 594 775 624T1600 607" fill="none" stroke="#a8b7a1" stroke-width="4" opacity=".5"/>
+          <path d="M0 693Q500 665 880 693T1600 678" fill="none" stroke="#b7a48e" stroke-width="2" opacity=".47"/>
+          <g fill="#24413d"><path d="M66 598l15-74 15 74m-29-25h29M83 598v52" stroke="#1a3034" stroke-width="4"/><path d="M426 598l12-66 13 66m-23-24h20M439 597v38" stroke="#1a3034" stroke-width="4"/><path d="M772 593l13-63 14 63m-23-20h23M786 592v52" stroke="#1a3034" stroke-width="4"/><path d="M1487 595l19-80 18 80m-35-29h35M1506 591v45" stroke="#1a3034" stroke-width="4"/></g>
+          <g class="stop" data-stop="archive" tabindex="0" role="button" aria-label="Visit the data archive">
+            <path d="M119 378l131-92 139 92Z" fill="#a97065" stroke="#e5b77e" stroke-width="6" class="stop-border"/><path d="M135 371h239v229H135Z" fill="#76565a" stroke="#c79573" stroke-width="6"/><path d="M135 371h239v229H135Z" fill="url(#brick)"/>
+            <path d="M216 391h78v209h-78Z" fill="#2c3845" stroke="#e9bb7e" stroke-width="7"/><path d="M232 429h47v70h-47Z" fill="#e9ba79" opacity=".76" class="window-light"/>
+            <path d="M154 416h40v53h-40Zm161 0h40v53h-40ZM154 499h40v52h-40Zm161 0h40v52h-40Z" fill="#f5cb86" stroke="#332f39" stroke-width="7" class="window-light"/>
+            <path d="M100 600h310v16H100Z" fill="#382e36"/><text x="158" y="365" class="stop-label">THE ARCHIVE</text>
+          </g>
+          <g class="stop" data-stop="systems" tabindex="0" role="button" aria-label="Visit the systems workshop">
+            <path d="M465 352l118-61 191 61v19H465Z" fill="#4b6d73" stroke="#b3c7af" stroke-width="5" class="stop-border"/><path d="M480 369h280v231H480Z" fill="#405963" stroke="#9cb9ae" stroke-width="5"/>
+            <path d="M500 399h240v75H500Z" fill="#243e49" stroke="#95b4ab" stroke-width="4"/><path d="M510 411h220v50H510Z" fill="#88c8bd" opacity=".78" class="window-light"/>
+            <path d="M505 504h63v74h-63Zm81 0h63v74h-63Zm81 0h63v74h-63Z" fill="#1b3441" stroke="#8facab" stroke-width="4"/><path d="M512 513h48v6h-48Zm81 0h48v6h-48Zm81 0h48v6h-48Z" fill="#b8dfca" class="window-light"/>
+            <path d="M440 600h356v16H440Z" fill="#1b313b"/><text x="521" y="349" class="stop-label">SYSTEMS LAB</text>
+            <path d="M653 300v-96m-14 0h28" stroke="#92c7b8" stroke-width="5"/><circle cx="653" cy="200" r="8" fill="#ffe4a4" class="firefly"/>
+          </g>
+          <g class="stop" data-stop="stories" tabindex="0" role="button" aria-label="Visit the cinema and outside class shelf">
+            <path d="M845 390h267v210H845Z" fill="#644c5e" stroke="#d1a9a1" stroke-width="5" class="stop-border"/><path d="M830 390l149-92 146 92Z" fill="#a16a70" stroke="#e9b893" stroke-width="6"/>
+            <path d="M880 428h197v64H880Z" fill="#ead3aa" stroke="#f9dfa9" stroke-width="6"/><text x="910" y="467" fill="#5c3f50" style="font:900 31px Georgia,serif;letter-spacing:3px">CINEMA</text>
+            <path d="M863 509h231v89H863Z" fill="#352b42" stroke="#f0b887" stroke-width="4"/><path d="M897 523v66m45-66v66m45-66v66m45-66v66m45-66v66" stroke="#bc7b82" stroke-width="5"/><circle cx="878" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="916" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="954" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="992" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="1030" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="1068" cy="500" r="5" fill="#fbd999" class="window-light"/>
+            <path d="M810 600h326v16H810Z" fill="#342d39"/><text x="877" y="374" class="stop-label">AFTER HOURS</text>
+          </g>
+          <g class="stop" data-stop="contact" tabindex="0" role="button" aria-label="Visit the signal tower and contact Ryan">
+            <path class="signal-beam" d="M1326 281l-190-137 87-64 103 201 110-201 83 64Z" fill="#ffe3a0" opacity=".25"/>
+            <path d="M1262 359h128l38 241h-204Z" fill="#607473" stroke="#afc6b4" stroke-width="6" class="stop-border"/><path d="M1291 290h72l20 69h-112Z" fill="#e6b98b" stroke="#c9d5ba" stroke-width="5"/><path d="M1304 309h46v40h-46Z" fill="#ffe7a2" class="window-light"/><path d="M1317 258h19v34h-19Z" fill="#b0c7b6"/><path d="M1282 410h90m-85 42h94m-86 44h102" stroke="#a8bdac" stroke-width="5"/><path d="M1309 540h35v60h-35Z" fill="#273e45" stroke="#b6c5b2" stroke-width="4"/><path d="M1200 600h250v16h-250Z" fill="#263b40"/><text x="1229" y="389" class="stop-label">SIGNAL TOWER</text>
+          </g>
+          <g fill="#ffe6a1" class="firefly"><circle cx="98" cy="513" r="3"/><circle cx="416" cy="504" r="2"/><circle cx="801" cy="466" r="3"/><circle cx="1173" cy="535" r="2"/><circle cx="1461" cy="479" r="3"/></g>
+          <g class="train"><path d="M-5 632h423l-14 65H8Z" fill="#9b5a56" stroke="#e4ac7d" stroke-width="5"/><path d="M18 644h73v32H18Zm86 0h73v32h-73Zm86 0h73v32h-73Zm86 0h73v32h-73Z" fill="#f7d7a1" class="train-window"/><circle cx="55" cy="703" r="12" fill="#172632"/><circle cx="355" cy="703" r="12" fill="#172632"/><path d="M405 658h27" stroke="#f6d69b" stroke-width="8"/></g>
+        </svg>
+        <div class="character" id="character" aria-hidden="true"></div>
+        <span class="scene-caption">← → Walk &nbsp; · &nbsp; Enter / tap a building</span><span class="coordinates">19.0748° N, 72.8856° E &nbsp; / &nbsp; NIGHT 01</span>
       </div>
+      <div class="world-hint" id="world-hint" role="status" aria-live="polite"><p class="eyebrow">A small world, four stops</p><strong>Where do you want to go?</strong><p>Tap a lit building. Or walk there with your arrow keys.</p></div>
+      <nav class="mobile-stops" aria-label="World stops"><a href="#work">Archive</a><a href="#about">Systems</a><a href="#stories">Stories</a><a href="#contact">Signal</a></nav>
     </section>
-
-    <div class="marquee-line" aria-hidden="true"><div class="container">DATA <span>✳</span> STORIES <span>✳</span> SYSTEMS <span>✳</span> MUSIC <span>✳</span> MUMBAI <span>✳</span> STILL LEARNING</div></div>
-
-    <section class="section now-section" aria-labelledby="now-title">
-      <div class="container">
-        <div class="section-top"><p class="eyebrow">01 / Right now</p><h2 id="now-title">A few things in motion<span class="period">.</span></h2></div>
-        <div class="now-grid">
-          <article class="note-card"><span class="note-index">01 — LEARNING</span><h3>Beyond my laptop</h3><p>I finished AWS Cloud Technical Essentials. Right now I’m working through Linux and trying to understand how an app runs when it leaves my machine.</p><span class="note-mark" aria-hidden="true">↗</span></article>
-          <article class="note-card"><span class="note-index">02 — BUILDING</span><h3>One piece at a time</h3><p>A dashboard, an API, a game with shared boards. The best part is when the pieces finally talk to each other after I’ve spent ages finding out why they didn’t.</p><span class="note-mark" aria-hidden="true">⌘</span></article>
-          <article class="note-card"><span class="note-index">03 — AFTER HOURS</span><h3>Stories that linger</h3><p>Andor for its people. Haikyu!! when I should be asleep. The <em>Your Name</em> soundtrack when I want the whole film back in a few notes.</p><a href="outside.html" class="small-link">Open the shelf ↗</a></article>
-        </div>
+    <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / Signal tower</span></div>
+    <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
+      <p class="eyebrow reveal">The archive / selected work</p><div class="section-heading reveal"><h2 id="work-heading">Proof of<br>curiosity.</h2><p>Projects from class, side experiments, and the point where “why isn’t this working?” turned into “oh, now I get it.”</p></div>
+      <div class="project-grid">
+        <article class="project reveal" data-no="01"><span class="type">Data / API / Dashboard</span><h3>Netflix analytics</h3><p>Untangled titles, people, countries and genres into a database, API and dashboard you can actually explore.</p><div class="tags"><span>Python</span><span>SQLite</span><span>FastAPI</span><span>Streamlit</span></div><a href="https://github.com/RyanCfe/Netflix-analytics-dashboard" target="_blank" rel="noopener noreferrer">See the code ↗</a></article>
+        <article class="project reveal" data-no="02"><span class="type">Machine learning / Backend</span><h3>Iris prediction API</h3><p>A trained model behind a Django REST endpoint, with authentication, PostgreSQL and a working request to response path.</p><div class="tags"><span>Django REST</span><span>scikit-learn</span><span>PostgreSQL</span></div></article>
+        <article class="project reveal" data-no="03"><span class="type">Real time / Shared state</span><h3>Socket game playground</h3><p>Rooms, boards and moves that have to make sense on more than one screen. A surprisingly good lesson in shared state.</p><div class="tags"><span>JavaScript</span><span>Socket.IO</span><span>Firebase</span></div></article>
+        <article class="project reveal" data-no="04"><span class="type">Analysis / Risk</span><h3>Gold ETF comparison</h3><p>Compared three funds with return, volatility and Sharpe ratio side by side. The risk deserved a place beside the headline number.</p><div class="tags"><span>Excel</span><span>Statistics</span><span>Finance</span></div></article>
+        <article class="project reveal" data-no="05"><span class="type">Systems / Infrastructure</span><h3>Four services, one stack</h3><p>FastAPI, Next.js, PostgreSQL and Nginx brought together with Docker Compose. The project that got me thinking seriously about Linux and cloud.</p><div class="tags"><span>Docker</span><span>FastAPI</span><span>Next.js</span><span>Nginx</span></div></article>
       </div>
-    </section>
-
-    <section class="section work-section" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <div class="section-top section-top-split"><div><p class="eyebrow">02 / Selected work</p><h2 id="work-title">Things I’ve made<span class="period">.</span></h2></div><p>Coursework and experiments, with little maps of how the parts fit together. I’m still learning by building.</p></div>
-        <div class="work-list">
-          <article class="work-item"><div class="work-number">01 / DATA</div><div class="work-content"><p class="work-type">Pipeline · API · dashboard</p><h3>Netflix analytics dashboard</h3><p>A Netflix CSV became a normalized SQLite database, a FastAPI backend and a Streamlit dashboard. Search titles and explore genres, cast, directors and countries.</p><p class="work-thought">The CSV looked simple until one title had several people, genres and countries attached to it. I liked making those relationships usable.</p><div class="work-bottom"><span>Python / SQLite / FastAPI / Streamlit</span><a href="https://github.com/RyanCfe/Netflix-analytics-dashboard" target="_blank" rel="noopener noreferrer">View code ↗</a></div></div><figure class="work-visual visual-pipeline"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">THE ROUTE</span><div class="pipeline-nodes"><span>CSV</span><b>→</b><span>DB</span><b>→</b><span>API</span><b>→</b><span>UI</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><figcaption>From rows to something you can explore.</figcaption></figure></article>
-          <article class="work-item"><div class="work-number">02 / API</div><div class="work-content"><p class="work-type">Machine learning · backend</p><h3>Iris prediction API</h3><p>A Django REST Framework endpoint that loads a trained scikit-learn model and predicts from JSON. I worked through token authentication, PostgreSQL and migrations, then tested it locally.</p><p class="work-thought">Training the model was one step. Getting authentication, the database and the endpoint to work together was the part I learned from.</p><div class="work-bottom"><span>Python / Django REST / scikit-learn / PostgreSQL</span></div></div><figure class="work-visual visual-api"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">REQUEST → RESPONSE</span><div class="api-line"><b>POST</b> /api/predict</div><div class="api-code">{ features: [ … ] }<br><span>↓</span><br>{ prediction: … }</div></div><figcaption>A model inside a working endpoint.</figcaption></figure></article>
-          <article class="work-item"><div class="work-number">03 / LIVE</div><div class="work-content"><p class="work-type">Real-time prototype</p><h3>Socket game playground</h3><p>A multiplayer playground with rooms and shared boards using Socket.IO. Some game modes are still experiments, but working through shared state was the point.</p><p class="work-thought">This made “works on my screen” a pretty useless test. A move has to make sense on yours too.</p><div class="work-bottom"><span>JavaScript / Node / Express / Socket.IO / Firebase</span></div></div><figure class="work-visual visual-socket"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">ROOM 01 · 2 ONLINE</span><div class="board-mini"><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i></div><div class="socket-sync">PLAYER A ⇄ PLAYER B</div></div><figcaption>One move, two screens.</figcaption></figure></article>
-          <article class="work-item"><div class="work-number">04 / RISK</div><div class="work-content"><p class="work-type">Financial analysis</p><h3>Gold ETF comparison</h3><p>I compared SBI Gold ETF, HDFC Gold ETF and Nippon Gold BeES over March 2025–March 2026 using cumulative return, annualized volatility and Sharpe ratios in Excel.</p><p class="work-thought">Looking at the Sharpe ratio changed how I read the returns. I wanted the risk right beside the number that looked good.</p><div class="work-bottom"><span>Excel / statistics / risk & return</span></div></div><figure class="work-visual visual-etf"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">THREE FUNDS / THREE LENSES</span><div class="fund-lines"><span>SBI Gold ETF</span><span>HDFC Gold ETF</span><span>Nippon Gold BeES</span></div><div class="metric-line">RETURN <b>·</b> VOLATILITY <b>·</b> SHARPE</div></div><figcaption>Reading performance with risk in view.</figcaption></figure></article>
-          <article class="work-item"><div class="work-number">05 / SYSTEMS</div><div class="work-content"><p class="work-type">Local infrastructure</p><h3>Containerized web stack</h3><p>A FastAPI backend, Next.js frontend, PostgreSQL and Nginx brought together with Docker Compose. It taught me a lot about how services connect and how to debug them.</p><p class="work-thought">Putting these services in one stack is what got me asking how I’d run the whole thing beyond my laptop.</p><div class="work-bottom"><span>FastAPI / Next.js / PostgreSQL / Nginx / Docker</span></div></div><figure class="work-visual visual-stack"><div class="visual-inner" aria-hidden="true"><span class="visual-tag">DOCKER COMPOSE</span><div class="stack-services"><span>Nginx</span><span>Next.js</span><span>FastAPI</span><span>Postgres</span></div></div><figcaption>Four services, one local stack.</figcaption></figure></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about-section" id="about" aria-labelledby="about-title">
-      <div class="container about-layout">
-        <div class="about-title"><p class="eyebrow">03 / A little about me</p><h2 id="about-title">I want to know what happens behind the screen<span class="period">.</span></h2><span class="about-scribble" aria-hidden="true">↝</span></div>
-        <div class="about-prose"><p>I’ve built dashboards and APIs, and lately I keep coming back to a new question: what happens after an app works on my laptop? Putting a frontend, API, database and Nginx together with Docker Compose made me want to learn Linux and cloud properly.</p><p>I’m still figuring out where I want to take that. For now I like getting my hands on each part, breaking something, reading the error, and trying again until it makes sense.</p><p>Outside that, I can spend hours on the strategy in <em>The Ravages of Time</em>, come back to the quiet of <em>Violet Evergarden</em>, or put on a soundtrack and remember exactly how a film felt.</p><a class="inline-arrow" href="outside.html">See the things I keep coming back to <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
-
-    <section class="section skills-section" aria-labelledby="skills-title">
-      <div class="container"><div class="section-top section-top-split"><div><p class="eyebrow">04 / Toolkit</p><h2 id="skills-title">What I use<span class="period">.</span></h2></div><p>Built through projects and class. There’s plenty I’m still learning.</p></div>
-        <div class="skill-lines"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST Framework · Node.js · Express · Socket.IO</p></div><div><h3>Databases & tools</h3><p>PostgreSQL · MySQL · SQLite · Git / GitHub · Docker Compose · Nginx</p></div><div><h3>Learning now</h3><p>Linux commands and shell scripting · AWS and cloud fundamentals</p></div></div>
-      </div>
-    </section>
-
-    <section class="shelf-door" aria-labelledby="shelf-door-title"><div class="container shelf-door-inner"><div><p class="eyebrow">05 / Outside class</p><h2 id="shelf-door-title">The things I carry<br>out of the screen<span class="period">.</span></h2><p>A very personal shelf of shows, movies, anime, music, books, games and manga. No ratings. Just what I love about them.</p><a class="button button-light" href="outside.html">Step inside the shelf <span aria-hidden="true">↗</span></a></div><div class="door-covers" aria-hidden="true"><img src="andor.png" alt="" width="272" height="376" loading="lazy"><img src="violet-evergarden.png" alt="" width="597" height="335" loading="lazy"><img src="yotsuba.png" alt="" width="365" height="547" loading="lazy"></div></div></section>
-
-    <section class="section contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><p class="eyebrow">06 / Say hello</p><h2 id="contact-title">A project, a question,<br>or a film I should watch?</h2><p>I’d like to hear about it.</p></div><div class="contact-actions"><a class="contact-email" href="mailto:ryanneshar1@gmail.com">ryanneshar1@gmail.com ↗</a><a class="inline-arrow" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><button type="button" class="copy-button" id="copy-email">Copy email</button><span id="copy-status" role="status" aria-live="polite"></span></div></div></section>
+    </div></section>
+    <section class="section story-section" id="stories" aria-labelledby="story-heading"><div class="section-shell">
+      <p class="eyebrow reveal">The cinema / outside class</p><div class="section-heading reveal"><h2 id="story-heading">The other<br>half of me.</h2><p>Shows, anime, films, music, books, games and manga. Not a ranking. A trail of things that stayed with me.</p></div>
+      <div class="story-grid"><div class="story-prose reveal"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over a hundred from ages 4 to 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games. That’s roughly how this shelf happened.</p></div><div class="ticket reveal"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>A personal shelf of stories and soundtracks.</p><a href="outside.html">Open the full shelf ↗</a></div></div>
+    </div></section>
+    <section class="section about-section" id="about" aria-labelledby="about-heading"><div class="section-shell">
+      <p class="eyebrow reveal">The workshop / about & tools</p><div class="section-heading reveal"><h2 id="about-heading">Still figuring<br>it out.</h2><p>Third-year MBA Tech Data Science student at NMIMS MPSTME, Mumbai. Currently learning Linux and cloud after finishing AWS Cloud Technical Essentials.</p></div>
+      <div class="about-grid"><div class="reveal"><p>Building dashboards and APIs got me interested in the parts between them. Then I put a frontend, backend, database and Nginx together with Docker Compose, and started wondering what it takes to run the whole thing beyond my laptop.</p><p>That’s why I’m learning Linux and cloud now. I’m still early, but I like following a problem far enough to understand what actually fixed it.</p></div><div class="toolkit reveal"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST · Node.js</p></div><div><h3>Systems</h3><p>PostgreSQL · MySQL · Git · Docker Compose · Nginx · Socket.IO</p></div><div><h3>Learning now</h3><p>Linux commands · shell scripting · AWS and cloud fundamentals</p></div></div></div>
+    </div></section>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-shell"><p class="eyebrow reveal">The signal tower / contact</p><h2 class="reveal" id="contact-heading">Send a<br><em>signal.</em></h2><div class="contact-links reveal"><a class="button button-primary" href="mailto:ryanneshar1@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><span>Ryan N. / Mumbai</span><span>Made with HTML, CSS & JavaScript.</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer><span>Ryan N. / Mumbai / 2026</span><span>Built with HTML, SVG, CSS & JavaScript.</span><a href="#top">Back to the sky ↑</a></footer>
+  <script src="world.js" defer></script>
 </body>
 </html>

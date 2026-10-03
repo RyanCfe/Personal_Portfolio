@@ -6,12 +6,12 @@ I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings
 
 ## Pages
 
-- **Home (`index.html`)** — projects, what I'm learning, a little about me and contact.
+- **Home (`index.html`)** — an illustrated night route through projects, tools, interests and contact. Four town landmarks act as navigation; keyboard arrows move the character, and the dawn button changes the sky.
 - **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code
 
-The site uses HTML, CSS and a small amount of JavaScript. `styles.css` handles the layouts, themes and phone sizes. The project maps are small HTML/CSS illustrations of each build, rather than screenshots. `script.js` switches the media categories, moves the gallery, remembers the day/after-hours theme, picks a random shelf item and runs the copy-email button. The 37 PNG images are stored beside the HTML files. They are shown at smaller sizes to keep the supplied artwork from being stretched beyond its original resolution. `dev-server.js` is a local preview server; the site itself is static.
+The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
 
 ## Artwork credits
 
