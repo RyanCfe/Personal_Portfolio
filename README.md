@@ -2,6 +2,10 @@
 
 A two-page personal portfolio in HTML, CSS and JavaScript. It has five selected projects, grouped skills, contact details and an illustrated page for interests outside class. No framework, template or npm packages are used.
 
+**Live site:** https://ryancfe.github.io/Personal_Portfolio/  
+**Outside class:** https://ryancfe.github.io/Personal_Portfolio/outside.html  
+**Source code:** https://github.com/RyanCfe/Personal_Portfolio
+
 ## Run it on your laptop
 
 1. Install Node.js if it is not already installed. In a terminal, check with `node --version`.
@@ -37,7 +41,7 @@ In Windows PowerShell, if `npm` reports a script execution policy error, use `np
 
 The finished site is static. `dev-server.js` runs only on your laptop; GitHub Pages serves the HTML, CSS, JavaScript and PNG files directly.
 
-## Before publishing
+## Before submission
 
 - Read the About, project and Outside class text in your own voice. The project descriptions distinguish local builds and prototypes from finished public work. The media page uses your latest list and images; change anything you would rather keep off a public site.
 - Only the Netflix project links to code. Add links for other projects if you publish their repositories; avoid linking to private work or claiming a prototype is complete.
@@ -46,10 +50,7 @@ The finished site is static. `dev-server.js` runs only on your laptop; GitHub Pa
 
 ## Submit the assignment
 
-1. Create a **public** repository on GitHub and add the files from this folder. The GitHub profile URL alone is not the source-code link.
-2. In that repository, open **Settings → Pages → Build and deployment**. Choose **Deploy from a branch**, then `main` and `/(root)`, and save.
-3. Wait for the live URL shown in Pages settings. Open both the live site and the public repository in a private/incognito window.
-4. Submit **both links** through the class portal by **October 17, 2026, 11:59 PM**. Changes pushed after the deadline will not be marked.
+Submit the **live site** and **source code** links above through the class portal by **October 17, 2026, 11:59 PM**. The repository is public, and GitHub Pages deploys from `main` at `/(root)`. Check both links in a private/incognito window before submitting. Changes pushed after the deadline will not be marked.
 
 ### Artwork and writing credits
 
