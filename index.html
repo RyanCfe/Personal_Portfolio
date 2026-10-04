@@ -12,7 +12,7 @@
   <a href="#main" class="skip">Skip to content</a><div class="grain" aria-hidden="true"></div><div id="progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE NIGHT ROUTE</span></a>
-    <nav aria-label="Main navigation"><a href="#world">World</a><a href="#work">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">World</a><a class="mobile-explore" href="#mobile-world">World</a><a href="#work">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
     <button class="sky-toggle" id="sky-toggle" type="button" aria-pressed="false">☾ &nbsp; Dawn mode</button>
   </header>
   <main id="main">
@@ -22,7 +22,7 @@
         <p class="eyebrow">Mumbai, 2026 / Somewhere between work and wonder</p>
         <h1 id="hero-title">Come<br><em>take a walk.</em></h1>
         <p class="intro">I’m Ryan. I build things with data and code, keep asking what happens behind the screen, and never seem to run out of stories I want to talk about.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#world">Explore the world <span>↘</span></a><a class="button button-ghost" href="#work">I’m here for the work ↗</a></div>
+        <div class="hero-actions"><a class="button button-primary desktop-explore" href="#world">Explore the world <span>↘</span></a><a class="button button-primary mobile-explore" href="#mobile-world">Explore the world <span>↘</span></a><a class="button button-ghost" href="#work">I’m here for the work ↗</a></div>
       </div>
       <div class="scene" id="world" tabindex="0" aria-label="Explore four landmarks. Click a building, or use left and right arrows to move Ryan and Enter to visit the nearest place.">
         <svg class="world-svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A cinematic illustrated night town with an archive, systems building, cinema, and signal tower">
@@ -74,7 +74,17 @@
         <span class="scene-caption">← → Walk &nbsp; · &nbsp; Enter / tap a building</span><span class="coordinates">19.0748° N, 72.8856° E &nbsp; / &nbsp; NIGHT 01</span>
       </div>
       <div class="world-hint" id="world-hint" role="status" aria-live="polite"><p class="eyebrow">A small world, four stops</p><strong>Where do you want to go?</strong><p>Tap a lit building. Or walk there with your arrow keys.</p></div>
-      <nav class="mobile-stops" aria-label="World stops"><a href="#work">Archive</a><a href="#about">Systems</a><a href="#stories">Stories</a><a href="#contact">Signal</a></nav>
+      <nav class="mobile-world" id="mobile-world" aria-label="Explore the four places in Ryan's world">
+        <div class="mobile-world-heading"><span>THE NIGHT ROUTE</span><span>FOUR STOPS ↓</span></div>
+        <div class="mobile-landmarks">
+          <a class="landmark archive" href="#work"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>01 / SELECTED WORK</small><strong>The archive</strong><b>Explore ↗</b></span></a>
+          <a class="landmark systems" href="#about"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>02 / ABOUT & TOOLS</small><strong>Systems lab</strong><b>Explore ↗</b></span></a>
+          <a class="landmark cinema" href="#stories"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>03 / OUTSIDE CLASS</small><strong>After hours</strong><b>Explore ↗</b></span></a>
+          <a class="landmark signal" href="#contact"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>04 / GET IN TOUCH</small><strong>Signal tower</strong><b>Explore ↗</b></span></a>
+        </div>
+        <div class="mobile-ground" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="mobile-world-footer">Pick a place to wander into. <span>RYAN N. / MUMBAI / 2026</span></p>
+      </nav>
     </section>
     <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / Signal tower</span></div>
     <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
@@ -89,7 +99,7 @@
     </div></section>
     <section class="section story-section" id="stories" aria-labelledby="story-heading"><div class="section-shell">
       <p class="eyebrow reveal">The cinema / outside class</p><div class="section-heading reveal"><h2 id="story-heading">The other<br>half of me.</h2><p>Shows, anime, films, music, books, games and manga. Not a ranking. A trail of things that stayed with me.</p></div>
-      <div class="story-grid"><div class="story-prose reveal"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over a hundred from ages 4 to 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games. That’s roughly how this shelf happened.</p></div><div class="ticket reveal"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>A personal shelf of stories and soundtracks.</p><a href="outside.html">Open the full shelf ↗</a></div></div>
+      <div class="story-grid"><div class="story-prose reveal"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over 200+ books between ages 7 and 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games. That’s roughly how this shelf happened.</p></div><div class="ticket reveal"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>A personal shelf of stories and soundtracks.</p><a href="outside.html">Open the full shelf ↗</a></div></div>
     </div></section>
     <section class="section about-section" id="about" aria-labelledby="about-heading"><div class="section-shell">
       <p class="eyebrow reveal">The workshop / about & tools</p><div class="section-heading reveal"><h2 id="about-heading">Still figuring<br>it out.</h2><p>Third-year MBA Tech Data Science student at NMIMS MPSTME, Mumbai. Currently learning Linux and cloud after finishing AWS Cloud Technical Essentials.</p></div>
