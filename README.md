@@ -1,48 +1,58 @@
-Ryan N. — Portfolio
+# Ryan N. — Portfolio
+
 I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings together projects I've worked on and a shelf for the shows, movies, anime, music, books, games and manga I keep coming back to.
-Live site: ryancfe.github.io/Personal_Portfolio
-Pages
-- Home (index.html) — an illustrated night route through projects, tools, interests and contact. Four town landmarks act as navigation; keyboard arrows move the character, and the dawn button changes the sky.
-- The shelf (outside.html) — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
-Code
-The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in index.html; world.css controls its layout and animation, while world.js runs the stars, character movement, landmarks, dawn mode and scroll effects. The Outside class page keeps its own styles.css and script.js for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. dev-server.js is a local preview server; GitHub Pages serves the site without a backend.
-Asset credits
+
+**Live site:** [ryancfe.github.io/Personal_Portfolio](https://ryancfe.github.io/Personal_Portfolio/)
+
+## Pages
+
+- **Home (`index.html`)** — an illustrated night route through projects, tools, interests and contact. Four town landmarks act as navigation; keyboard arrows move the character, and the dawn button changes the sky.
+- **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
+
+## Code
+
+The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
+
+## Asset credits
+
 The night town, interface illustrations and animations are built with the HTML, SVG, CSS and JavaScript in this repository. The 37 PNG covers, posters and stills on the shelf depict existing works. Their creators and publishers are credited below, one entry per file. The exact download URLs for the PNG copies are unavailable. The linked pages identify the works and their rights holders; they are not the download locations or reuse licences for these files. The artwork remains with its respective rights holders.
-Image file	Work and creator / publisher
-andor.png	Andor — Lucasfilm / Star Wars
-chernobyl.png	Chernobyl — HBO
-over-the-garden-wall.png	Over the Garden Wall — Cartoon Network
-arcane.png	Arcane — Riot Games, Fortiche and Netflix
-moon-knight.png	Moon Knight — Marvel Studios / Disney
-interstellar.png	Interstellar — Paramount Pictures / Warner Bros.
-ford-v-ferrari.png	Ford v Ferrari — 20th Century Studios
-spirited-away.png	Spirited Away — Hayao Miyazaki / Studio Ghibli
-the-shawshank-redemption.png	The Shawshank Redemption — Castle Rock / Warner Bros.
-avatar.png	Avatar — 20th Century Studios
-attack-on-titan.png	Attack on Titan — official anime portal
-march-comes-in-like-a-lion.png	March Comes in Like a Lion — Chica Umino / Shaft / production committee
-violet-evergarden.png	Violet Evergarden — Kyoto Animation
-one-piece.png	One Piece — official anime site
-haikyu.png	Haikyu!! — official anime site
-code-geass.png	Code Geass — SUNRISE / PROJECT GEASS
-legend-of-the-galactic-heroes.png	Legend of the Galactic Heroes — original anime site
-shelter.png	Shelter — Porter Robinson, Madeon and A-1 Pictures
-who-am-i.png	Who Am I — Casting Crowns; supplied image is album art
-love-that-binds-us.png	The Love That Binds Us — Evan Call / Violet Evergarden; supplied image is from the anime
-random-access-memories.png	Random Access Memories — Daft Punk
-the-hunger-games.png	The Hunger Games — Suzanne Collins / Scholastic
-a-week-in-winter.png	A Week in Winter — Marcia Willett / Hachette
-the-chronicles-of-narnia.png	The Chronicles of Narnia — C. S. Lewis; supplied image is adaptation artwork
-the-house-in-fata-morgana.png	The House in Fata Morgana — NOVECT
-south-of-the-circle.png	South of the Circle — State of Play / 11 bit studios
-dispatch.png	Dispatch — AdHoc Studio
-your-name-soundtrack.png	Your Name soundtrack — RADWIMPS; supplied image is film artwork
-the-lord-of-the-rings.png	The Lord of the Rings — J. R. R. Tolkien / Tolkien Estate ; supplied image is film artwork
-the-maze-runner.png	The Maze Runner — James Dashner / Penguin Random House
-detroit-become-human.png	Detroit: Become Human — Quantic Dream
-mouthwashing.png	Mouthwashing — Wrong Organ / CRITICAL REFLEX
-haikyu-manga.png	Haikyu!! — Haruichi Furudate / VIZ
-the-ravages-of-time.png	The Ravages of Time (火鳳燎原) — Chan Mou / Tong Li
-karakuri-circus.png	Karakuri Circus — Kazuhiro Fujita / Shogakukan
-yotsuba.png	Yotsuba&! — Kiyohiko Azuma / Yen Press
-ashita-no-joe.png	Ashita no Joe: Fighting for Tomorrow — Asao Takamori, Tetsuya Chiba / Kodansha
+
+| Image file | Work and creator / publisher |
+| --- | --- |
+| `andor.png` | [Andor — Lucasfilm / Star Wars](https://www.starwars.com/series/andor/) |
+| `chernobyl.png` | [Chernobyl — HBO](https://www.hbo.com/series) |
+| `over-the-garden-wall.png` | [Over the Garden Wall — Cartoon Network](https://www.youtube.com/watch?v=MchGCjJMv3E) |
+| `arcane.png` | [Arcane — Riot Games, Fortiche and Netflix](https://www.netflix.com/tudum/arcane) |
+| `moon-knight.png` | [Moon Knight — Marvel Studios / Disney](https://news.disney.com/marvel-studios-moon-knight) |
+| `interstellar.png` | [Interstellar — Paramount Pictures / Warner Bros.](https://ir.paramount.com/news-releases/news-release-details/paramount-pictures-and-warner-bros-pictures-announce-start) |
+| `ford-v-ferrari.png` | [Ford v Ferrari — 20th Century Studios](https://www.20thcenturystudios.com/movies/ford-v-ferrari) |
+| `spirited-away.png` | [Spirited Away — Hayao Miyazaki / Studio Ghibli](https://www.ghibli.jp/works/chihiro/) |
+| `the-shawshank-redemption.png` | [The Shawshank Redemption — Castle Rock / Warner Bros.](https://www.wbppcs.com/picture-projects/the-shawshank-redemption-1994/) |
+| `avatar.png` | [Avatar — 20th Century Studios](https://www.20thcenturystudios.com/movies/avatar) |
+| `attack-on-titan.png` | [Attack on Titan — official anime portal](https://aot-portal.com/about/) |
+| `march-comes-in-like-a-lion.png` | [March Comes in Like a Lion — Chica Umino / Shaft / production committee](https://3lion-anime.com/cast_staff/) |
+| `violet-evergarden.png` | [Violet Evergarden — Kyoto Animation](https://tv.violet-evergarden.jp/) |
+| `one-piece.png` | [One Piece — official anime site](https://one-piece.com/anime/index.html) |
+| `haikyu.png` | [Haikyu!! — official anime site](https://haikyu.jp/) |
+| `code-geass.png` | [Code Geass — SUNRISE / PROJECT GEASS](https://geass.jp/first/) |
+| `legend-of-the-galactic-heroes.png` | [Legend of the Galactic Heroes — original anime site](https://www.ginei.jp/index.php) |
+| `shelter.png` | [Shelter — Porter Robinson, Madeon and A-1 Pictures](https://sheltertheanimation.com/) |
+| `who-am-i.png` | [Who Am I — Casting Crowns](https://www.youtube.com/watch?v=3rT8Re1EIQc); supplied image is album art |
+| `love-that-binds-us.png` | [The Love That Binds Us — Evan Call / Violet Evergarden](https://tv.violet-evergarden.jp/music/); supplied image is from the anime |
+| `random-access-memories.png` | [Random Access Memories — Daft Punk](https://www.daftpunk.com/randomaccessmemories/) |
+| `the-hunger-games.png` | [The Hunger Games — Suzanne Collins / Scholastic](https://www.scholastic.com/newsroom/online-press-kits/hunger-games-series.html) |
+| `a-week-in-winter.png` | [A Week in Winter — Marcia Willett / Hachette](https://www.hachette.com.au/marcia-willett/a-week-in-winter-a-moving-tale-of-a-family-in-turmoil-in-the-west-country) |
+| `the-chronicles-of-narnia.png` | [The Chronicles of Narnia — C. S. Lewis](https://www.cslewis.com/us/about-cs-lewis/); supplied image is adaptation artwork |
+| `the-house-in-fata-morgana.png` | [The House in Fata Morgana — NOVECT](https://novect.net/fatamorgana/) |
+| `south-of-the-circle.png` | [South of the Circle — State of Play / 11 bit studios](https://11bitstudios.com/games/south-of-the-circle/) |
+| `dispatch.png` | [Dispatch — AdHoc Studio](https://adhocstudio.com/) |
+| `your-name-soundtrack.png` | [Your Name soundtrack — RADWIMPS](https://radwimps.jp/en/music/12801/); supplied image is film artwork |
+| `the-lord-of-the-rings.png` | [The Lord of the Rings — J. R. R. Tolkien / Tolkien Estate](https://www.tolkienestate.com/) ; supplied image is film artwork |
+| `the-maze-runner.png` | [The Maze Runner — James Dashner / Penguin Random House](https://www.penguinrandomhouse.com/books/36941/the-maze-runner-by-james-dashner/9780385737951/) |
+| `detroit-become-human.png` | [Detroit: Become Human — Quantic Dream](https://www.quanticdream.com/en/detroit-become-human) |
+| `mouthwashing.png` | [Mouthwashing — Wrong Organ / CRITICAL REFLEX](https://store.steampowered.com/app/2475490/Mouthwashing/) |
+| `haikyu-manga.png` | [Haikyu!! — Haruichi Furudate / VIZ](https://www.viz.com/haikyu) |
+| `the-ravages-of-time.png` | [The Ravages of Time (火鳳燎原) — Chan Mou / Tong Li](https://www.tongli.com.tw/BooksDetail.aspx?BD=TC16703) |
+| `karakuri-circus.png` | [Karakuri Circus — Kazuhiro Fujita / Shogakukan](https://shogakukan-comic.jp/book?isbn=9784091286277) |
+| `yotsuba.png` | [Yotsuba&! — Kiyohiko Azuma / Yen Press](https://yenpress.com/titles/9780316217941-yotsuba-vol-1) |
+| `ashita-no-joe.png` | [Ashita no Joe: Fighting for Tomorrow — Asao Takamori, Tetsuya Chiba / Kodansha](https://kodansha.us/series/ashita-no-joe-fighting-for-tomorrow/) |
