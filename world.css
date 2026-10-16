@@ -95,6 +95,8 @@
     .project .tags { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:.35rem; margin-top:auto; padding-top:1.3rem; }
     .tags span { border:1px solid #e9ebdc7a; padding:.3rem .55rem; color:#e9ebdc; font-size:.61rem; font-weight:750; }
     .project a { position:relative; z-index:2; width:max-content; margin-top:1rem; color:var(--amber); font-size:.7rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
+    .archive-more { margin:1.5rem 0 0; text-align:right; }
+    .archive-more a { color:var(--amber); font-size:.72rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
     .project-ideas { margin-top:3.7rem; scroll-margin-top:7rem; }
     .idea-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.2rem; }
     .idea-card { min-width:0; padding:1.2rem; border:1px dashed #bfa6787a; background:#20313d; }
