@@ -7,12 +7,12 @@ I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings
 ## Pages
 
 - **Home (`index.html`)** — an illustrated night route with projects, an expanded About section, interests and contact. Keyboard arrows move the character, and the dawn button changes the sky.
-- **Projects (`projects.html`)** — coursework and side projects alongside six small browser experiments. Each card opens `project.html`: the coursework pages explain what I worked on, while the experiments have interactive demos. The data in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data; the two personal app demos save entries only in the visitor's browser.
+- **Projects (`projects.html`)** — coursework, side projects and six smaller web projects. Each card opens a write-up about why I chose it, what I worked on and what I learned. The data discussed in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data. The portfolio does not run the projects inside the site.
 - **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code
 
-The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. `projects.css` styles the projects pages and `project.js` runs their demos. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
+The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. `projects.css` styles the project pages and `project.js` loads the individual write-ups. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
 
 ## Asset credits
 

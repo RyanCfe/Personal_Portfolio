@@ -1,170 +1,196 @@
-(() => {
-  const demos = {
-    dayline: { title:'Dayline', kind:'App / Weekly planner', description:'A simple place to put the tasks that are floating around in my head. Add one, give it a day, and cross it off when it is done.', note:'Tasks stay in this browser using local storage. No account or server.', explain:'Tasks are stored as a small list of objects. Adding, completing and removing one updates both the list and the count. Local storage brings the list back on the next visit.', stack:'HTML · CSS · JavaScript · localStorage', start:dayline },
-    framebook: { title:'Framebook', kind:'App / Watchlist', description:'A tiny watchlist with a rating and a note. The point is remembering what a film or show felt like, not only whether I watched it.', note:'Your entries stay in this browser using local storage.', explain:'Each entry has a title, format, rating and short note. The page builds the list from saved entries and lets you remove them without an account.', stack:'HTML · CSS · JavaScript · localStorage', start:framebook },
-    cityflow: { title:'CityFlow', kind:'Data / Scenario explorer', description:'A fictional commuter route, a few sliders, and a question: at what point does demand start to outrun capacity?', note:'The data is simulated for this browser demo. It is not a real Mumbai route or a forecast.', explain:'A daily demand pattern is scaled by the slider. The chart compares each time slot with the chosen capacity and counts the slots above it.', stack:'JavaScript · SVG · simulated data', start:cityflow },
-    spendscope: { title:'SpendScope', kind:'Data / CSV explorer', description:'Paste a short transaction list and get a category breakdown. It makes a table much easier to read at a glance.', note:'Data is processed in your browser and is not uploaded. Use the sample or paste your own CSV.', explain:'The parser checks the category and amount columns, groups transactions by category, and calculates totals. It handles simple CSV; quoted commas inside fields are not supported.', stack:'JavaScript · CSV parsing · data aggregation', start:spendscope },
-    clusterlab: { title:'Cluster Lab', kind:'ML / K-means playground', description:'Place points on a board, choose how many groups you want, then watch the centroids move toward them.', note:'A real k-means step runs in your browser. The sample points are generated for this demo.', explain:'Each step assigns points to the nearest centroid, then moves each centroid to the average of its assigned points. Different starting positions can lead to different groups.', stack:'JavaScript · SVG · k-means', start:clusterlab },
-    neighborlab: { title:'Neighbor Lab', kind:'ML / KNN playground', description:'Move a new point around the board and see which labelled examples are closest. Change k to see when the vote changes.', note:'A real Euclidean-distance nearest-neighbour vote runs in your browser. The points are sample data.', explain:'The page measures distance to each labelled point and takes the nearest k. Their labels vote on the new point; if the vote ties, the closest neighbour wins.', stack:'JavaScript · SVG · k-nearest neighbours', start:neighborlab }
-  };
-  const studies = {
-    decidex: {
-      title:'DecideX', kind:'Android / Decision making', description:'A decision app I made for the times when every option feels equally good or bad.',
-      note:'Coursework and app project · This page describes the work; it is not an Android demo.',
-      story:['I wanted the result to show how it was reached. The app takes criteria you care about, lets you rate the options, and brings mood and urgency into the decision instead of hiding them in a single score.','I worked on the scoring and the breakdown of the result, along with a history so a decision can be revisited. The tricky part was making the logic understandable on screen, not just calculating a winner.'],
-      explain:'A useful recommendation needs to show what tipped the balance. That shaped how I presented the scores and the decision history.', stack:'Kotlin · Firebase · SQLite'
-    },
-    playgroundhq: {
-      title:'PlaygroundHQ', kind:'Real time / Game prototype', description:'A multiplayer playground with login, rooms and live game events.',
-      note:'Project prototype · This page describes the work.',
-      story:['The point was to make the same game state visible to more than one person at a time. I worked with Express, Socket.IO and Firebase to handle rooms and send live events between players.','Once two people can act at nearly the same moment, small timing mistakes become visible. That was the part that made this more interesting than a single-player page.'],
-      explain:'Real-time work made me think about where shared state lives and what each player should see after an event.', stack:'JavaScript · Express · Socket.IO · Firebase'
-    },
-    bmc: {
-      title:'BMC platform', kind:'Full stack / Systems', description:'A frontend, backend, database and web server brought together as one running project.',
-      note:'Full-stack project · This page describes the work.',
-      story:['I connected a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx using Docker Compose. Each service could make sense on its own; the real task was getting the whole path to work together.','When a request failed, I had to work out whether the issue came from the frontend, API, database connection or routing. That debugging is what pushed me to learn more about Linux and cloud.'],
-      explain:'Running several services together taught me to trace a problem through the layers instead of assuming the first visible error is the cause.', stack:'Next.js · FastAPI · PostgreSQL · Nginx · Docker Compose'
-    },
-    savedlinks: {
-      title:'Saved links extension', kind:'Browser / Small utility', description:'A small browser extension idea for the posts I kept losing in bookmarks and chats.',
-      note:'Side project prototype · This page describes the work.',
-      story:['I tried collecting links from Instagram and X in one place, with a simple save-and-find flow. It started from a problem I actually had: remembering a post but not remembering where I put it.','The useful part was keeping the interaction quick enough that I would use it while browsing. A utility this small only works if saving something takes almost no effort.'],
-      explain:'A tiny feature can still be hard to get right when it has to fit naturally into a habit.', stack:'JavaScript · Browser extension APIs'
-    },
-    goldetf: {
-      title:'Gold ETF comparison', kind:'Finance / Team analysis', description:'A comparison of three Indian Gold ETFs through return, risk and liquidity.',
-      note:'Team analysis · This page describes the study; it is not investment advice.',
-      story:['Our team compared HDFC, SBI and Nippon India Gold BeES using returns, volatility, Sharpe ratio and liquidity. We wanted to look past a single performance number and understand what changes when the priority is risk or ease of trading.','The analysis made a simple point stick with me: there is no useful “best” until the criteria are clear. A table of figures only becomes helpful when someone can see the trade-offs.'],
-      explain:'The same fund can look different depending on whether the comparison emphasizes returns, volatility, risk-adjusted performance or liquidity.', stack:'Excel · Python · Tableau'
-    },
-    netflix: {
-      title:'Netflix analytics', kind:'Database / API / Dashboard', description:'Turning a flat catalogue dataset into something easier to query and explore.',
-      note:'Data and dashboard project · This page describes the work.',
-      story:['I split the flat dataset into related tables for titles, genres, people and countries, then built API endpoints and a dashboard around those relationships. The database structure mattered because the questions crossed more than one field.','This was where “having data” and being able to ask it useful questions started to feel like two different things. The dashboard helped make the result visible, but the work underneath made those views possible.'],
-      explain:'A normalized database and API make it easier to ask consistent questions about a catalogue than repeated manual filtering of one large sheet.', stack:'Python · SQLite · FastAPI · Streamlit'
-    },
-    iris: {
-      title:'Iris prediction API', kind:'Prediction / Backend', description:'A trained model made accessible through a Django REST endpoint.',
-      note:'Machine learning and API project · This page describes the work.',
-      story:['I trained a model to predict iris species from four flower measurements and put the prediction behind an API. The endpoint takes the measurements, checks the input and returns the predicted species as JSON.','I also worked with authentication and a PostgreSQL-backed setup. The model was only one part; a usable endpoint has to deal with input and access before it ever returns a prediction.'],
-      explain:'Putting a model behind an endpoint made the surrounding validation and response format just as important as training it.', stack:'Python · scikit-learn · Django REST · PostgreSQL'
-    }
-  };
-  const slug = new URLSearchParams(location.search).get('demo');
-  const demo = demos[slug] || studies[slug];
-  const $ = (selector, root=document) => root.querySelector(selector);
-  const surface = $('#demo-surface');
-  if (!demo) {
-    document.title = 'Project not found / Ryan N.';
-    $('#detail-title').textContent = 'Wrong turn.';
-    $('#detail-description').textContent = 'That project is not in the archive.';
-    $('#detail-note').textContent = '';
-    $('#demo-explain').textContent = '';
-    $('#demo-stack').textContent = '';
-    surface.innerHTML = '<p>Head back to the project list and choose another door.</p><a class="demo-button" href="projects.html">All projects ↗</a>';
-    return;
+const projects = {
+  decidex: {
+    title: 'DecideX',
+    type: 'Android app / Decision making',
+    intro: 'A way to slow down a decision when every option feels equally good or bad.',
+    why: 'I kept thinking about how a recommendation can sound certain while hiding the reasons behind it. I wanted an app where the result was something you could question and understand.',
+    work: [
+      'The app lets someone set criteria, rate options and add mood and urgency. I worked on the scoring, the result breakdown and a history of earlier decisions.',
+      'The main challenge was explaining the score on a small screen. A number on its own is not much help unless you can see which criteria pushed it up or down.'
+    ],
+    learned: 'It made me think harder about how a product explains its logic to the person using it.',
+    stack: 'Kotlin · Firebase · SQLite',
+    status: 'Android project'
+  },
+  playgroundhq: {
+    title: 'PlaygroundHQ',
+    type: 'Real time / Game prototype',
+    intro: 'A multiplayer playground with login, rooms and live game events.',
+    why: 'A single-player page only has to keep track of one person. I wanted to see what changes when several people share the same space and act at the same time.',
+    work: [
+      'I worked with Express, Socket.IO and Firebase on rooms, login and events that reach the other players as they happen.',
+      'Keeping the shared state in sync was the difficult bit. Two people can make a move almost together, and the screen still needs to make sense for both of them.'
+    ],
+    learned: 'Real-time code made timing and state feel like actual design problems, not just terms in a lesson.',
+    stack: 'JavaScript · Express · Socket.IO · Firebase',
+    status: 'Game prototype'
+  },
+  bmc: {
+    title: 'BMC platform',
+    type: 'Full stack / Systems',
+    intro: 'A frontend, API, database and web server running as one system.',
+    why: 'I had built pieces of web apps before. This time I wanted to see what it takes for all the pieces to run and talk to one another.',
+    work: [
+      'I connected a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx with Docker Compose.',
+      'The hard part was tracing a request through the layers when something failed. A page error could start with routing, an API response or the database connection.'
+    ],
+    learned: 'This is the project that pulled me toward Linux and cloud. I want to understand what happens after the app works on my laptop.',
+    stack: 'Next.js · FastAPI · PostgreSQL · Nginx · Docker Compose',
+    status: 'Full-stack project'
+  },
+  savedlinks: {
+    title: 'Saved links extension',
+    type: 'Browser / Side project',
+    intro: 'A small utility for posts I wanted to revisit but kept losing.',
+    why: 'Links from Instagram and X kept ending up across bookmarks and chats. I wanted one quick place to save them while browsing.',
+    work: [
+      'I tried a browser extension with a simple save-and-find flow for those links.',
+      'The important part was keeping it quick. If saving a post takes more effort than sending it to myself, the extension misses the point.'
+    ],
+    learned: 'Small tools still need a clear reason to exist and an interaction that fits the way someone already behaves.',
+    stack: 'JavaScript · Browser extension APIs',
+    status: 'Side project prototype'
+  },
+  goldetf: {
+    title: 'Gold ETF comparison',
+    type: 'Finance / Team analysis',
+    intro: 'Comparing three Indian Gold ETFs without reducing the choice to one return figure.',
+    why: 'A fund can look like the obvious winner until you change the measure. Our team wanted to compare HDFC, SBI and Nippon India Gold BeES across more than one angle.',
+    work: [
+      'We looked at returns, volatility, Sharpe ratio and liquidity, then put the results side by side so the trade-offs were visible.',
+      'The useful question became “best for what?” A comparison has to say whether it values return, steadier performance or the ease of buying and selling.'
+    ],
+    learned: 'I enjoyed the point where the calculations turned into a decision someone could actually discuss.',
+    stack: 'Excel · Python · Tableau',
+    status: 'Team analysis'
+  },
+  netflix: {
+    title: 'Netflix analytics',
+    type: 'Database / API / Dashboard',
+    intro: 'A catalogue dataset turned into related tables, API endpoints and a dashboard.',
+    why: 'I wanted to do more than count titles in a spreadsheet. Questions about genres, people and countries become more interesting when the data is organised properly.',
+    work: [
+      'I started with a flat dataset, separated the entities into related tables and built endpoints and a dashboard to explore them.',
+      'The database design was a big part of the work. If the relationships are messy, even a good-looking chart can answer the wrong question.'
+    ],
+    learned: 'This helped me see the difference between having data and making it useful to query.',
+    stack: 'Python · SQLite · FastAPI · Streamlit',
+    status: 'Data project'
+  },
+  iris: {
+    title: 'Iris prediction API',
+    type: 'Machine learning / Backend',
+    intro: 'A classification model made available through a Django REST endpoint.',
+    why: 'Training a model in a notebook is one step. I wanted to see what changes when another application has to send it input and get a dependable answer back.',
+    work: [
+      'I trained a model using four flower measurements and built an endpoint that accepts those values and returns a species prediction as JSON.',
+      'I also worked with input validation, authentication and PostgreSQL. The surrounding API matters because a model cannot quietly assume every request is clean.'
+    ],
+    learned: 'It connected the ML work I study with the backend work needed to make a prediction usable.',
+    stack: 'Python · scikit-learn · Django REST · PostgreSQL',
+    status: 'ML and API project'
+  },
+  dayline: {
+    title: 'Dayline',
+    type: 'Web app / Weekly planner',
+    intro: 'A small task board built around what needs doing next.',
+    why: 'I wanted a planner that does not make a normal week feel like a complicated project. Put a task down, give it a day, and move on.',
+    work: [
+      'I built the add, complete and remove flow, then kept a count of what is still open. Tasks are saved in local storage, so they return in the same browser without an account.',
+      'The challenge was keeping the interface clear as the list changes. The code is simple, but the small details decide whether a tool like this feels easy to use.'
+    ],
+    learned: 'It was a useful exercise in making state, storage and the visible screen agree with one another.',
+    stack: 'HTML · CSS · JavaScript · localStorage',
+    status: 'Small web project'
+  },
+  framebook: {
+    title: 'Framebook',
+    type: 'Web app / Personal watchlist',
+    intro: 'A watchlist that remembers more than whether I watched something.',
+    why: 'I spend a lot of time with films and shows. A title and a tick box never really capture why one stayed with me, so I wanted room for a rating and a short thought.',
+    work: [
+      'Each entry stores a title, format, rating and note. I built the form, the saved list and the remove action, with local storage keeping everything in the visitor’s browser.',
+      'The aim was to make a personal shelf rather than another endless catalogue. One sentence about a film can bring the whole feeling back.'
+    ],
+    learned: 'This gave me a small way to connect interface work with something I genuinely care about outside class.',
+    stack: 'HTML · CSS · JavaScript · localStorage',
+    status: 'Small web project'
+  },
+  cityflow: {
+    title: 'CityFlow',
+    type: 'Data / Scenario visualisation',
+    intro: 'A fictional commuter route that changes as demand and capacity change.',
+    why: 'Living in Mumbai makes it hard to ignore how differently a route feels at different hours. I wanted to make the relationship between demand and capacity visible, even with a simplified example.',
+    work: [
+      'I used a simulated daily pattern and sliders for average demand and capacity. The SVG chart redraws for each choice and counts the time slots above capacity.',
+      'The numbers are deliberately fictional; this is an exploration of the relationship, not a forecast of an actual route.'
+    ],
+    learned: 'A chart becomes more useful when someone can change an assumption and immediately see what that does to the conclusion.',
+    stack: 'JavaScript · SVG · Simulated data',
+    status: 'Data visualisation project'
+  },
+  spendscope: {
+    title: 'SpendScope',
+    type: 'Data / CSV breakdown',
+    intro: 'A short transaction list turned into a category breakdown.',
+    why: 'A table of purchases is easy to skim and still miss the pattern. I wanted the categories and totals to be the first thing you notice.',
+    work: [
+      'The page reads simple category-and-amount CSV data, checks the values, groups the rows and calculates totals. The result is shown as a breakdown rather than another table.',
+      'It works locally in the browser. I kept the parser intentionally small for this format instead of presenting it as a full spreadsheet importer.'
+    ],
+    learned: 'The useful part of data work is often the step between raw rows and a question someone can answer from them.',
+    stack: 'JavaScript · CSV parsing · Data aggregation',
+    status: 'Data project'
+  },
+  clusterlab: {
+    title: 'Cluster Lab',
+    type: 'Machine learning / K-means visualisation',
+    intro: 'A way to watch k-means clustering change one step at a time.',
+    why: 'I understood the definition of a centroid before I really understood what it was doing. Moving points around made the algorithm much easier to follow.',
+    work: [
+      'I built a board where points can be placed and the number of groups can be changed. Each step assigns points to their nearest centroid, then moves each centroid to the average of its group.',
+      'The sample points make it possible to see how a different starting position can lead to a different result.'
+    ],
+    learned: 'Seeing the assignments and centres move helped turn the formula into something I could explain.',
+    stack: 'JavaScript · SVG · K-means',
+    status: 'ML visualisation project'
+  },
+  neighborlab: {
+    title: 'Neighbor Lab',
+    type: 'Machine learning / KNN visualisation',
+    intro: 'A visual look at how nearby examples decide a new point’s class.',
+    why: 'KNN sounds straightforward until changing k or moving a point flips the answer. I wanted to see that shift rather than just calculate it on paper.',
+    work: [
+      'The page measures Euclidean distance from a new point to the labelled examples, selects the nearest k and uses their votes to assign a class.',
+      'Moving the point and changing k makes the boundary feel less abstract. The labelled points are sample data for the visualisation.'
+    ],
+    learned: 'This made it easier to see why the choice of k matters and why a prediction depends on the examples around it.',
+    stack: 'JavaScript · SVG · K-nearest neighbours',
+    status: 'ML visualisation project'
   }
-  document.title = `${demo.title} / Ryan N.`;
-  $('#detail-kind').textContent = demo.kind;
-  $('#detail-title').textContent = demo.title;
-  $('#detail-description').textContent = demo.description;
-  $('#detail-note').textContent = demo.note;
-  $('#demo-explain').textContent = demo.explain;
-  $('#demo-stack').textContent = demo.stack;
-  if (demo.story) {
-    $('#detail-method-label').textContent = 'What I learned';
-    surface.classList.add('study-surface');
-    surface.append(element('h2','What I worked on'));
-    demo.story.forEach(paragraph => surface.append(element('p',paragraph,'study-paragraph')));
-  } else demo.start();
+};
 
-  function readSaved(key, fallback) {
-    try { const data = JSON.parse(localStorage.getItem(key)); return Array.isArray(data) ? data : fallback; }
-    catch { return fallback; }
-  }
-  function save(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} }
-  function element(tag, text, className='') {
-    const node=document.createElement(tag); node.textContent=text;
-    if(className) node.className=className;
-    return node;
-  }
-  function dayline() {
-    surface.innerHTML = '<h2>This week</h2><form class="demo-toolbar" id="task-form"><label>What needs doing?<input name="task" maxlength="90" required placeholder="Write one task"></label><label>Day<select name="day"><option>Today</option><option>Tomorrow</option><option>Later this week</option></select></label><button>Add task</button><button type="button" class="secondary" id="clear-done">Clear completed</button></form><div class="demo-feedback" id="task-count" role="status"></div><ul class="task-list" id="task-list"></ul>';
-    let tasks=readSaved('ryan-dayline-v1',[]);
-    const list=$('#task-list');
-    function render() {
-      list.replaceChildren();
-      $('#task-count').textContent=`${tasks.filter(t=>!t.done).length} left to do · ${tasks.filter(t=>t.done).length} completed`;
-      if(!tasks.length) list.append(element('li','Nothing here yet. Add a task to start.'));
-      tasks.forEach(task=>{
-        const li=element('li','',`task-item${task.done?' done':''}`), details=element('div','');
-        details.append(element('strong',task.title),element('small',task.day));
-        const actions=element('div',''), toggle=element('button',task.done?'Undo':'Done'), remove=element('button','Remove');
-        toggle.type=remove.type='button'; toggle.setAttribute('aria-label',`${task.done?'Undo':'Complete'} ${task.title}`); remove.setAttribute('aria-label',`Remove ${task.title}`);
-        toggle.addEventListener('click',()=>{task.done=!task.done;save('ryan-dayline-v1',tasks);render()});
-        remove.addEventListener('click',()=>{tasks=tasks.filter(t=>t.id!==task.id);save('ryan-dayline-v1',tasks);render()});
-        actions.append(toggle,remove);li.append(details,actions);list.append(li);
-      });
-    }
-    $('#task-form').addEventListener('submit',event=>{event.preventDefault();const form=event.currentTarget;const title=form.elements.task.value.trim();if(!title)return;tasks.unshift({id:Date.now()+Math.random(),title,day:form.elements.day.value,done:false});save('ryan-dayline-v1',tasks);form.reset();render()});
-    $('#clear-done').addEventListener('click',()=>{tasks=tasks.filter(t=>!t.done);save('ryan-dayline-v1',tasks);render()});render();
-  }
-  function framebook() {
-    surface.innerHTML='<h2>The watchlist</h2><form class="demo-toolbar" id="film-form"><label>Title<input name="title" maxlength="80" required placeholder="Film or series"></label><label>Format<select name="format"><option>Film</option><option>Series</option></select></label><label>Rating<select name="rating"><option value="5">5 / 5</option><option value="4">4 / 5</option><option value="3">3 / 5</option><option value="2">2 / 5</option><option value="1">1 / 5</option></select></label><label>One thought<input name="note" maxlength="140" placeholder="What stayed with you?"></label><button>Save entry</button></form><div class="demo-feedback" id="film-count" role="status"></div><ul class="film-list" id="film-list"></ul>';
-    let films=readSaved('ryan-framebook-v1',[]);const list=$('#film-list');
-    function render(){list.replaceChildren();$('#film-count').textContent=`${films.length} ${films.length===1?'entry':'entries'} saved on this device`;
-      if(!films.length)list.append(element('li','Your shelf is empty. Add the first title.'));
-      films.forEach(f=>{const li=element('li','','film-item'),details=element('div','');details.append(element('strong',f.title),element('small',`${f.format} · ${'★'.repeat(f.rating)}${'☆'.repeat(5-f.rating)}${f.note?' · '+f.note:''}`));const remove=element('button','Remove');remove.type='button';remove.setAttribute('aria-label',`Remove ${f.title}`);remove.addEventListener('click',()=>{films=films.filter(x=>x.id!==f.id);save('ryan-framebook-v1',films);render()});li.append(details,remove);list.append(li)});
-    }
-    $('#film-form').addEventListener('submit',event=>{event.preventDefault();const f=event.currentTarget;const title=f.elements.title.value.trim();if(!title)return;films.unshift({id:Date.now()+Math.random(),title,format:f.elements.format.value,rating:Number(f.elements.rating.value),note:f.elements.note.value.trim()});save('ryan-framebook-v1',films);f.reset();render()});render();
-  }
-  function cityflow() {
-    surface.innerHTML='<h2>Route pressure</h2><div class="demo-toolbar"><label>Average demand <strong id="demand-value"></strong><input id="demand" type="range" min="80" max="280" value="160"></label><label>Capacity per slot <strong id="capacity-value"></strong><input id="capacity" type="range" min="100" max="300" value="180"></label></div><div class="metric-row"><div class="metric"><strong id="peak"></strong><span>Peak demand</span></div><div class="metric"><strong id="pressure"></strong><span>Slots over capacity</span></div><div class="metric"><strong id="total"></strong><span>Passengers across day</span></div></div><svg class="chart" id="flow-chart" viewBox="0 0 720 300" role="img" aria-label="Simulated hourly demand compared with route capacity"></svg><p class="demo-feedback" id="flow-description" role="status"></p>';
-    const shape=[.38,.52,1.15,1.4,.9,.7,1.2,1.35,.65],hours=['06','08','09','11','13','15','17','18','21'];
-    function render(){const demand=Number($('#demand').value),capacity=Number($('#capacity').value),values=shape.map(n=>Math.round(n*demand)),max=Math.max(400,...values,capacity),over=values.filter(v=>v>capacity).length;
-      $('#demand-value').textContent=demand;$('#capacity-value').textContent=capacity;$('#peak').textContent=Math.max(...values);$('#pressure').textContent=`${over} / 9`;$('#total').textContent=values.reduce((a,b)=>a+b,0).toLocaleString();
-      const y=n=>250-n/max*205, bars=values.map((v,i)=>`<rect class="bar" x="${45+i*72}" y="${y(v)}" width="38" height="${250-y(v)}"/><text x="${46+i*72}" y="271">${hours[i]}h</text>`).join('');
-      $('#flow-chart').innerHTML=`<path class="grid" d="M25 250H700M25 150H700M25 50H700"/>${bars}<path d="M25 ${y(capacity)}H700" stroke="#a9dfcf" stroke-width="3" stroke-dasharray="7 6"/><text x="520" y="${Math.max(22,y(capacity)-8)}">Capacity: ${capacity}</text>`;
-      $('#flow-description').textContent=`Peak at ${hours[values.indexOf(Math.max(...values))]}h. ${over} of 9 time slots exceed the chosen capacity.`;
-    }
-    $('#demand').addEventListener('input',render);$('#capacity').addEventListener('input',render);render();
-  }
-  function spendscope() {
-    surface.innerHTML='<h2>Where did it go?</h2><label for="csv-input">Paste CSV with category,amount columns</label><textarea class="csv-box" id="csv-input" spellcheck="false">category,amount\nFood,240\nTravel,80\nBooks,350\nFood,180\nGames,400\nTravel,120\nBooks,220</textarea><div class="demo-toolbar" style="margin-top:.7rem"><button id="analyse">Analyse data</button><button class="secondary" id="sample">Restore sample</button></div><p class="demo-feedback" id="csv-error" role="status"></p><div class="metric-row" id="spend-metrics"></div><div class="breakdown" id="breakdown"></div>';
-    const sample=$('#csv-input').value;
-    function render(){const lines=$('#csv-input').value.trim().split(/\r?\n/).map(line=>line.trim()).filter(Boolean);const error=$('#csv-error'),breakdown=$('#breakdown'),metrics=$('#spend-metrics');breakdown.replaceChildren();metrics.replaceChildren();
-      if(lines.length<2||lines[0].toLowerCase().replace(/\s/g,'')!=='category,amount'){error.textContent='First line must be category,amount, followed by at least one row.';return}
-      const rows=[];for(const line of lines.slice(1)){const parts=line.split(',');const amount=Number(parts[1]?.trim());if(parts.length!==2||!parts[0].trim()||!Number.isFinite(amount)||amount<0){error.textContent=`Check this row: ${line.slice(0,80)}`;return}rows.push({category:parts[0].trim(),amount})}
-      error.textContent=`${rows.length} rows analysed in your browser.`;const totals=new Map();rows.forEach(r=>totals.set(r.category,(totals.get(r.category)||0)+r.amount));const sorted=[...totals].sort((a,b)=>b[1]-a[1]);const total=rows.reduce((n,r)=>n+r.amount,0),largest=sorted[0];
-      for(const [number,label] of [[total.toLocaleString(),'Total'],[rows.length,'Transactions'],[largest?.[0]||'—','Largest category']]){const div=element('div','','metric');div.append(element('strong',String(number)),element('span',label));metrics.append(div)}
-      sorted.forEach(([category,value])=>{const item=element('div','','breakdown-item'),track=element('div','','breakdown-track'),fill=element('i','');fill.style.width=`${total?value/total*100:0}%`;track.append(fill);item.append(element('span',category),track,element('strong',value.toLocaleString()));breakdown.append(item)});
-    }
-    $('#analyse').addEventListener('click',render);$('#sample').addEventListener('click',()=>{$('#csv-input').value=sample;render()});render();
-  }
-  function clusterlab() {
-    surface.innerHTML='<h2>Find the groups</h2><div class="demo-toolbar"><label>Clusters: <strong id="k-value">3</strong><input id="k" type="range" min="2" max="5" value="3"></label><button id="step">Run one step</button><button class="secondary" id="run-all">Run to settle</button><button class="secondary" id="reset">Reset points</button></div><svg class="plot" id="cluster-plot" viewBox="0 0 600 380" role="img" aria-label="Interactive scatter plot of points and k-means centroids"></svg><div class="demo-legend" id="cluster-legend"></div><p class="demo-feedback" id="cluster-status" role="status"></p>';
-    const colors=['#f4bf80','#9fd9cc','#ef9faa','#c7b1ed','#dce48d'];let points=[],centroids=[],iteration=0;
-    const plot=$('#cluster-plot');
-    function seed(){const centers=[[125,100],[440,115],[280,285]];points=[];centers.forEach(([cx,cy],g)=>{for(let i=0;i<6;i++){const angle=(i*2.4+g)*1.7;points.push({x:cx+Math.cos(angle)*(20+i*7),y:cy+Math.sin(angle)*(18+i*6),group:-1})}});resetCenters()}
-    function resetCenters(){iteration=0;const k=Number($('#k').value);centroids=Array.from({length:k},(_,i)=>({x:90+i*410/Math.max(1,k-1),y:180}));points.forEach(p=>p.group=-1);render()}
-    function step(){points.forEach(p=>{let best=0,dist=Infinity;centroids.forEach((c,i)=>{const d=(p.x-c.x)**2+(p.y-c.y)**2;if(d<dist){dist=d;best=i}});p.group=best});centroids=centroids.map((c,i)=>{const group=points.filter(p=>p.group===i);return group.length?{x:group.reduce((n,p)=>n+p.x,0)/group.length,y:group.reduce((n,p)=>n+p.y,0)/group.length}:c});iteration++;render()}
-    function render(){const ns='http://www.w3.org/2000/svg';plot.replaceChildren();function svg(tag,attrs){const n=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([key,value])=>n.setAttribute(key,String(value)));plot.append(n)}
-      svg('path',{d:'M0 190H600M300 0V380',class:'axis'});points.forEach(p=>svg('circle',{cx:p.x,cy:p.y,r:6,fill:p.group<0?'#e6e0cc':colors[p.group]}));centroids.forEach((c,i)=>{svg('path',{d:`M${c.x-11} ${c.y-11}L${c.x+11} ${c.y+11}M${c.x+11} ${c.y-11}L${c.x-11} ${c.y+11}`,class:'centroid',stroke:colors[i]})});
-      $('#k-value').textContent=centroids.length;$('#cluster-status').textContent=`${points.length} points · ${iteration} ${iteration===1?'step':'steps'} run. Click the plot to add a point.`;
-      $('#cluster-legend').innerHTML=centroids.map((_,i)=>`<span><i style="background:${colors[i]}"></i>Group ${i+1}</span>`).join('');
-    }
-    plot.addEventListener('click',event=>{const r=plot.getBoundingClientRect();points.push({x:(event.clientX-r.left)/r.width*600,y:(event.clientY-r.top)/r.height*380,group:-1});render()});
-    $('#k').addEventListener('input',resetCenters);$('#step').addEventListener('click',step);$('#run-all').addEventListener('click',()=>{for(let i=0;i<12;i++)step()});$('#reset').addEventListener('click',seed);seed();
-  }
-  function neighborlab() {
-    surface.innerHTML='<h2>Who is nearest?</h2><div class="demo-toolbar"><label>Neighbours: <strong id="neighbor-k">3</strong><input id="neighbor-range" type="range" min="1" max="9" step="2" value="3"></label><button class="secondary" id="neighbor-reset">Reset new point</button></div><svg class="plot" id="neighbor-plot" viewBox="0 0 600 380" role="img" aria-label="Interactive KNN classification plot"></svg><div class="demo-legend"><span><i style="background:#f4bf80"></i>Amber</span><span><i style="background:#9fd9cc"></i>Mint</span><span>◆ New point</span></div><p class="demo-feedback" id="neighbor-status" role="status"></p>';
-    const training=[{x:100,y:75,c:0},{x:150,y:130,c:0},{x:85,y:220,c:0},{x:220,y:80,c:0},{x:185,y:260,c:0},{x:245,y:180,c:0},{x:345,y:70,c:1},{x:420,y:95,c:1},{x:505,y:170,c:1},{x:385,y:205,c:1},{x:480,y:275,c:1},{x:315,y:300,c:1}],colors=['#f4bf80','#9fd9cc'];let query={x:300,y:185};const plot=$('#neighbor-plot');
-    function render(){const k=Number($('#neighbor-range').value),near=training.map(p=>({...p,d:(p.x-query.x)**2+(p.y-query.y)**2})).sort((a,b)=>a.d-b.d).slice(0,k),votes=[near.filter(p=>p.c===0).length,near.filter(p=>p.c===1).length],winner=votes[0]===votes[1]?near[0].c:(votes[0]>votes[1]?0:1),ns='http://www.w3.org/2000/svg';plot.replaceChildren();
-      function svg(tag,attrs){const n=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([key,value])=>n.setAttribute(key,String(value)));plot.append(n)}
-      svg('path',{d:'M0 190H600M300 0V380',class:'axis'});near.forEach(p=>svg('path',{d:`M${query.x} ${query.y}L${p.x} ${p.y}`,stroke:'#f8e9bb66','stroke-width':2}));training.forEach(p=>svg('circle',{cx:p.x,cy:p.y,r:8,fill:colors[p.c]}));svg('path',{d:`M${query.x} ${query.y-15}L${query.x+15} ${query.y}L${query.x} ${query.y+15}L${query.x-15} ${query.y}Z`,fill:colors[winner],stroke:'#fff7e6','stroke-width':3});
-      $('#neighbor-k').textContent=k;$('#neighbor-status').textContent=`Predicted: ${winner?'Mint':'Amber'} · ${votes[0]} Amber, ${votes[1]} Mint among the ${k} nearest. Click the plot to move the diamond.`;
-    }
-    plot.addEventListener('click',event=>{const r=plot.getBoundingClientRect();query={x:(event.clientX-r.left)/r.width*600,y:(event.clientY-r.top)/r.height*380};render()});$('#neighbor-range').addEventListener('input',render);$('#neighbor-reset').addEventListener('click',()=>{query={x:300,y:185};render()});render();
-  }
-})();
+const slug = new URLSearchParams(window.location.search).get('project');
+const project = projects[slug];
+const byId = id => document.getElementById(id);
+
+if (!project) {
+  document.title = 'Project not found / Ryan N.';
+  byId('detail-title').textContent = 'Wrong turn.';
+  byId('detail-description').textContent = 'That project is not in the archive.';
+  byId('project-content').hidden = true;
+} else {
+  document.title = `${project.title} / Ryan N.`;
+  byId('detail-kind').textContent = project.type;
+  byId('detail-title').textContent = project.title;
+  byId('detail-description').textContent = project.intro;
+  byId('project-status').textContent = project.status;
+  byId('project-why').textContent = project.why;
+  byId('project-learned').textContent = project.learned;
+  byId('project-stack').textContent = project.stack;
+  project.work.forEach(paragraph => {
+    const p = document.createElement('p');
+    p.textContent = paragraph;
+    byId('project-work').append(p);
+  });
+}

@@ -123,6 +123,10 @@
     .toolkit { display:grid; grid-template-columns:1fr 1fr; align-content:start; gap:2rem 1.5rem; }
     .toolkit div { padding-top:1rem; border-top:1px solid var(--line); }
     .toolkit h3 { color:var(--amber); font-size:1.45rem; }.toolkit p { color:var(--muted); font-size:.95rem; }
+    .next-steps { margin-top:3.5rem; padding:clamp(1.5rem,3vw,2.5rem); border:1px solid #d5b77a88; background:#213641; }
+    .next-steps span { color:var(--amber); font-size:.67rem; font-weight:850; letter-spacing:.17em; text-transform:uppercase; }
+    .next-steps h3 { margin:.8rem 0 1rem; font:clamp(2rem,3vw,3rem)/1.05 var(--serif); }
+    .next-steps p { max-width:920px; margin:0; color:#dce3da; font-size:1rem; line-height:1.7; }
     .contact-section { min-height:65vh; display:flex; align-items:center; background:radial-gradient(circle at 85% 50%,#70505877,transparent 33%),#0b1521; }
     .contact-section h2 { max-width:950px; margin:1rem 0 2rem; font-size:clamp(4rem,9vw,9rem); line-height:.95; letter-spacing:-.07em; }
     .contact-section h2 em { color:var(--amber); }
