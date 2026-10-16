@@ -7,8 +7,52 @@
     clusterlab: { title:'Cluster Lab', kind:'ML / K-means playground', description:'Place points on a board, choose how many groups you want, then watch the centroids move toward them.', note:'A real k-means step runs in your browser. The sample points are generated for this demo.', explain:'Each step assigns points to the nearest centroid, then moves each centroid to the average of its assigned points. Different starting positions can lead to different groups.', stack:'JavaScript · SVG · k-means', start:clusterlab },
     neighborlab: { title:'Neighbor Lab', kind:'ML / KNN playground', description:'Move a new point around the board and see which labelled examples are closest. Change k to see when the vote changes.', note:'A real Euclidean-distance nearest-neighbour vote runs in your browser. The points are sample data.', explain:'The page measures distance to each labelled point and takes the nearest k. Their labels vote on the new point; if the vote ties, the closest neighbour wins.', stack:'JavaScript · SVG · k-nearest neighbours', start:neighborlab }
   };
+  const studies = {
+    decidex: {
+      title:'DecideX', kind:'Android / Decision making', description:'A decision app I made for the times when every option feels equally good or bad.',
+      note:'Coursework and app project · This page describes the work; it is not an Android demo.',
+      story:['I wanted the result to show how it was reached. The app takes criteria you care about, lets you rate the options, and brings mood and urgency into the decision instead of hiding them in a single score.','I worked on the scoring and the breakdown of the result, along with a history so a decision can be revisited. The tricky part was making the logic understandable on screen, not just calculating a winner.'],
+      explain:'A useful recommendation needs to show what tipped the balance. That shaped how I presented the scores and the decision history.', stack:'Kotlin · Firebase · SQLite'
+    },
+    playgroundhq: {
+      title:'PlaygroundHQ', kind:'Real time / Game prototype', description:'A multiplayer playground with login, rooms and live game events.',
+      note:'Project prototype · This page describes the work.',
+      story:['The point was to make the same game state visible to more than one person at a time. I worked with Express, Socket.IO and Firebase to handle rooms and send live events between players.','Once two people can act at nearly the same moment, small timing mistakes become visible. That was the part that made this more interesting than a single-player page.'],
+      explain:'Real-time work made me think about where shared state lives and what each player should see after an event.', stack:'JavaScript · Express · Socket.IO · Firebase'
+    },
+    bmc: {
+      title:'BMC platform', kind:'Full stack / Systems', description:'A frontend, backend, database and web server brought together as one running project.',
+      note:'Full-stack project · This page describes the work.',
+      story:['I connected a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx using Docker Compose. Each service could make sense on its own; the real task was getting the whole path to work together.','When a request failed, I had to work out whether the issue came from the frontend, API, database connection or routing. That debugging is what pushed me to learn more about Linux and cloud.'],
+      explain:'Running several services together taught me to trace a problem through the layers instead of assuming the first visible error is the cause.', stack:'Next.js · FastAPI · PostgreSQL · Nginx · Docker Compose'
+    },
+    savedlinks: {
+      title:'Saved links extension', kind:'Browser / Small utility', description:'A small browser extension idea for the posts I kept losing in bookmarks and chats.',
+      note:'Side project prototype · This page describes the work.',
+      story:['I tried collecting links from Instagram and X in one place, with a simple save-and-find flow. It started from a problem I actually had: remembering a post but not remembering where I put it.','The useful part was keeping the interaction quick enough that I would use it while browsing. A utility this small only works if saving something takes almost no effort.'],
+      explain:'A tiny feature can still be hard to get right when it has to fit naturally into a habit.', stack:'JavaScript · Browser extension APIs'
+    },
+    goldetf: {
+      title:'Gold ETF comparison', kind:'Finance / Team analysis', description:'A comparison of three Indian Gold ETFs through return, risk and liquidity.',
+      note:'Team analysis · This page describes the study; it is not investment advice.',
+      story:['Our team compared HDFC, SBI and Nippon India Gold BeES using returns, volatility, Sharpe ratio and liquidity. We wanted to look past a single performance number and understand what changes when the priority is risk or ease of trading.','The analysis made a simple point stick with me: there is no useful “best” until the criteria are clear. A table of figures only becomes helpful when someone can see the trade-offs.'],
+      explain:'The same fund can look different depending on whether the comparison emphasizes returns, volatility, risk-adjusted performance or liquidity.', stack:'Excel · Python · Tableau'
+    },
+    netflix: {
+      title:'Netflix analytics', kind:'Database / API / Dashboard', description:'Turning a flat catalogue dataset into something easier to query and explore.',
+      note:'Data and dashboard project · This page describes the work.',
+      story:['I split the flat dataset into related tables for titles, genres, people and countries, then built API endpoints and a dashboard around those relationships. The database structure mattered because the questions crossed more than one field.','This was where “having data” and being able to ask it useful questions started to feel like two different things. The dashboard helped make the result visible, but the work underneath made those views possible.'],
+      explain:'A normalized database and API make it easier to ask consistent questions about a catalogue than repeated manual filtering of one large sheet.', stack:'Python · SQLite · FastAPI · Streamlit'
+    },
+    iris: {
+      title:'Iris prediction API', kind:'Prediction / Backend', description:'A trained model made accessible through a Django REST endpoint.',
+      note:'Machine learning and API project · This page describes the work.',
+      story:['I trained a model to predict iris species from four flower measurements and put the prediction behind an API. The endpoint takes the measurements, checks the input and returns the predicted species as JSON.','I also worked with authentication and a PostgreSQL-backed setup. The model was only one part; a usable endpoint has to deal with input and access before it ever returns a prediction.'],
+      explain:'Putting a model behind an endpoint made the surrounding validation and response format just as important as training it.', stack:'Python · scikit-learn · Django REST · PostgreSQL'
+    }
+  };
   const slug = new URLSearchParams(location.search).get('demo');
-  const demo = demos[slug];
+  const demo = demos[slug] || studies[slug];
   const $ = (selector, root=document) => root.querySelector(selector);
   const surface = $('#demo-surface');
   if (!demo) {
@@ -28,7 +72,12 @@
   $('#detail-note').textContent = demo.note;
   $('#demo-explain').textContent = demo.explain;
   $('#demo-stack').textContent = demo.stack;
-  demo.start();
+  if (demo.story) {
+    $('#detail-method-label').textContent = 'What I learned';
+    surface.classList.add('study-surface');
+    surface.append(element('h2','What I worked on'));
+    demo.story.forEach(paragraph => surface.append(element('p',paragraph,'study-paragraph')));
+  } else demo.start();
 
   function readSaved(key, fallback) {
     try { const data = JSON.parse(localStorage.getItem(key)); return Array.isArray(data) ? data : fallback; }

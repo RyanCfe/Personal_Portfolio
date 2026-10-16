@@ -6,8 +6,8 @@ I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings
 
 ## Pages
 
-- **Home (`index.html`)** — an illustrated night route through tools, interests and contact, with the archive opening the separate Projects page. Keyboard arrows move the character, and the dawn button changes the sky.
-- **Projects (`projects.html`)** — six small browser experiments grouped as apps, data and machine learning. Each card opens `project.html` with its own interactive demo. The data in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data; the two personal app demos save entries only in the visitor's browser.
+- **Home (`index.html`)** — an illustrated night route with projects, an expanded About section, interests and contact. Keyboard arrows move the character, and the dawn button changes the sky.
+- **Projects (`projects.html`)** — coursework and side projects alongside six small browser experiments. Each card opens `project.html`: the coursework pages explain what I worked on, while the experiments have interactive demos. The data in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data; the two personal app demos save entries only in the visitor's browser.
 - **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code

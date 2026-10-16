@@ -33,6 +33,9 @@
 .detail-note { margin:1.3rem 0 2rem; color:#aebdb8; font-size:.78rem; }
 .demo-surface { min-height:420px; padding:clamp(1rem,3vw,2rem); border:1px solid #9aa6a077; background:#1d303c; box-shadow:0 25px 70px #050b1488; }
 .demo-surface h2 { margin:0 0 1rem; font-size:clamp(1.6rem,3vw,2.5rem); }
+.study-surface { min-height:0; }
+.study-paragraph { max-width:780px; color:#d6e0d9; font:clamp(1.08rem,1.6vw,1.35rem)/1.62 var(--serif); }
+.study-paragraph + .study-paragraph { margin-top:1.3rem; }
 .demo-toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:.75rem; margin-bottom:1.25rem; }
 .demo-toolbar label { display:grid; gap:.3rem; color:#d9e4df; font-size:.72rem; font-weight:750; }
 .demo-toolbar input,.demo-toolbar select,.demo-toolbar textarea,.demo-input { min-height:42px; min-width:0; padding:.6rem .7rem; border:1px solid #a8b9b188; border-radius:0; background:#10232e; color:#fff6e5; font:inherit; }
