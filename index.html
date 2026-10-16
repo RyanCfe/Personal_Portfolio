@@ -12,7 +12,7 @@
   <a href="#main" class="skip">Skip to content</a><div class="grain" aria-hidden="true"></div><div id="progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE NIGHT ROUTE</span></a>
-    <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">World</a><a class="mobile-explore" href="#mobile-world">World</a><a href="#work">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">World</a><a class="mobile-explore" href="#mobile-world">World</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
     <button class="sky-toggle" id="sky-toggle" type="button" aria-pressed="false">☾ &nbsp; Dawn mode</button>
   </header>
   <main id="main">
@@ -22,7 +22,7 @@
         <p class="eyebrow">Mumbai, 2026 / Somewhere between work and wonder</p>
         <h1 id="hero-title">Come<br><em>take a walk.</em></h1>
         <p class="intro">I’m Ryan, a Data Science student in Mumbai. I’ve put my projects here, along with a whole separate shelf for the films, books, games and music I love.</p>
-        <div class="hero-actions"><a class="button button-primary desktop-explore" href="#world">Explore the world <span>↘</span></a><a class="button button-primary mobile-explore" href="#mobile-world">Explore the world <span>↘</span></a><a class="button button-ghost" href="#work">I’m here for the work ↗</a></div>
+        <div class="hero-actions"><a class="button button-primary desktop-explore" href="#world">Explore the world <span>↘</span></a><a class="button button-primary mobile-explore" href="#mobile-world">Explore the world <span>↘</span></a><a class="button button-ghost" href="projects.html">I’m here for the work ↗</a></div>
       </div>
       <div class="scene" id="world" tabindex="0" aria-label="Explore four landmarks. Click a building, or use left and right arrows to move Ryan and Enter to visit the nearest place.">
         <svg class="world-svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A cinematic illustrated night town with an archive, systems building, cinema, and signal tower">
@@ -77,7 +77,7 @@
       <nav class="mobile-world" id="mobile-world" aria-label="Explore the four places in Ryan's world">
         <div class="mobile-world-heading"><span>THE NIGHT ROUTE</span><span>FOUR STOPS ↓</span></div>
         <div class="mobile-landmarks">
-          <a class="landmark archive" href="#work"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>01 / SELECTED WORK</small><strong>The archive</strong><b>Explore ↗</b></span></a>
+          <a class="landmark archive" href="projects.html"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>01 / SELECTED WORK</small><strong>The archive</strong><b>Explore ↗</b></span></a>
           <a class="landmark systems" href="#about"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>02 / ABOUT & TOOLS</small><strong>Systems lab</strong><b>Explore ↗</b></span></a>
           <a class="landmark cinema" href="#stories"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>03 / OUTSIDE CLASS</small><strong>After hours</strong><b>Explore ↗</b></span></a>
           <a class="landmark signal" href="#contact"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>04 / GET IN TOUCH</small><strong>Signal tower</strong><b>Explore ↗</b></span></a>
@@ -87,41 +87,6 @@
       </nav>
     </section>
     <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / Signal tower</span></div>
-    <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
-      <p class="eyebrow reveal">The archive / selected work</p><div class="section-heading reveal"><h2 id="work-heading">Projects.</h2><p>Apps, data work and ML experiments. A mix of class work and things I wanted to try for myself.</p></div>
-      <nav class="project-index reveal" aria-label="Project categories"><a href="#apps">01 / Apps</a><a href="#data-projects">02 / Data</a><a href="#ml-projects">03 / ML</a><a href="#project-ideas">On my desk ↗</a></nav>
-      <div class="project-group" id="apps">
-        <div class="project-group-heading reveal"><span>01 / Apps & prototypes</span><h3>Built to do something.</h3><p>Ideas that got past the notebook and onto a screen.</p></div>
-        <div class="project-grid">
-          <article class="project reveal" data-no="01"><span class="type">Android / Decision making</span><h4>DecideX</h4><p>I wanted a way to think through decisions when every option felt equally good or bad. The app lets you rate what matters, add your mood and urgency, then see how it reached its result. I built the scoring, breakdown and decision history.</p><div class="tags"><span>Kotlin</span><span>Firebase</span><span>SQLite</span></div><a href="https://github.com/RyanCfe/DecideX" target="_blank" rel="noopener noreferrer">See the code ↗</a></article>
-          <article class="project reveal" data-no="02"><span class="type">Real time / Game prototype</span><h4>PlaygroundHQ</h4><p>A multiplayer playground with login, rooms and live game events. Making it work for more than one player showed me how quickly shared state gets messy, especially when people act at the same time.</p><div class="tags"><span>JavaScript</span><span>Express</span><span>Socket.IO</span><span>Firebase</span></div></article>
-          <article class="project reveal" data-no="03"><span class="type">Desktop / Side project</span><h4>Desktop pet</h4><p>I made a little companion for my screen and kept changing how it moves and reacts. It went through several versions because tiny things like timing and movement decide whether it feels alive or just sits there.</p></article>
-          <article class="project reveal" data-no="04"><span class="type">Browser / Small utility</span><h4>Saved links extension</h4><p>Posts I wanted to revisit kept disappearing into bookmarks and chats. I tried making a browser extension to save links from Instagram and X in one place. A small idea, but one I'd actually use.</p></article>
-          <article class="project reveal" data-no="05"><span class="type">Full stack / Systems</span><h4>BMC platform</h4><p>I put a frontend, API, database and Nginx together with Docker Compose. The interesting part was getting the services to talk to each other and figuring out where a problem was when they didn't.</p><div class="tags"><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker Compose</span></div></article>
-        </div>
-      </div>
-      <div class="project-group" id="data-projects">
-        <div class="project-group-heading reveal"><span>02 / Data & analysis</span><h3>From data to a decision.</h3><p>Cleaning, comparing and making the result easier to explore.</p></div>
-        <div class="project-grid">
-          <article class="project reveal" data-no="06"><span class="type">Finance / Team analysis</span><h4>Gold ETF comparison</h4><p>We compared HDFC, SBI and Nippon India Gold BeES using returns, volatility, Sharpe ratio and liquidity. What stayed with me was that there wasn't one answer until we decided what mattered most in the comparison.</p><div class="tags"><span>Excel</span><span>Python</span><span>Tableau</span></div></article>
-          <article class="project reveal" data-no="07"><span class="type">Database / API / Dashboard</span><h4>Netflix analytics</h4><p>I started with a flat dataset, split it into related tables, then built API endpoints and a dashboard to explore titles, genres, people and countries. It made the difference between simply having data and being able to ask it useful questions much clearer.</p><div class="tags"><span>Python</span><span>SQLite</span><span>FastAPI</span><span>Streamlit</span></div><a href="https://github.com/RyanCfe/Netflix-analytics-dashboard" target="_blank" rel="noopener noreferrer">See the code ↗</a></article>
-        </div>
-      </div>
-      <div class="project-group" id="ml-projects">
-        <div class="project-group-heading reveal"><span>03 / Machine learning</span><h3>Models in practice.</h3><p>What changes when a model has to take real input and return something useful?</p></div>
-        <div class="project-grid">
-          <article class="project reveal" data-no="08"><span class="type">Prediction / Backend</span><h4>Iris prediction API</h4><p>I trained a model to predict iris species from four flower measurements, then put it behind a Django REST endpoint. The API validates inputs, checks authentication and returns the prediction as JSON.</p><div class="tags"><span>Django REST</span><span>scikit-learn</span><span>PostgreSQL</span></div></article>
-          <article class="project reveal" data-no="09"><span class="type">Images / PCA experiment</span><h4>Image compression with PCA</h4><p>I tried reducing images with PCA at different variance levels and compared what was left. Seeing the pictures lose detail step by step made the tradeoff much easier to understand than just reading about components.</p><div class="tags"><span>Python</span><span>NumPy</span><span>PCA</span></div></article>
-        </div>
-      </div>
-      <div class="project-ideas" id="project-ideas"><div class="project-group-heading reveal"><span>On my desk / Work in progress & ideas</span><h3>Next things to build.</h3><p>These are directions I'm exploring, not finished projects.</p></div>
-        <div class="idea-grid">
-          <article class="idea-card reveal"><span>01 / Prototype</span><h4>CareFlow</h4><p>A hospital medicine delivery system with moving agents, an approval desk and a record of why a delivery was cleared or blocked. I'm working through the agent logic and the interface together.</p></article>
-          <article class="idea-card reveal"><span>02 / Planned data project</span><h4>Customer segments on AWS</h4><p>The idea is to group customers by behaviour, then explain what separates the groups in a simple dashboard. I want the AWS part to have a clear purpose in the workflow.</p></article>
-          <article class="idea-card reveal"><span>03 / Product idea</span><h4>Everyday legal guide</h4><p>A guide that would start with a real problem, then show official steps, documents and places to go. The hard part is keeping each path accurate and useful beyond a generic AI answer.</p></article>
-        </div>
-      </div>
-    </div></section>
     <section class="section story-section" id="stories" aria-labelledby="story-heading"><div class="section-shell">
       <p class="eyebrow reveal">The cinema / outside class</p><div class="section-heading reveal"><h2 id="story-heading">The other<br>half of me.</h2><p>Shows, anime, films, music, books, games and manga. Not a ranking. A trail of things that stayed with me.</p></div>
       <div class="story-grid"><div class="story-prose reveal"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over 200+ books between ages 7 and 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games. That’s roughly how this shelf happened.</p></div><div class="ticket reveal"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>A personal shelf of stories and soundtracks.</p><a href="outside.html">Open the full shelf ↗</a></div></div>

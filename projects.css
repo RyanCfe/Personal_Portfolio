@@ -1,0 +1,74 @@
+.portfolio-subpage { background:#101928; }
+.portfolio-subpage .site-header { position:relative; background:#101928; }
+.portfolio-subpage .site-header nav a[aria-current="page"] { color:var(--amber); }
+.portfolio-subpage .site-header nav a.mobile-explore { display:inline; }
+.projects-page { padding:0 clamp(1.25rem,7vw,8rem) 6rem; }
+.projects-intro { padding:clamp(4rem,7vw,7rem) 0 3rem; }
+.projects-intro h1 { max-width:1100px; margin:0 0 1.7rem; font-size:clamp(3.8rem,9vw,8rem); }
+.projects-lead { max-width:660px; color:#c5d0cd; font:clamp(1.15rem,1.8vw,1.6rem)/1.48 var(--serif); }
+.project-index { display:flex; flex-wrap:wrap; gap:.5rem; }
+.project-index a { padding:.55rem .8rem; border:1px solid #b9b8a077; color:#eee7d6; font-size:.66rem; font-weight:800; letter-spacing:.09em; text-decoration:none; text-transform:uppercase; }
+.project-index a:hover,.project-index a:focus-visible { border-color:var(--amber); color:var(--amber); }
+.projects-page .project-index { margin-top:2rem; }
+.project-family { padding:2.6rem 0 1.2rem; border-top:1px solid #6e808677; scroll-margin-top:1rem; }
+.family-heading { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-bottom:1.3rem; }
+.family-heading span { color:var(--amber); font-size:.65rem; font-weight:850; letter-spacing:.18em; }
+.family-heading h2 { margin:.5rem 0 0; font-size:clamp(2rem,4vw,3.8rem); line-height:1.02; letter-spacing:-.045em; }
+.family-heading p { max-width:350px; margin:0; color:#aebbb9; font-size:.86rem; }
+.demo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.demo-card { position:relative; display:flex; min-height:300px; flex-direction:column; padding:1.55rem; border:1px solid #71848888; background:linear-gradient(135deg,#29404d,#20323d); color:#f3edda; text-decoration:none; overflow:hidden; transition:transform .2s,border-color .2s; }
+.demo-card:nth-child(2) { background:linear-gradient(135deg,#3a3e51,#273343); }
+.demo-card:hover,.demo-card:focus-visible { transform:translateY(-4px); border-color:var(--amber); }
+.demo-kind { position:relative; z-index:1; color:var(--amber); font-size:.64rem; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.demo-mark { position:absolute; right:1rem; top:.2rem; color:#ffffff14; font:12rem/1 var(--serif); pointer-events:none; }
+.demo-card h3 { position:relative; z-index:1; margin:1.5rem 0 .5rem; font-size:clamp(2.1rem,4vw,3.8rem); letter-spacing:-.05em; }
+.demo-card p { position:relative; z-index:1; max-width:440px; margin:0 0 2rem; color:#d5dfdb; font-size:.9rem; }
+.demo-open { position:relative; z-index:1; align-self:flex-start; margin-top:auto; border-bottom:1px solid currentColor; color:var(--amber); font-size:.7rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+.project-detail { max-width:1200px; margin:auto; padding:3rem clamp(1.25rem,5vw,4rem) 6rem; }
+.back-projects { display:inline-block; margin-bottom:2.5rem; color:#d3dbd4; font-size:.72rem; font-weight:850; letter-spacing:.1em; text-decoration:none; text-transform:uppercase; }
+.back-projects:hover { color:var(--amber); }
+.detail-intro { display:grid; grid-template-columns:1.25fr .75fr; gap:2rem; align-items:end; padding-bottom:2rem; border-bottom:1px solid #81919788; }
+.detail-intro h1 { margin:.5rem 0 0; font-size:clamp(4rem,8vw,7rem); }
+.detail-intro p:last-child { max-width:390px; margin:0; color:#c9d2cd; font-size:1rem; }
+.detail-note { margin:1.3rem 0 2rem; color:#aebdb8; font-size:.78rem; }
+.demo-surface { min-height:420px; padding:clamp(1rem,3vw,2rem); border:1px solid #9aa6a077; background:#1d303c; box-shadow:0 25px 70px #050b1488; }
+.demo-surface h2 { margin:0 0 1rem; font-size:clamp(1.6rem,3vw,2.5rem); }
+.demo-toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:.75rem; margin-bottom:1.25rem; }
+.demo-toolbar label { display:grid; gap:.3rem; color:#d9e4df; font-size:.72rem; font-weight:750; }
+.demo-toolbar input,.demo-toolbar select,.demo-toolbar textarea,.demo-input { min-height:42px; min-width:0; padding:.6rem .7rem; border:1px solid #a8b9b188; border-radius:0; background:#10232e; color:#fff6e5; font:inherit; }
+.demo-toolbar input[type="range"] { min-height:20px; padding:0; accent-color:var(--amber); }
+.demo-toolbar input[type="color"] { width:42px; padding:.2rem; }
+.demo-toolbar button,.demo-button { min-height:42px; padding:.6rem .85rem; border:1px solid var(--amber); background:var(--amber); color:#142431; font-size:.73rem; font-weight:850; cursor:pointer; }
+.demo-toolbar button.secondary,.demo-button.secondary { background:transparent; color:var(--amber); }
+.demo-toolbar button:hover,.demo-button:hover { filter:brightness(1.12); }
+.demo-feedback { min-height:1.5rem; color:#e4d1a9; font-size:.79rem; }
+.task-list,.film-list { display:grid; gap:.55rem; margin:1rem 0 0; padding:0; list-style:none; }
+.task-item,.film-item { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 1rem; border:1px solid #8a9b9170; background:#29404a; }
+.task-item.done { opacity:.58; }.task-item.done strong { text-decoration:line-through; }
+.task-item small,.film-item small { display:block; color:#afc5bf; font-size:.7rem; }
+.task-item button,.film-item button { border:0; background:transparent; color:#f4c987; cursor:pointer; }
+.film-item strong { font:1.3rem var(--serif); }
+.metric-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; margin:1.2rem 0; }
+.metric { padding:1rem; border:1px solid #82968d70; background:#28414b; }
+.metric strong { display:block; font:clamp(1.4rem,3vw,2.5rem) var(--serif); }
+.metric span { color:#b8c6bf; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }
+.chart { width:100%; min-height:260px; display:block; border:1px solid #78908766; background:#102630; }
+.chart text { fill:#d8e3d8; font:11px system-ui,sans-serif; }
+.chart .grid { stroke:#7d968a44; stroke-width:1; }
+.chart .bar { fill:#e4ad72; }
+.chart .bar:nth-of-type(even) { fill:#9fcabd; }
+.csv-box { width:100%; min-height:135px; padding:.75rem; border:1px solid #94aa9b99; background:#10232e; color:#f4eee1; font: .86rem/1.5 ui-monospace,monospace; resize:vertical; }
+.split-demo { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.breakdown { display:grid; gap:.55rem; align-content:start; }
+.breakdown-item { display:grid; grid-template-columns:100px 1fr 70px; gap:.5rem; align-items:center; font-size:.77rem; }
+.breakdown-track { height:10px; background:#10232e; }.breakdown-track i { display:block; height:100%; background:#f4c987; }
+.plot { display:block; width:100%; max-width:650px; aspect-ratio:1.55; border:1px solid #8ba59988; background:#102630; cursor:crosshair; touch-action:manipulation; }
+.plot .axis { stroke:#6b8a86; stroke-width:1; }.plot .centroid { stroke:#fff2d8; stroke-width:3; }
+.demo-legend { display:flex; flex-wrap:wrap; gap:1rem; margin:.8rem 0; color:#d4dfd8; font-size:.75rem; }
+.demo-legend i { display:inline-block; width:10px; height:10px; margin-right:.35rem; border-radius:50%; }
+.detail-notes { display:grid; grid-template-columns:2fr 1fr; gap:2rem; margin-top:2rem; padding-top:1.5rem; border-top:1px solid #81919788; }
+.detail-notes span { color:var(--amber); font-size:.66rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+.detail-notes p { max-width:720px; margin:.7rem 0 0; color:#c3d0c9; font-size:.9rem; }
+@media(max-width:900px){.portfolio-subpage .site-header nav a:nth-child(2){display:inline}}
+@media(max-width:700px){.detail-intro,.detail-notes{grid-template-columns:1fr}.family-heading{display:block}.family-heading p{margin-top:.8rem}.demo-grid,.split-demo{grid-template-columns:1fr}.metric-row{grid-template-columns:1fr 1fr}.projects-intro{padding-top:3rem}}
+@media(max-width:620px){.portfolio-subpage .site-header nav a{font-size:.58rem}.portfolio-subpage .site-header nav a:nth-child(2){display:inline}.demo-card{min-height:240px}.project-detail{padding-top:2rem}.detail-intro h1{font-size:clamp(3.2rem,13vw,5rem)}.metric-row{grid-template-columns:1fr}.breakdown-item{grid-template-columns:76px 1fr 60px}.project-index a{flex:1 1 calc(50% - .5rem)}}

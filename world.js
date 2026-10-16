@@ -24,7 +24,7 @@
 
       const scene = document.querySelector('#world'), walker = document.querySelector('#character'), hint = document.querySelector('#world-hint');
       const stops = [
-        {id:'archive', x:16, title:'The archive', note:'Projects and data, with all the messy parts in between.', target:'#work'},
+        {id:'archive', x:16, title:'The archive', note:'Projects and data, with all the messy parts in between.', target:'projects.html'},
         {id:'systems', x:39, title:'Systems lab', note:'The tools I use and the layers I’m learning.', target:'#about'},
         {id:'stories', x:61, title:'After hours', note:'Andor, Haikyu!!, Interstellar, and everything that stayed.', target:'#stories'},
         {id:'contact', x:83, title:'Signal tower', note:'Send a question, an idea, or a film recommendation.', target:'#contact'}
@@ -32,7 +32,7 @@
       let walkerX=46, walkingTimer;
       function setWalker(x) { walkerX=Math.max(8,Math.min(91,x)); scene.style.setProperty('--walker',walkerX+'%'); walker.classList.add('walking'); clearTimeout(walkingTimer); walkingTimer=setTimeout(()=>walker.classList.remove('walking'),350); }
       function showStop(stop) { hint.innerHTML='<p class="eyebrow">You found a stop</p><strong>'+stop.title+'</strong><p>'+stop.note+'</p>'; }
-      function visit(stop) { setWalker(stop.x); showStop(stop); document.querySelector(stop.target)?.scrollIntoView({behavior:reduced.matches?'instant':'smooth'}); }
+      function visit(stop) { setWalker(stop.x); showStop(stop); if(stop.target.startsWith('#')) document.querySelector(stop.target)?.scrollIntoView({behavior:reduced.matches?'instant':'smooth'}); else location.href=stop.target; }
       document.querySelectorAll('.stop').forEach(el => {
         const stop=stops.find(s=>s.id===el.dataset.stop);
         el.addEventListener('click',()=>visit(stop));

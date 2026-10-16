@@ -6,12 +6,13 @@ I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings
 
 ## Pages
 
-- **Home (`index.html`)** — an illustrated night route through projects, tools, interests and contact. Four town landmarks act as navigation; keyboard arrows move the character, and the dawn button changes the sky.
+- **Home (`index.html`)** — an illustrated night route through tools, interests and contact, with the archive opening the separate Projects page. Keyboard arrows move the character, and the dawn button changes the sky.
+- **Projects (`projects.html`)** — six small browser experiments grouped as apps, data and machine learning. Each card opens `project.html` with its own interactive demo. The data in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data; the two personal app demos save entries only in the visitor's browser.
 - **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code
 
-The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
+The site uses static HTML, CSS, SVG and JavaScript. The homepage world is drawn inline in `index.html`; `world.css` controls its layout and animation, while `world.js` runs the stars, character movement, landmarks, dawn mode and scroll effects. `projects.css` styles the projects pages and `project.js` runs their demos. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
 
 ## Asset credits
 
