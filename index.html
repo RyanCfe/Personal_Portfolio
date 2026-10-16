@@ -88,12 +88,29 @@
     </section>
     <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / Signal tower</span></div>
     <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
-      <p class="eyebrow reveal">The archive / interactive work</p>
-      <div class="section-heading reveal"><h2 id="work-heading">Things I<br>built to try.</h2><p>Small browser projects you can open and use. Some organize everyday things; others make data and machine learning easier to see.</p></div>
-      <div class="project-grid">
-        <article class="project reveal" data-no="01"><span class="type">01 / Apps</span><h4>For everyday use.</h4><p>Dayline keeps a week of tasks in view. Framebook saves the films and shows worth remembering, with your own notes.</p><div class="tags"><span>JavaScript</span><span>Local storage</span></div><a href="projects.html#apps">Explore the apps ↗</a></article>
-        <article class="project reveal" data-no="02"><span class="type">02 / Data</span><h4>Read the numbers.</h4><p>Change the demand on a fictional commuter route, or paste a few transactions to see a category breakdown.</p><div class="tags"><span>Charts</span><span>CSV</span></div><a href="projects.html#data-projects">Explore the data projects ↗</a></article>
-        <article class="project reveal" data-no="03"><span class="type">03 / Machine learning</span><h4>See the model move.</h4><p>Step through k-means clustering and move a point around a nearest-neighbours map to see how its label changes.</p><div class="tags"><span>K-means</span><span>KNN</span></div><a href="projects.html#ml-projects">Explore the ML projects ↗</a></article>
+      <p class="eyebrow reveal">The archive / selected work</p>
+      <div class="section-heading reveal"><h2 id="work-heading">Projects.</h2><p>Six small browser projects across apps, data and machine learning. Open one to try it yourself.</p></div>
+      <nav class="project-index reveal" aria-label="Project categories"><a href="#apps">01 / Apps</a><a href="#data-projects">02 / Data</a><a href="#ml-projects">03 / ML</a></nav>
+      <div class="project-group" id="apps">
+        <div class="project-group-heading reveal"><span>01 / Apps</span><h3>Built to do something.</h3><p>Two small tools for things I actually keep track of.</p></div>
+        <div class="project-grid">
+          <article class="project reveal" data-no="01"><span class="type">Planner / Local storage</span><h4>Dayline</h4><p>A weekly task board. Add what needs doing, give it a day and cross it off when it's done. Your list stays in this browser.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="project.html?demo=dayline">Try Dayline ↗</a></article>
+          <article class="project reveal" data-no="02"><span class="type">Watchlist / Personal notes</span><h4>Framebook</h4><p>A place for films and shows you want to remember. Save a rating and a sentence about why one stayed with you.</p><div class="tags"><span>JavaScript</span><span>Local storage</span></div><a href="project.html?demo=framebook">Try Framebook ↗</a></article>
+        </div>
+      </div>
+      <div class="project-group" id="data-projects">
+        <div class="project-group-heading reveal"><span>02 / Data</span><h3>Make the numbers readable.</h3><p>Change a scenario or bring your own small table.</p></div>
+        <div class="project-grid">
+          <article class="project reveal" data-no="03"><span class="type">Scenario explorer / Charts</span><h4>CityFlow</h4><p>Adjust demand and capacity on a fictional commuter route. The chart shows the hours when the route would get crowded.</p><div class="tags"><span>JavaScript</span><span>SVG</span><span>Simulated data</span></div><a href="project.html?demo=cityflow">Try CityFlow ↗</a></article>
+          <article class="project reveal" data-no="04"><span class="type">CSV / Spending breakdown</span><h4>SpendScope</h4><p>Paste a short transaction list and see where the total goes, category by category. Everything runs in your browser.</p><div class="tags"><span>CSV</span><span>JavaScript</span></div><a href="project.html?demo=spendscope">Try SpendScope ↗</a></article>
+        </div>
+      </div>
+      <div class="project-group" id="ml-projects">
+        <div class="project-group-heading reveal"><span>03 / Machine learning</span><h3>See the model think.</h3><p>Two algorithms that make more sense when you can move the data.</p></div>
+        <div class="project-grid">
+          <article class="project reveal" data-no="05"><span class="type">K-means / Interactive</span><h4>Cluster Lab</h4><p>Place points, pick the number of groups and step through k-means to watch the centroids move.</p><div class="tags"><span>K-means</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?demo=clusterlab">Try Cluster Lab ↗</a></article>
+          <article class="project reveal" data-no="06"><span class="type">KNN / Classification</span><h4>Neighbor Lab</h4><p>Move a new point around the map and change k to see how its nearest neighbours vote on its class.</p><div class="tags"><span>KNN</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?demo=neighborlab">Try Neighbor Lab ↗</a></article>
+        </div>
       </div>
       <p class="archive-more reveal"><a href="projects.html">Open all six projects ↗</a></p>
     </div></section>
