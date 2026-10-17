@@ -3,24 +3,43 @@
       const canvas = document.querySelector('#stars');
       const ctx = canvas.getContext('2d');
       const hero = document.querySelector('.hero');
-      let stars = [], raf = 0;
+      let stars = [], raf = 0, dpr = 1, visible = true, lastDraw = 0;
       function resizeStars() {
-        const dpr = Math.min(devicePixelRatio || 1, 2);
-        const rect = hero.getBoundingClientRect();
+        stopStars();
+        dpr = Math.min(devicePixelRatio || 1, innerWidth < 620 ? 1 : 1.5);
+        const rect = canvas.getBoundingClientRect();
         canvas.width = Math.round(rect.width * dpr); canvas.height = Math.round(rect.height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        stars = Array.from({length: Math.min(150, Math.floor(rect.width / 9))}, () => ({x:Math.random()*rect.width,y:Math.random()*rect.height*.67,r:Math.random()*1.3+.25,phase:Math.random()*7}));
+        stars = Array.from({length: Math.min(100, Math.floor(rect.width / 12))}, () => ({x:Math.random()*rect.width,y:Math.random()*rect.height*.67,r:Math.random()*1.3+.25,phase:Math.random()*7}));
         drawStars(0);
+        startStars();
       }
       function drawStars(t) {
-        const w = canvas.width / Math.min(devicePixelRatio || 1, 2), h = canvas.height / Math.min(devicePixelRatio || 1, 2);
+        const w = canvas.width / dpr, h = canvas.height / dpr;
         ctx.clearRect(0,0,w,h);
         stars.forEach(s => { ctx.globalAlpha = reduced.matches ? .7 : .35 + .55 * (Math.sin(t*.0015+s.phase)**2); ctx.fillStyle='#fff0d9'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill(); });
         ctx.globalAlpha=1;
-        if (!reduced.matches) raf=requestAnimationFrame(drawStars);
       }
-      addEventListener('resize', () => { cancelAnimationFrame(raf); resizeStars(); }, {passive:true}); resizeStars();
-      reduced.addEventListener?.('change', () => { cancelAnimationFrame(raf); drawStars(0); });
+      function stopStars() { if (raf) cancelAnimationFrame(raf); raf=0; }
+      function starFrame(t) {
+        if (!visible || document.hidden || reduced.matches) { raf=0; return; }
+        if (t-lastDraw >= 42) { drawStars(t); lastDraw=t; }
+        raf=requestAnimationFrame(starFrame);
+      }
+      function startStars() {
+        if (raf || !visible || document.hidden || reduced.matches || innerWidth < 620) return;
+        lastDraw=0;
+        raf=requestAnimationFrame(starFrame);
+      }
+      let resizeTimer;
+      addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer=setTimeout(resizeStars, 180); }, {passive:true}); resizeStars();
+      if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+        visible=entry.isIntersecting;
+        hero.classList.toggle('is-offscreen', !visible);
+        if (visible) startStars(); else stopStars();
+      }).observe(hero);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stopStars(); else startStars(); });
+      reduced.addEventListener?.('change', () => { stopStars(); drawStars(0); startStars(); });
 
       const scene = document.querySelector('#world'), walker = document.querySelector('#character'), hint = document.querySelector('#world-hint');
       const stops = [
@@ -52,7 +71,5 @@
 
       const toggle=document.querySelector('#sky-toggle');
       toggle.addEventListener('click',()=>{let dawn=document.body.classList.toggle('dawn');toggle.setAttribute('aria-pressed',String(dawn));toggle.textContent=dawn?'☀  Night mode':'☾  Dawn mode';});
-      const reveal=document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window&&!reduced.matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.08});reveal.forEach(el=>observer.observe(el));} else reveal.forEach(el=>el.classList.add('visible'));
-      let queued=false; addEventListener('scroll',()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{let max=document.documentElement.scrollHeight-innerHeight;document.querySelector('#progress').style.width=(max>0?scrollY/max*100:0)+'%';queued=false})},{passive:true});
+      let queued=false; addEventListener('scroll',()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{let max=document.documentElement.scrollHeight-innerHeight;document.querySelector('#progress').style.transform='scaleX('+(max>0?scrollY/max:0)+')';queued=false})},{passive:true});
     })();
