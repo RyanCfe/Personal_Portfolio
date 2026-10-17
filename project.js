@@ -10,7 +10,8 @@ const projects = {
     ],
     learned: 'It made me think harder about how a product explains its logic to the person using it.',
     stack: 'Kotlin · Firebase · SQLite',
-    status: 'Android project'
+    status: 'Public repository on GitHub',
+    repository: 'https://github.com/RyanCfe/DecideX'
   },
   playgroundhq: {
     title: 'PlaygroundHQ',
@@ -26,17 +27,17 @@ const projects = {
     status: 'Game prototype'
   },
   bmc: {
-    title: 'BMC platform',
+    title: 'BMC movie platform',
     type: 'Full stack / Systems',
-    intro: 'A frontend, API, database and web server running as one system.',
-    why: 'I had built pieces of web apps before. This time I wanted to see what it takes for all the pieces to run and talk to one another.',
+    intro: 'A movie platform built across a frontend, API, database and web server.',
+    why: 'I love films, so working on a movie platform gave the system a purpose I actually cared about. I also wanted to see what it takes for all the pieces of a web app to run and talk to one another.',
     work: [
       'I connected a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx with Docker Compose.',
       'The hard part was tracing a request through the layers when something failed. A page error could start with routing, an API response or the database connection.'
     ],
     learned: 'This is the project that pulled me toward Linux and cloud. I want to understand what happens after the app works on my laptop.',
     stack: 'Next.js · FastAPI · PostgreSQL · Nginx · Docker Compose',
-    status: 'Full-stack project'
+    status: 'Private repository · Full-stack project'
   },
   savedlinks: {
     title: 'Saved links extension',
@@ -75,7 +76,8 @@ const projects = {
     ],
     learned: 'This helped me see the difference between having data and making it useful to query.',
     stack: 'Python · SQLite · FastAPI · Streamlit',
-    status: 'Data project'
+    status: 'Public repository on GitHub',
+    repository: 'https://github.com/RyanCfe/Netflix-analytics-dashboard'
   },
   iris: {
     title: 'Iris prediction API',
@@ -185,6 +187,14 @@ if (!project) {
   byId('detail-title').textContent = project.title;
   byId('detail-description').textContent = project.intro;
   byId('project-status').textContent = project.status;
+  if (project.repository) {
+    const link = document.createElement('a');
+    link.href = project.repository;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = ' View code on GitHub ↗';
+    byId('project-status').append(link);
+  }
   byId('project-why').textContent = project.why;
   byId('project-learned').textContent = project.learned;
   byId('project-stack').textContent = project.stack;
