@@ -1,5 +1,5 @@
-.portfolio-subpage { background:#101928; }
-.portfolio-subpage .site-header { position:relative; background:#101928; }
+.portfolio-subpage { background:#14262c; }
+.portfolio-subpage .site-header { position:relative; background:#14262c; }
 .portfolio-subpage .site-header nav a[aria-current="page"] { color:var(--amber); }
 .projects-page { padding:0 clamp(1.25rem,7vw,8rem) 6rem; }
 .projects-intro { padding:clamp(4rem,7vw,7rem) 0 3rem; }
@@ -12,8 +12,8 @@
 .family-heading h2 { margin:.5rem 0 0; font-size:clamp(2rem,4vw,3.8rem); line-height:1.02; letter-spacing:-.045em; }
 .family-heading p { max-width:430px; margin:0; color:#d2dad5; font-size:1rem; line-height:1.6; }
 .project-page-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
-.project-page-card { position:relative; display:flex; min-height:290px; flex-direction:column; padding:1.7rem; border:1px solid #9bada388; background:linear-gradient(135deg,#29404d,#20323d); color:#f3edda; text-decoration:none; overflow:hidden; transition:transform .2s,border-color .2s; }
-.project-page-card:nth-child(even) { background:linear-gradient(135deg,#3a3e51,#273343); }
+.project-page-card { position:relative; display:flex; min-height:290px; flex-direction:column; padding:1.7rem; border:1px solid #9bada388; background:linear-gradient(135deg,#294443,#20323d); color:#f3edda; text-decoration:none; overflow:hidden; transition:transform .2s,border-color .2s; }
+.project-page-card:nth-child(even) { background:linear-gradient(135deg,#4b3d43,#273b41); }
 #data-projects .project-page-card { border-top:3px solid #ef9b9b; }
 #ml-projects .project-page-card { border-top:3px solid #9dd7c6; }
 .project-page-card:hover,.project-page-card:focus-visible { transform:translateY(-4px); border-color:var(--amber); }

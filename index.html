@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An experimental, explorable world for Ryan N.'s portfolio.">
+  <meta name="description" content="Ryan N.'s portfolio: projects, tools and stories from the lookout.">
   <meta name="theme-color" content="#101928">
-  <title>Ryan N. / The Night Route</title>
-  <link rel="stylesheet" href="world.css?v=20261016-2">
+  <title>Ryan N. / The Lookout</title>
+  <link rel="stylesheet" href="world.css?v=20261017-lookout">
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a><div class="grain" aria-hidden="true"></div><div id="progress" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE NIGHT ROUTE</span></a>
-    <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">World</a><a class="mobile-explore" href="#mobile-world">World</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
+    <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE LOOKOUT</span></a>
+    <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">Lookout</a><a class="mobile-explore" href="#mobile-world">Lookout</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
     <button class="sky-toggle" id="sky-toggle" type="button" aria-pressed="false">☾ &nbsp; Dawn mode</button>
   </header>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <canvas id="stars" aria-hidden="true"></canvas><div class="moon" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow">Mumbai, 2026 / Somewhere between work and wonder</p>
-        <h1 id="hero-title">Come<br><em>take a walk.</em></h1>
+        <p class="eyebrow">Mumbai, 2026 / An open line from the lookout</p>
+        <h1 id="hero-title">Come up to<br><em>the lookout.</em></h1>
         <p class="intro">I’m Ryan, a third-year Data Science student in Mumbai. Most of my work starts with a question and turns into data, an app, or a lot of debugging. Outside class, I’m usually reading or watching something I’ll want to talk about later.</p>
-        <div class="hero-actions"><a class="button button-primary desktop-explore" href="#world">Explore the world <span>↘</span></a><a class="button button-primary mobile-explore" href="#mobile-world">Explore the world <span>↘</span></a><a class="button button-ghost" href="projects.html">See the projects ↗</a></div>
+        <div class="hero-actions"><a class="button button-primary desktop-explore" href="#world">Explore the outposts <span>↘</span></a><a class="button button-primary mobile-explore" href="#mobile-world">Explore the outposts <span>↘</span></a><a class="button button-ghost" href="projects.html">See the projects ↗</a></div>
+        <div class="radio-card"><span class="radio-light" aria-hidden="true"></span><div><small id="radio-label">RADIO / CHANNEL OPEN</small><p id="radio-message">Work, tools, stories, and a way to reach me. Follow a light below.</p></div><span class="radio-waves" aria-hidden="true">)))</span></div>
       </div>
       <div class="scene" id="world" tabindex="0" aria-label="Explore four landmarks. Click a building, or use left and right arrows to move Ryan and Enter to visit the nearest place.">
-        <svg class="world-svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A cinematic illustrated night town with an archive, systems building, cinema, and signal tower">
+        <svg class="world-svg" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="An illustrated dusk valley with an archive, systems workshop, cinema and lookout tower">
           <defs>
             <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#45666b"/><stop offset="1" stop-color="#172c37"/></linearGradient>
             <linearGradient id="earth" x2="0" y2="1"><stop stop-color="#506a62"/><stop offset=".45" stop-color="#263e42"/><stop offset="1" stop-color="#152936"/></linearGradient>
@@ -37,7 +38,7 @@
           <g fill="#d8bcb3" opacity=".2" class="cloud second"><ellipse cx="1150" cy="168" rx="118" ry="15"/><ellipse cx="1245" cy="148" rx="80" ry="23"/></g>
           <path d="M0 409Q122 335 240 390T470 357T730 400T990 338T1260 375T1600 335V730H0Z" fill="#2e4a58" opacity=".53"/>
           <path d="M0 483Q130 396 280 461T570 412T890 445T1210 415T1600 456V740H0Z" fill="url(#hill)"/>
-          <g opacity=".45" fill="#132936"><path d="M18 480h16v-60h9v60h16v-85h10v85h20v-37h12v37h30v90H18Z"/><path d="M390 472h15v-49h11v49h20v-72h18v72h8v-32h20v32h27v85H390Z"/><path d="M1060 482h28v-57h12v57h21v-87h13v87h24v-38h19v38h27v91h-144Z"/></g>
+          <g opacity=".7" fill="#142f32"><path d="M34 545l24-112 24 112h-14v45H48v-45Zm70 0l31-142 31 142h-20v47h-23v-47Zm259 0l24-100 24 100h-13v52h-21v-52Zm334 0l25-126 25 126h-15v55h-20v-55Zm460 0l29-137 29 137h-18v62h-22v-62Zm294 0l25-111 25 111h-16v58h-18v-58Z"/></g>
           <path d="M0 545Q280 521 600 554T1120 532T1600 550V760H0Z" fill="url(#water)"/>
           <g class="waterline" fill="none" stroke="#e6c49a" stroke-width="2" stroke-linecap="round" opacity=".4"><path d="M26 587h111m100 25h180m80 15h68m195-36h200m72 29h140m76-24h160m90 37h81"/><path d="M55 656h228m185 35h133m235-28h194m80 30h183"/></g>
           <path d="M0 620Q320 582 745 611T1600 594V760H0Z" fill="url(#earth)"/>
@@ -63,29 +64,36 @@
             <path d="M863 509h231v89H863Z" fill="#352b42" stroke="#f0b887" stroke-width="4"/><path d="M897 523v66m45-66v66m45-66v66m45-66v66m45-66v66" stroke="#bc7b82" stroke-width="5"/><circle cx="878" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="916" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="954" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="992" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="1030" cy="500" r="5" fill="#fbd999" class="window-light"/><circle cx="1068" cy="500" r="5" fill="#fbd999" class="window-light"/>
             <path d="M810 600h326v16H810Z" fill="#342d39"/><text x="877" y="374" class="stop-label">AFTER HOURS</text>
           </g>
-          <g class="stop" data-stop="contact" tabindex="0" role="button" aria-label="Visit the signal tower and contact Ryan">
-            <path class="signal-beam" d="M1326 281l-190-137 87-64 103 201 110-201 83 64Z" fill="#ffe3a0" opacity=".25"/>
-            <path d="M1262 359h128l38 241h-204Z" fill="#607473" stroke="#afc6b4" stroke-width="6" class="stop-border"/><path d="M1291 290h72l20 69h-112Z" fill="#e6b98b" stroke="#c9d5ba" stroke-width="5"/><path d="M1304 309h46v40h-46Z" fill="#ffe7a2" class="window-light"/><path d="M1317 258h19v34h-19Z" fill="#b0c7b6"/><path d="M1282 410h90m-85 42h94m-86 44h102" stroke="#a8bdac" stroke-width="5"/><path d="M1309 540h35v60h-35Z" fill="#273e45" stroke="#b6c5b2" stroke-width="4"/><path d="M1200 600h250v16h-250Z" fill="#263b40"/><text x="1229" y="389" class="stop-label">SIGNAL TOWER</text>
+          <g class="stop" data-stop="contact" tabindex="0" role="button" aria-label="Visit the lookout and contact Ryan">
+            <path class="signal-beam" d="M1326 279l-183-133 85-62 98 195 108-195 84 62Z" fill="#ffdc99" opacity=".22"/>
+            <path d="M1245 343l81-67 82 67Z" fill="#a86456" stroke="#f5c58a" stroke-width="6" class="stop-border"/>
+            <path d="M1261 341h130v94h-130Z" fill="#4e6160" stroke="#dfb988" stroke-width="6"/>
+            <path d="M1277 356h35v52h-35Zm61 0h36v52h-36Z" fill="#ffdea2" stroke="#1d3540" stroke-width="5" class="window-light"/>
+            <path d="M1250 439h153v12h-153Z" fill="#dfaf77"/>
+            <path d="M1271 451l-21 149m124-149 21 149m-118-116h96m-104 49h112m-118 48h125" fill="none" stroke="#b9c9b5" stroke-width="8"/>
+            <path d="M1259 464l127 124m-8-124-127 124" fill="none" stroke="#7d8f81" stroke-width="5"/>
+            <path d="M1322 278v-43m-11 0h22" stroke="#f8d5a1" stroke-width="5"/><circle cx="1322" cy="229" r="7" fill="#ffe6a4" class="firefly"/>
+            <path d="M1216 600h223v16h-223Z" fill="#263b40"/><text x="1252" y="328" class="stop-label">THE LOOKOUT</text>
           </g>
           <g fill="#ffe6a1" class="firefly"><circle cx="98" cy="513" r="3"/><circle cx="416" cy="504" r="2"/><circle cx="801" cy="466" r="3"/><circle cx="1173" cy="535" r="2"/><circle cx="1461" cy="479" r="3"/></g>
         </svg>
         <div class="character" id="character" aria-hidden="true"></div>
         <span class="scene-caption">← → Walk &nbsp; · &nbsp; Enter / tap a building</span><span class="coordinates">19.0748° N, 72.8856° E &nbsp; / &nbsp; NIGHT 01</span>
       </div>
-      <div class="world-hint" id="world-hint" role="status" aria-live="polite"><p class="eyebrow">A small world, four stops</p><strong>Where do you want to go?</strong><p>Tap a lit building. Or walk there with your arrow keys.</p></div>
-      <nav class="mobile-world" id="mobile-world" aria-label="Explore the four places in Ryan's world">
-        <div class="mobile-world-heading"><span>THE NIGHT ROUTE</span><span>FOUR STOPS ↓</span></div>
+      <div class="world-hint" id="world-hint" role="status" aria-live="polite"><p class="eyebrow">Four outposts / one open channel</p><strong>Where do you want to go?</strong><p>Tap a lit building. Or walk there with your arrow keys.</p></div>
+      <nav class="mobile-world" id="mobile-world" aria-label="Explore four outposts in Ryan's portfolio">
+        <div class="mobile-world-heading"><span>THE LOOKOUT</span><span>FOUR OUTPOSTS ↓</span></div>
         <div class="mobile-landmarks">
           <a class="landmark archive" href="projects.html"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>01 / SELECTED WORK</small><strong>The archive</strong><b>Explore ↗</b></span></a>
           <a class="landmark systems" href="#about"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>02 / ABOUT & TOOLS</small><strong>Systems lab</strong><b>Explore ↗</b></span></a>
           <a class="landmark cinema" href="#stories"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>03 / OUTSIDE CLASS</small><strong>After hours</strong><b>Explore ↗</b></span></a>
-          <a class="landmark signal" href="#contact"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>04 / GET IN TOUCH</small><strong>Signal tower</strong><b>Explore ↗</b></span></a>
+          <a class="landmark signal" href="#contact"><span class="landmark-art" aria-hidden="true"><i class="landmark-roof"></i><i class="landmark-building"></i><i class="landmark-door"></i></span><span class="landmark-name"><small>04 / GET IN TOUCH</small><strong>The lookout</strong><b>Explore ↗</b></span></a>
         </div>
         <div class="mobile-ground" aria-hidden="true"><span></span><span></span><span></span></div>
         <p class="mobile-world-footer">Pick a place to wander into. <span>RYAN N. / MUMBAI / 2026</span></p>
       </nav>
     </section>
-    <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / Signal tower</span></div>
+    <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / The lookout</span></div>
     <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
       <p class="eyebrow reveal">The archive / selected work</p>
       <div class="section-heading reveal"><h2 id="work-heading">Projects.</h2><p>Class projects, side projects and smaller web builds. Each one has a story behind the code, the data or the decision.</p></div>
@@ -129,9 +137,9 @@
       <div class="about-grid"><div class="reveal"><p>My work has moved across data, apps and the systems underneath them. For a Gold ETF analysis, our team compared returns and risk instead of picking a winner from one number. In Netflix analytics, I went from a flat dataset to related tables, API endpoints and a dashboard. With DecideX, I wanted the result to show its reasoning instead of just giving an answer.</p><p>I've also built a Django REST endpoint for an iris prediction model and experimented with real-time game rooms using Socket.IO. Putting a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx together with Docker Compose made me pay attention to the space between services: what connects, what fails and how to find the cause.</p><p>That's what pulled me toward Linux and cloud. I've finished AWS Cloud Technical Essentials and I'm working through Linux commands and shell scripting now. I'm still learning, but I want to understand how something gets from my laptop to a system other people can use.</p><p>Outside coursework, I read and watch a lot of stories. They keep me curious about people and perspectives, which matters when the data or software is supposed to help someone in the real world.</p></div><div class="toolkit reveal"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST · Node.js</p></div><div><h3>Systems</h3><p>PostgreSQL · MySQL · Git · Docker Compose · Nginx · Socket.IO</p></div><div><h3>Learning now</h3><p>Linux commands · shell scripting · AWS and cloud fundamentals</p></div></div></div>
       <div class="next-steps reveal"><span>Where I am going next</span><h3>From my laptop to the cloud.</h3><p>Right now I'm working through Linux commands and shell scripting. Next I want to take one of my APIs, containerise it properly, deploy it on AWS and understand every step instead of only following a tutorial. After that: GitHub Actions for the build, then Terraform once I understand the manual setup. There is a lot I still have to learn, which is honestly the part I like.</p></div>
     </div></section>
-    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-shell"><p class="eyebrow reveal">The signal tower / contact</p><h2 class="reveal" id="contact-heading">Send a<br><em>signal.</em></h2><div class="contact-links reveal"><a class="button button-primary" href="mailto:ryanneshar1@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></div></section>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-shell"><p class="eyebrow reveal">The lookout / open channel</p><h2 class="reveal" id="contact-heading">Keep the line<br><em>open.</em></h2><p class="contact-intro reveal">A project question, an idea, or a film I should watch next — I’d like to hear it.</p><div class="contact-links reveal"><a class="button button-primary" href="mailto:ryanneshar1@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></div></section>
   </main>
-  <footer><span>Ryan N. / Mumbai / 2026</span><span>Built with HTML, SVG, CSS & JavaScript.</span><a href="#top">Back to the sky ↑</a></footer>
+  <footer><span>Ryan N. / Mumbai / 2026</span><span>Built with HTML, SVG, CSS & JavaScript.</span><a href="#top">Back to the lookout ↑</a></footer>
   <script src="world.js" defer></script>
 </body>
 </html>
