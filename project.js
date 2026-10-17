@@ -92,32 +92,6 @@ const projects = {
     stack: 'Python · scikit-learn · Django REST · PostgreSQL',
     status: 'ML and API project'
   },
-  dayline: {
-    title: 'Dayline',
-    type: 'Web app / Weekly planner',
-    intro: 'A small task board built around what needs doing next.',
-    why: 'I wanted a planner that does not make a normal week feel like a complicated project. Put a task down, give it a day, and move on.',
-    work: [
-      'I built the add, complete and remove flow, then kept a count of what is still open. Tasks are saved in local storage, so they return in the same browser without an account.',
-      'The challenge was keeping the interface clear as the list changes. The code is simple, but the small details decide whether a tool like this feels easy to use.'
-    ],
-    learned: 'It was a useful exercise in making state, storage and the visible screen agree with one another.',
-    stack: 'HTML · CSS · JavaScript · localStorage',
-    status: 'Small web project'
-  },
-  framebook: {
-    title: 'Framebook',
-    type: 'Web app / Personal watchlist',
-    intro: 'A watchlist that remembers more than whether I watched something.',
-    why: 'I spend a lot of time with films and shows. A title and a tick box never really capture why one stayed with me, so I wanted room for a rating and a short thought.',
-    work: [
-      'Each entry stores a title, format, rating and note. I built the form, the saved list and the remove action, with local storage keeping everything in the visitor’s browser.',
-      'The aim was to make a personal shelf rather than another endless catalogue. One sentence about a film can bring the whole feeling back.'
-    ],
-    learned: 'This gave me a small way to connect interface work with something I genuinely care about outside class.',
-    stack: 'HTML · CSS · JavaScript · localStorage',
-    status: 'Small web project'
-  },
   cityflow: {
     title: 'CityFlow',
     type: 'Data / Scenario visualisation',
@@ -130,19 +104,6 @@ const projects = {
     learned: 'A chart becomes more useful when someone can change an assumption and immediately see what that does to the conclusion.',
     stack: 'JavaScript · SVG · Simulated data',
     status: 'Data visualisation project'
-  },
-  spendscope: {
-    title: 'SpendScope',
-    type: 'Data / CSV breakdown',
-    intro: 'A short transaction list turned into a category breakdown.',
-    why: 'A table of purchases is easy to skim and still miss the pattern. I wanted the categories and totals to be the first thing you notice.',
-    work: [
-      'The page reads simple category-and-amount CSV data, checks the values, groups the rows and calculates totals. The result is shown as a breakdown rather than another table.',
-      'It works locally in the browser. I kept the parser intentionally small for this format instead of presenting it as a full spreadsheet importer.'
-    ],
-    learned: 'The useful part of data work is often the step between raw rows and a question someone can answer from them.',
-    stack: 'JavaScript · CSV parsing · Data aggregation',
-    status: 'Data project'
   },
   clusterlab: {
     title: 'Cluster Lab',
@@ -157,19 +118,7 @@ const projects = {
     stack: 'JavaScript · SVG · K-means',
     status: 'ML visualisation project'
   },
-  neighborlab: {
-    title: 'Neighbor Lab',
-    type: 'Machine learning / KNN visualisation',
-    intro: 'A visual look at how nearby examples decide a new point’s class.',
-    why: 'KNN sounds straightforward until changing k or moving a point flips the answer. I wanted to see that shift rather than just calculate it on paper.',
-    work: [
-      'The page measures Euclidean distance from a new point to the labelled examples, selects the nearest k and uses their votes to assign a class.',
-      'Moving the point and changing k makes the boundary feel less abstract. The labelled points are sample data for the visualisation.'
-    ],
-    learned: 'This made it easier to see why the choice of k matters and why a prediction depends on the examples around it.',
-    stack: 'JavaScript · SVG · K-nearest neighbours',
-    status: 'ML visualisation project'
-  }
+
 };
 
 const slug = new URLSearchParams(window.location.search).get('project');
