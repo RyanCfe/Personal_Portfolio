@@ -6,17 +6,15 @@ I'm a third-year MBA Tech Data Science student at NMIMS MPSTME. This site brings
 
 ## Pages
 
-- **Home (`index.html`)** — an illustrated lookout valley with projects, an expanded About section, interests and contact. Keyboard arrows move the character, and the dawn button changes the sky.
+- **Home (`index.html`)** — an illustrated lookout valley with projects, an expanded About section, interests and contact. Keyboard arrows move the character, the radio knob tunes between sections, and the dawn button changes the sky.
 - **Projects (`projects.html`)** — coursework, side projects and six smaller web projects. Each card opens a write-up about why I chose it, what I worked on and what I learned. The data discussed in CityFlow, Cluster Lab and Neighbor Lab is simulated sample data. The portfolio does not run the projects inside the site.
 - **The shelf (`outside.html`)** — TV, movies, anime, music, books, games and manga, with notes on why I like each one and a swipeable gallery of frames and covers.
 
 ## Code
 
-The site uses static HTML, CSS, SVG and JavaScript. The homepage valley and lookout are drawn inline in `index.html`; `world.css` controls their layout and animation, while `world.js` runs the stars, character movement, radio notes, landmarks, dawn mode and scroll effects. `projects.css` styles the project pages and `project.js` loads the individual write-ups. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on that page. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
+The site uses static HTML, CSS, SVG and JavaScript. The homepage valley and lookout are drawn inline in `index.html`, which also embeds the homepage CSS and JavaScript. `projects.css` styles the project pages and `project.js` loads the individual write-ups. The Outside class page keeps its own `styles.css` and `script.js` for the shelf layout, category buttons, swipeable gallery, theme and random pick. The 37 PNG images are stored beside the HTML files and used on the shelf; two appear in a small collage on the homepage. `dev-server.js` is a local preview server; GitHub Pages serves the site without a backend.
 
 ## Asset credits
-
-The homepage radio and introductory motion use GSAP 3.15.0 by GreenSock, bundled as `gsap.min.js` from the supplied GSAP distribution. [GSAP documentation and licence](https://gsap.com/standard-license/).
 
 The lookout and radio atmosphere was inspired by [Firewatch by Campo Santo](https://www.firewatchgame.com/about/). The valley, tower, interface illustrations and animations are built with the HTML, SVG, CSS and JavaScript in this repository; no Firewatch images or audio are used. The 37 PNG covers, posters and stills on the shelf depict existing works. Their creators and publishers are credited below, one entry per file. The exact download URLs for the PNG copies are unavailable. The linked pages identify the works and their rights holders; they are not the download locations or reuse licences for these files. The artwork remains with its respective rights holders.
 
