@@ -16,6 +16,8 @@ The site uses static HTML, CSS, SVG and JavaScript. The homepage valley and look
 
 ## Asset credits
 
+The homepage radio and introductory motion use GSAP 3.15.0 by GreenSock, bundled as `gsap.min.js` from the supplied GSAP distribution. [GSAP documentation and licence](https://gsap.com/standard-license/).
+
 The lookout and radio atmosphere was inspired by [Firewatch by Campo Santo](https://www.firewatchgame.com/about/). The valley, tower, interface illustrations and animations are built with the HTML, SVG, CSS and JavaScript in this repository; no Firewatch images or audio are used. The 37 PNG covers, posters and stills on the shelf depict existing works. Their creators and publishers are credited below, one entry per file. The exact download URLs for the PNG copies are unavailable. The linked pages identify the works and their rights holders; they are not the download locations or reuse licences for these files. The artwork remains with its respective rights holders.
 
 | Image file | Work and creator / publisher |
