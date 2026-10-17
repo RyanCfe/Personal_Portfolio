@@ -99,19 +99,20 @@
     .project-group-heading p { max-width:430px; margin:0 0 .15rem auto; color:var(--muted); font-size:1rem; line-height:1.6; }
     #data-projects .project-group-heading span { color:var(--pink); }
     #ml-projects .project-group-heading span { color:var(--mint); }
-    .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.2rem; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.85rem; margin-top:1.2rem; }
     .work-section .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .project { position:relative; display:flex; flex-direction:column; min-width:0; min-height:250px; padding:1.35rem .2rem 1.5rem; border:0; border-top:1px solid #8fa39d8c; background:transparent; }
-    .project:hover { border-top-color:var(--amber); }
-    #data-projects .project,#ml-projects .project { border-top:1px solid #8fa39d8c; }
-    .project::after { content:attr(data-no); position:absolute; right:.2rem; top:1.1rem; color:#aebdb2; font:700 .76rem/1 system-ui,sans-serif; letter-spacing:.14em; pointer-events:none; }
+    .project { position:relative; display:flex; flex-direction:column; min-width:0; min-height:0; padding:1.45rem; border:1px solid #92a6a177; background:#29424b; transition:transform .2s,border-color .2s; }
+    .project:nth-child(2) { background:#393f55; }.project:nth-child(3) { background:#314944; }.project:nth-child(4) { background:#453c45; }.project:nth-child(5) { background:#29434e; }.project:nth-child(6) { background:#3b4350; }
+    .project:hover { transform:translateY(-3px); border-color:var(--amber); }
+    #data-projects .project { border-top:3px solid var(--pink); }
+    #ml-projects .project { border-top:3px solid var(--mint); }
+    .project::after { content:attr(data-no); position:absolute; right:1.3rem; top:1.35rem; color:#c9d4c9; font:700 .76rem/1 system-ui,sans-serif; letter-spacing:.14em; pointer-events:none; }
     .project .type { color:var(--amber); font-size:.65rem; font-weight:850; letter-spacing:.17em; text-transform:uppercase; }
-    .project h4 { position:relative; z-index:1; margin:1.1rem 0 .65rem; font:clamp(1.7rem,2.1vw,2.4rem)/1.08 var(--serif); letter-spacing:-.045em; }
-    .project p { position:relative; z-index:1; max-width:62ch; color:#dfe5db; font-size:.98rem; line-height:1.65; }
-    .project .tags { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:.35rem; margin-top:auto; padding-top:1.3rem; }
-    .tags span { color:#c1d6cc; font-size:.69rem; font-weight:750; }
-    .tags span + span::before { content:"/"; margin-right:.35rem; color:#92aaa1; }
-    .project a { position:relative; z-index:2; width:max-content; margin-top:1rem; color:var(--amber); font-size:.83rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
+    .project h4 { position:relative; z-index:1; margin:.8rem 0 .55rem; font:clamp(1.7rem,2.1vw,2.4rem)/1.08 var(--serif); letter-spacing:-.045em; }
+    .project p { position:relative; z-index:1; max-width:62ch; margin-bottom:.8rem; color:#dfe5db; font-size:.98rem; line-height:1.65; }
+    .project .tags { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:.35rem; margin-top:0; padding-top:0; }
+    .tags span { border:1px solid #e9ebdc7a; padding:.25rem .5rem; color:#e9ebdc; font-size:.69rem; font-weight:750; }
+    .project a { position:relative; z-index:2; width:max-content; margin-top:.65rem; color:var(--amber); font-size:.83rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
     .archive-more { margin:1.5rem 0 0; text-align:right; }
     .archive-more a { color:var(--amber); font-size:.72rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
     .project-ideas { margin-top:3.7rem; scroll-margin-top:7rem; }
@@ -148,7 +149,6 @@
     .work-section .section-heading,.about-section .section-heading { border-bottom-width:2px; }
     .work-section .section-heading h2,.about-section .section-heading h2 { text-wrap:balance; }
     .project-group-heading { border-bottom-color:#b9c2b299; }
-    .project { border-top-color:#8fa39d8c; }
     .project .type { max-width:calc(100% - 3rem); }
     .toolkit div { border-top:2px solid #b7b7a783; }
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,7vw,8rem); margin-top:3rem; }
