@@ -17,7 +17,7 @@
     :focus-visible { outline:3px solid var(--amber); outline-offset:4px; }
     .skip { position:absolute; left:1rem; top:-5rem; z-index:100; background:var(--paper); color:var(--deep); padding:.5rem 1rem; }
     .skip:focus { top:1rem; }
-    .grain { position:fixed; inset:0; z-index:30; pointer-events:none; opacity:.22; background-image:var(--grain-image); background-size:96px 96px; }
+    .grain { position:absolute; inset:0; z-index:30; pointer-events:none; opacity:.22; background-image:var(--grain-image); background-size:96px 96px; }
     #progress { position:fixed; z-index:60; top:0; left:0; width:100%; height:3px; transform:scaleX(0); transform-origin:left; background:var(--amber); box-shadow:0 0 16px var(--amber); }
     .site-header { position:absolute; z-index:40; inset:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.3rem clamp(1.25rem,4vw,4.5rem); border-bottom:1px solid rgba(233,225,204,.18); }
     .brand { text-decoration:none; font-size:.87rem; font-weight:850; letter-spacing:.17em; white-space:nowrap; }
@@ -88,8 +88,8 @@
     .section-heading h2 { margin:0; font-size:clamp(3.7rem,7vw,7.5rem); line-height:.92; letter-spacing:-.07em; }
     .section-heading > p { max-width:440px; margin:0 0 .35rem auto; color:var(--muted); }
     .work-section { background:linear-gradient(#172a31,#172632); }
-    .project-index { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem; }
-    .project-index a { padding:.55rem .8rem; border:1px solid #b9b8a077; color:#eee7d6; font-size:.66rem; font-weight:800; letter-spacing:.09em; text-decoration:none; text-transform:uppercase; }
+    .project-index { display:flex; flex-wrap:wrap; gap:.5rem 1.7rem; margin-top:1.4rem; }
+    .project-index a { padding:.55rem 0; border-bottom:1px solid #b9b8a077; color:#eee7d6; font-size:.66rem; font-weight:800; letter-spacing:.09em; text-decoration:none; text-transform:uppercase; }
     .project-index a:hover,.project-index a:focus-visible { border-color:var(--amber); color:var(--amber); }
     .project-group { margin-top:3.2rem; scroll-margin-top:7rem; }
     .project-group + .project-group { margin-top:3.7rem; }
@@ -101,17 +101,16 @@
     #ml-projects .project-group-heading span { color:var(--mint); }
     .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.2rem; }
     .work-section .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .project { position:relative; display:flex; flex-direction:column; min-width:0; min-height:280px; padding:1.5rem; border:1px solid #92a6a177; background:#223441; overflow:hidden; transition:transform .3s,border-color .3s; }
-    .project:hover { transform:translateY(-6px); border-color:var(--amber); }
-    .project:nth-child(1) { background:#31505a; }.project:nth-child(2) { background:#3d3e58; }.project:nth-child(3) { background:#3a4b48; }.project:nth-child(4) { background:#4b3d43; }.project:nth-child(5) { background:#29434e; }
-    #data-projects .project { border-top:3px solid #ef9b9b; }
-    #ml-projects .project { border-top:3px solid #9dd7c6; }
-    .project::after { content:attr(data-no); position:absolute; right:.08em; bottom:-.4em; color:#ffffff0b; font:10rem/.9 var(--serif); pointer-events:none; }
+    .project { position:relative; display:flex; flex-direction:column; min-width:0; min-height:250px; padding:1.35rem .2rem 1.5rem; border:0; border-top:1px solid #8fa39d8c; background:transparent; }
+    .project:hover { border-top-color:var(--amber); }
+    #data-projects .project,#ml-projects .project { border-top:1px solid #8fa39d8c; }
+    .project::after { content:attr(data-no); position:absolute; right:.2rem; top:1.1rem; color:#aebdb2; font:700 .76rem/1 system-ui,sans-serif; letter-spacing:.14em; pointer-events:none; }
     .project .type { color:var(--amber); font-size:.65rem; font-weight:850; letter-spacing:.17em; text-transform:uppercase; }
     .project h4 { position:relative; z-index:1; margin:1.1rem 0 .65rem; font:clamp(1.7rem,2.1vw,2.4rem)/1.08 var(--serif); letter-spacing:-.045em; }
-    .project p { position:relative; z-index:1; max-width:62ch; color:#f0eee4; font-size:.98rem; line-height:1.65; }
+    .project p { position:relative; z-index:1; max-width:62ch; color:#dfe5db; font-size:.98rem; line-height:1.65; }
     .project .tags { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:.35rem; margin-top:auto; padding-top:1.3rem; }
-    .tags span { border:1px solid #e9ebdc7a; padding:.3rem .55rem; color:#e9ebdc; font-size:.69rem; font-weight:750; }
+    .tags span { color:#c1d6cc; font-size:.69rem; font-weight:750; }
+    .tags span + span::before { content:"/"; margin-right:.35rem; color:#92aaa1; }
     .project a { position:relative; z-index:2; width:max-content; margin-top:1rem; color:var(--amber); font-size:.83rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
     .archive-more { margin:1.5rem 0 0; text-align:right; }
     .archive-more a { color:var(--amber); font-size:.72rem; font-weight:850; text-decoration:none; border-bottom:1px solid currentColor; }
@@ -149,7 +148,7 @@
     .work-section .section-heading,.about-section .section-heading { border-bottom-width:2px; }
     .work-section .section-heading h2,.about-section .section-heading h2 { text-wrap:balance; }
     .project-group-heading { border-bottom-color:#b9c2b299; }
-    .project { border-top:3px solid #f8c779a6; }
+    .project { border-top-color:#8fa39d8c; }
     .project .type { max-width:calc(100% - 3rem); }
     .toolkit div { border-top:2px solid #b7b7a783; }
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,7vw,8rem); margin-top:3rem; }
@@ -164,11 +163,9 @@
     .next-steps p { max-width:920px; margin:0; color:#dce3da; font-size:1rem; line-height:1.7; }
     .contact-section { min-height:65vh; display:flex; align-items:center; background:radial-gradient(circle at 81% 48%,#ad735277,transparent 32%),linear-gradient(130deg,#172f31,#101923 70%); }
     .contact-section h2 { max-width:950px; margin:1rem 0 2rem; font-size:clamp(4rem,9vw,9rem); line-height:.95; letter-spacing:-.07em; }
-    .contact-section h2 em { color:var(--amber); }
     .contact-intro { max-width:560px; margin:-.5rem 0 2rem; color:#e7e8d9; font-size:1.1rem; line-height:1.65; }
     .contact-links { display:flex; flex-wrap:wrap; gap:1rem 2rem; }
     footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem 2rem; padding:1.3rem clamp(1.25rem,7vw,8rem); border-top:1px solid var(--line); color:var(--muted); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; }
-    .reveal { opacity:0; transform:translateY(25px); transition:opacity .8s,transform .8s; }.reveal.visible { opacity:1; transform:none; }
     @keyframes drift { from{transform:translateX(-40px)} to{transform:translateX(130px)} }
     @keyframes water { from{opacity:.22;transform:translateX(-12px)} to{opacity:.72;transform:translateX(15px)} }
     @keyframes window-pulse { from{opacity:.45} to{opacity:1} }
@@ -241,7 +238,7 @@
       .mobile-world-footer span { color:#eebd88; font-size:.49rem; letter-spacing:.08em; text-align:right; }
       .project-grid,.idea-grid,.work-section .project-grid { grid-template-columns:1fr; }.project { min-height:0; }
       .project-group { margin-top:2.5rem; }.project-group + .project-group { margin-top:3.2rem; }
-      .project-index a { flex:1 1 calc(50% - .5rem); text-align:center; }
+      .project-index a { flex:1 1 calc(50% - .9rem); text-align:left; }
       .toolkit { grid-template-columns:1fr; }.ticket { transform:none; }
       .shelf-collage { gap:.6rem; padding:1.2rem .75rem 0; }
       .shelf-card { padding:.4rem .4rem .7rem; }
@@ -252,7 +249,7 @@
       .story-prose p:first-child::first-letter { font-size:2.75em; }
       .contact-section h2 { font-size:clamp(4rem,15vw,6rem); }
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 </style>
   <style>
@@ -410,7 +407,7 @@
   </style>
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a><div class="grain" aria-hidden="true"></div><div id="progress" aria-hidden="true"></div>
+  <a href="#main" class="skip">Skip to content</a><div id="progress" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top">RYAN<i>✳</i>N. <span style="font-weight:400;opacity:.65">/ THE LOOKOUT</span></a>
     <nav aria-label="Main navigation"><a class="desktop-explore" href="#world">Lookout</a><a class="mobile-explore" href="#mobile-world">Lookout</a><a href="projects.html">Projects</a><a href="#about">About</a><a href="#stories">Outside class</a><a href="#contact">Contact</a></nav>
@@ -418,6 +415,7 @@
   </header>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="grain" aria-hidden="true"></div>
       <canvas id="stars" aria-hidden="true"></canvas><div class="moon" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="eyebrow">Mumbai, 2026 / An open line from the lookout</p>
@@ -505,49 +503,49 @@
     </section>
     <div class="route-strip" aria-hidden="true"><span>01 / Archive</span><span>✳</span><span>02 / Systems lab</span><span>✳</span><span>03 / After hours</span><span>✳</span><span>04 / The lookout</span></div>
     <section class="section work-section" id="work" aria-labelledby="work-heading"><div class="section-shell">
-      <p class="eyebrow reveal">The archive / selected work</p>
-      <div class="section-heading reveal"><h2 id="work-heading">Projects.</h2><p>Class projects, side projects and smaller web builds. Each one has a story behind the code, the data or the decision.</p></div>
-      <nav class="project-index reveal" aria-label="Project categories"><a href="#apps">01 / Apps & systems</a><a href="#data-projects">02 / Data</a><a href="#ml-projects">03 / ML</a></nav>
+      <p class="eyebrow">The archive / selected work</p>
+      <div class="section-heading"><h2 id="work-heading">Projects.</h2><p>Class projects, side projects and smaller web builds. Each one has a story behind the code, the data or the decision.</p></div>
+      <nav class="project-index" aria-label="Project categories"><a href="#apps">01 / Apps & systems</a><a href="#data-projects">02 / Data</a><a href="#ml-projects">03 / ML</a></nav>
       <div class="project-group" id="apps">
-        <div class="project-group-heading reveal"><span>01 / Apps & systems</span><h3>Built to do something.</h3><p>From an Android app to live game rooms and services that have to talk to each other.</p></div>
+        <div class="project-group-heading"><span>01 / Apps & systems</span><h3>Built to do something.</h3><p>From an Android app to live game rooms and services that have to talk to each other.</p></div>
         <div class="project-grid">
-          <article class="project reveal" data-no="01"><span class="type">Android / Decision making</span><h4>DecideX</h4><p>When every option feels equally good or bad, this app gives the decision some structure. I worked on the criteria scoring, mood and urgency inputs, result breakdown and history so the answer shows how it was reached.</p><div class="tags"><span>Kotlin</span><span>Firebase</span><span>SQLite</span></div><a href="project.html?project=decidex">Open project ↗</a></article>
-          <article class="project reveal" data-no="02"><span class="type">Real time / Game prototype</span><h4>PlaygroundHQ</h4><p>A multiplayer playground with login, rooms and live game events. I worked on keeping players in sync as actions happened, and learned how quickly shared state gets messy when two people act at once.</p><div class="tags"><span>Express</span><span>Socket.IO</span><span>Firebase</span></div><a href="project.html?project=playgroundhq">Open project ↗</a></article>
-          <article class="project reveal" data-no="03"><span class="type">Full stack / Systems</span><h4>BMC platform</h4><p>I put a frontend, API, database and Nginx together with Docker Compose. Getting the services to connect, and working out which layer caused a problem, taught me more than seeing each part run alone.</p><div class="tags"><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker Compose</span></div><a href="project.html?project=bmc">Open project ↗</a></article>
-          <article class="project reveal" data-no="04"><span class="type">Browser / Small utility</span><h4>Saved links extension</h4><p>Posts I wanted to revisit kept getting lost in bookmarks and chats. I tried building an extension to collect links from Instagram and X in one place, focusing on a simple save-and-find flow.</p><div class="tags"><span>Browser extension</span><span>JavaScript</span></div><a href="project.html?project=savedlinks">Open project ↗</a></article>
-          <article class="project reveal" data-no="05"><span class="type">Small web project / Planner</span><h4>Dayline</h4><p>I wanted a task board that made a normal week easier to see without adding more clutter. I worked on the task state, completion count and local storage.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="project.html?project=dayline">Read about Dayline ↗</a></article>
-          <article class="project reveal" data-no="06"><span class="type">Small web project / Watchlist</span><h4>Framebook</h4><p>A title and a tick box never captured why I loved a film or show. I built a small personal watchlist with ratings and a note for the thought that stayed.</p><div class="tags"><span>JavaScript</span><span>Local storage</span></div><a href="project.html?project=framebook">Read about Framebook ↗</a></article>
+          <article class="project" data-no="01"><span class="type">Android / Decision making</span><h4>DecideX</h4><p>When every option feels equally good or bad, this app gives the decision some structure. I worked on the criteria scoring, mood and urgency inputs, result breakdown and history so the answer shows how it was reached.</p><div class="tags"><span>Kotlin</span><span>Firebase</span><span>SQLite</span></div><a href="project.html?project=decidex">Open project ↗</a></article>
+          <article class="project" data-no="02"><span class="type">Real time / Game prototype</span><h4>PlaygroundHQ</h4><p>A multiplayer playground with login, rooms and live game events. I worked on keeping players in sync as actions happened, and learned how quickly shared state gets messy when two people act at once.</p><div class="tags"><span>Express</span><span>Socket.IO</span><span>Firebase</span></div><a href="project.html?project=playgroundhq">Open project ↗</a></article>
+          <article class="project" data-no="03"><span class="type">Full stack / Systems</span><h4>BMC platform</h4><p>I put a frontend, API, database and Nginx together with Docker Compose. Getting the services to connect, and working out which layer caused a problem, taught me more than seeing each part run alone.</p><div class="tags"><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker Compose</span></div><a href="project.html?project=bmc">Open project ↗</a></article>
+          <article class="project" data-no="04"><span class="type">Browser / Small utility</span><h4>Saved links extension</h4><p>Posts I wanted to revisit kept getting lost in bookmarks and chats. I tried building an extension to collect links from Instagram and X in one place, focusing on a simple save-and-find flow.</p><div class="tags"><span>Browser extension</span><span>JavaScript</span></div><a href="project.html?project=savedlinks">Open project ↗</a></article>
+          <article class="project" data-no="05"><span class="type">Small web project / Planner</span><h4>Dayline</h4><p>I wanted a task board that made a normal week easier to see without adding more clutter. I worked on the task state, completion count and local storage.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="project.html?project=dayline">Read about Dayline ↗</a></article>
+          <article class="project" data-no="06"><span class="type">Small web project / Watchlist</span><h4>Framebook</h4><p>A title and a tick box never captured why I loved a film or show. I built a small personal watchlist with ratings and a note for the thought that stayed.</p><div class="tags"><span>JavaScript</span><span>Local storage</span></div><a href="project.html?project=framebook">Read about Framebook ↗</a></article>
         </div>
       </div>
       <div class="project-group" id="data-projects">
-        <div class="project-group-heading reveal"><span>02 / Data & analysis</span><h3>Make the numbers readable.</h3><p>Compare real data and make the assumptions behind a chart easier to see.</p></div>
+        <div class="project-group-heading"><span>02 / Data & analysis</span><h3>Make the numbers readable.</h3><p>Compare real data and make the assumptions behind a chart easier to see.</p></div>
         <div class="project-grid">
-          <article class="project reveal" data-no="07"><span class="type">Finance / Team analysis</span><h4>Gold ETF comparison</h4><p>We compared HDFC, SBI and Nippon India Gold BeES using returns, volatility, Sharpe ratio and liquidity. Putting those measures side by side made it clear that the answer changes depending on what matters most.</p><div class="tags"><span>Excel</span><span>Python</span><span>Tableau</span></div><a href="project.html?project=goldetf">Open project ↗</a></article>
-          <article class="project reveal" data-no="08"><span class="type">Database / API / Dashboard</span><h4>Netflix analytics</h4><p>I took a flat dataset, split it into related tables, then built API endpoints and a dashboard to explore titles, genres, people and countries. The interesting part was making the data useful to query.</p><div class="tags"><span>SQLite</span><span>FastAPI</span><span>Streamlit</span></div><a href="project.html?project=netflix">Open project ↗</a></article>
-          <article class="project reveal" data-no="09"><span class="type">Small web project / Scenario</span><h4>CityFlow</h4><p>Mumbai commutes made me curious about where demand starts to outrun capacity. I used fictional route data and an SVG chart to explore that relationship.</p><div class="tags"><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=cityflow">Read about CityFlow ↗</a></article>
-          <article class="project reveal" data-no="10"><span class="type">Small web project / CSV</span><h4>SpendScope</h4><p>A table of purchases can hide the pattern. I built a simple CSV parser and category breakdown to make the totals easier to read.</p><div class="tags"><span>CSV</span><span>JavaScript</span></div><a href="project.html?project=spendscope">Read about SpendScope ↗</a></article>
+          <article class="project" data-no="07"><span class="type">Finance / Team analysis</span><h4>Gold ETF comparison</h4><p>We compared HDFC, SBI and Nippon India Gold BeES using returns, volatility, Sharpe ratio and liquidity. Putting those measures side by side made it clear that the answer changes depending on what matters most.</p><div class="tags"><span>Excel</span><span>Python</span><span>Tableau</span></div><a href="project.html?project=goldetf">Open project ↗</a></article>
+          <article class="project" data-no="08"><span class="type">Database / API / Dashboard</span><h4>Netflix analytics</h4><p>I took a flat dataset, split it into related tables, then built API endpoints and a dashboard to explore titles, genres, people and countries. The interesting part was making the data useful to query.</p><div class="tags"><span>SQLite</span><span>FastAPI</span><span>Streamlit</span></div><a href="project.html?project=netflix">Open project ↗</a></article>
+          <article class="project" data-no="09"><span class="type">Small web project / Scenario</span><h4>CityFlow</h4><p>Mumbai commutes made me curious about where demand starts to outrun capacity. I used fictional route data and an SVG chart to explore that relationship.</p><div class="tags"><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=cityflow">Read about CityFlow ↗</a></article>
+          <article class="project" data-no="10"><span class="type">Small web project / CSV</span><h4>SpendScope</h4><p>A table of purchases can hide the pattern. I built a simple CSV parser and category breakdown to make the totals easier to read.</p><div class="tags"><span>CSV</span><span>JavaScript</span></div><a href="project.html?project=spendscope">Read about SpendScope ↗</a></article>
         </div>
       </div>
       <div class="project-group" id="ml-projects">
-        <div class="project-group-heading reveal"><span>03 / Machine learning</span><h3>Models in practice.</h3><p>A prediction API and two small ways to see what an algorithm is doing.</p></div>
+        <div class="project-group-heading"><span>03 / Machine learning</span><h3>Models in practice.</h3><p>A prediction API and two small ways to see what an algorithm is doing.</p></div>
         <div class="project-grid">
-          <article class="project reveal" data-no="11"><span class="type">Prediction / Backend</span><h4>Iris prediction API</h4><p>I trained a model on four flower measurements and put it behind a Django REST endpoint. Input validation and authentication mattered as much as returning the species prediction as JSON.</p><div class="tags"><span>Django REST</span><span>scikit-learn</span><span>PostgreSQL</span></div><a href="project.html?project=iris">Open project ↗</a></article>
-          <article class="project reveal" data-no="12"><span class="type">Small web project / K-means</span><h4>Cluster Lab</h4><p>The centroid formula made more sense to me once I could see it move. I built a step-by-step visual for point assignments and new centres.</p><div class="tags"><span>K-means</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=clusterlab">Read about Cluster Lab ↗</a></article>
-          <article class="project reveal" data-no="13"><span class="type">Small web project / KNN</span><h4>Neighbor Lab</h4><p>I wanted to see why changing k can change a classification. The visual uses distances and neighbour votes to show how that decision happens.</p><div class="tags"><span>KNN</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=neighborlab">Read about Neighbor Lab ↗</a></article>
+          <article class="project" data-no="11"><span class="type">Prediction / Backend</span><h4>Iris prediction API</h4><p>I trained a model on four flower measurements and put it behind a Django REST endpoint. Input validation and authentication mattered as much as returning the species prediction as JSON.</p><div class="tags"><span>Django REST</span><span>scikit-learn</span><span>PostgreSQL</span></div><a href="project.html?project=iris">Open project ↗</a></article>
+          <article class="project" data-no="12"><span class="type">Small web project / K-means</span><h4>Cluster Lab</h4><p>The centroid formula made more sense to me once I could see it move. I built a step-by-step visual for point assignments and new centres.</p><div class="tags"><span>K-means</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=clusterlab">Read about Cluster Lab ↗</a></article>
+          <article class="project" data-no="13"><span class="type">Small web project / KNN</span><h4>Neighbor Lab</h4><p>I wanted to see why changing k can change a classification. The visual uses distances and neighbour votes to show how that decision happens.</p><div class="tags"><span>KNN</span><span>JavaScript</span><span>SVG</span></div><a href="project.html?project=neighborlab">Read about Neighbor Lab ↗</a></article>
         </div>
       </div>
-      <p class="archive-more reveal"><a href="projects.html">Explore all projects ↗</a></p>
+      <p class="archive-more"><a href="projects.html">Explore all projects ↗</a></p>
     </div></section>
     <section class="section story-section" id="stories" aria-labelledby="story-heading"><div class="section-shell">
-      <p class="eyebrow reveal">The cinema / outside class</p><div class="section-heading reveal"><h2 id="story-heading">The other<br>half of me.</h2><p>When class and code are done, this is where a lot of my time goes: books, films, shows, anime, manga, games and music.</p></div>
-      <div class="story-grid"><div class="story-prose reveal"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over 200+ books between ages 7 and 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games.</p><p>In my free time I still jump between a book, a match in <em>Haikyu!!</em>, a film and whatever game has a story I can't put down. <em>Attack on Titan</em> changed the way I think about whose side of a story I'm hearing; <em>Violet Evergarden</em> made me pay more attention to what people struggle to say. Those stories are fun first, but they stay with me long after the credits. I think that's part of why I like studying data too: a result means more when I understand the people and context behind it.</p></div><div class="shelf-collage reveal" aria-label="A few favourites from my shelf"><a class="shelf-card shelf-card-film" href="outside.html"><img src="interstellar.png" alt="Interstellar artwork" loading="lazy" decoding="async"><span>01 / THE FILM THAT STARTED IT AGAIN</span></a><a class="shelf-card shelf-card-manga" href="outside.html"><img src="haikyu-manga.png" alt="Haikyu!! manga artwork" loading="lazy" decoding="async"><span>02 / ONE MORE CHAPTER</span></a><div class="ticket"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>Films, books, games and the stories that stayed.</p><a href="outside.html">Open the full shelf ↗</a></div></div></div>
+      <p class="eyebrow">The cinema / outside class</p><div class="section-heading"><h2 id="story-heading">The other<br>half of me.</h2><p>When class and code are done, this is where a lot of my time goes: books, films, shows, anime, manga, games and music.</p></div>
+      <div class="story-grid"><div class="story-prose"><p>Some of my first movies were CDs Dad brought home around 2010: <em>Ghost Rider</em>, <em>TRON</em> and <em>Avatar</em>. <em>WALL·E</em>, <em>Toy Story</em> and <em>Cars</em> were part of childhood too, but books were my favourite for years. I read over 200+ books between ages 7 and 15—<em>Diary of a Wimpy Kid</em>, <em>Tom Gates</em>, <em>Goosebumps</em>, Enid Blyton mysteries, <em>Percy Jackson</em>, <em>Harry Potter</em>, <em>The Maze Runner</em>, <em>Divergent</em>, <em>The Lord of the Rings</em>, <em>The Silent Patient</em> and plenty more.</p><p>Then <em>Interstellar</em> blew me away in 2020. Two years later I went looking for it again, found a lot more films along the way, and got into TV shows. After <em>Lucifer</em>, <em>Attack on Titan</em> came up as a recommendation. That led to anime, then manga and manhwa, and eventually games.</p><p>In my free time I still jump between a book, a match in <em>Haikyu!!</em>, a film and whatever game has a story I can't put down. <em>Attack on Titan</em> changed the way I think about whose side of a story I'm hearing; <em>Violet Evergarden</em> made me pay more attention to what people struggle to say. Those stories are fun first, but they stay with me long after the credits. I think that's part of why I like studying data too: a result means more when I understand the people and context behind it.</p></div><div class="shelf-collage" aria-label="A few favourites from my shelf"><a class="shelf-card shelf-card-film" href="outside.html"><img src="interstellar.png" alt="Interstellar artwork" loading="lazy" decoding="async"><span>01 / THE FILM THAT STARTED IT AGAIN</span></a><a class="shelf-card shelf-card-manga" href="outside.html"><img src="haikyu-manga.png" alt="Haikyu!! manga artwork" loading="lazy" decoding="async"><span>02 / ONE MORE CHAPTER</span></a><div class="ticket"><small>RYAN N. / ADMIT ONE / ALWAYS OPEN</small><strong>After<br>hours.</strong><p>Films, books, games and the stories that stayed.</p><a href="outside.html">Open the full shelf ↗</a></div></div></div>
     </div></section>
     <section class="section about-section" id="about" aria-labelledby="about-heading"><div class="section-shell">
-      <p class="eyebrow reveal">The workshop / about & tools</p><div class="section-heading reveal"><h2 id="about-heading">Still figuring<br>it out.</h2><p>I'm Ryan, a third-year MBA Tech Data Science student at NMIMS MPSTME in Mumbai. I like following a project from the first messy idea to something I can actually run and explain.</p></div>
-      <div class="about-grid"><div class="reveal"><p>My work has moved across data, apps and the systems underneath them. For a Gold ETF analysis, our team compared returns and risk instead of picking a winner from one number. In Netflix analytics, I went from a flat dataset to related tables, API endpoints and a dashboard. With DecideX, I wanted the result to show its reasoning instead of just giving an answer.</p><p>I've also built a Django REST endpoint for an iris prediction model and experimented with real-time game rooms using Socket.IO. Putting a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx together with Docker Compose made me pay attention to the space between services: what connects, what fails and how to find the cause.</p><p>That's what pulled me toward Linux and cloud. I've finished AWS Cloud Technical Essentials and I'm working through Linux commands and shell scripting now. I'm still learning, but I want to understand how something gets from my laptop to a system other people can use.</p><p>Outside coursework, I read and watch a lot of stories. They keep me curious about people and perspectives, which matters when the data or software is supposed to help someone in the real world.</p></div><div class="toolkit reveal"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST · Node.js</p></div><div><h3>Systems</h3><p>PostgreSQL · MySQL · Git · Docker Compose · Nginx · Socket.IO</p></div><div><h3>Learning now</h3><p>Linux commands · shell scripting · AWS and cloud fundamentals</p></div></div></div>
-      <div class="next-steps reveal"><span>Where I am going next</span><h3>From my laptop to the cloud.</h3><p>Right now I'm working through Linux commands and shell scripting. Next I want to take one of my APIs, containerise it properly, deploy it on AWS and understand every step instead of only following a tutorial. After that: GitHub Actions for the build, then Terraform once I understand the manual setup. There is a lot I still have to learn, which is honestly the part I like.</p></div>
+      <p class="eyebrow">The workshop / about & tools</p><div class="section-heading"><h2 id="about-heading">Still figuring<br>it out.</h2><p>I'm Ryan, a third-year MBA Tech Data Science student at NMIMS MPSTME in Mumbai. I like following a project from the first messy idea to something I can actually run and explain.</p></div>
+      <div class="about-grid"><div class=""><p>My work has moved across data, apps and the systems underneath them. For a Gold ETF analysis, our team compared returns and risk instead of picking a winner from one number. In Netflix analytics, I went from a flat dataset to related tables, API endpoints and a dashboard. With DecideX, I wanted the result to show its reasoning instead of just giving an answer.</p><p>I've also built a Django REST endpoint for an iris prediction model and experimented with real-time game rooms using Socket.IO. Putting a Next.js frontend, FastAPI backend, PostgreSQL database and Nginx together with Docker Compose made me pay attention to the space between services: what connects, what fails and how to find the cause.</p><p>That's what pulled me toward Linux and cloud. I've finished AWS Cloud Technical Essentials and I'm working through Linux commands and shell scripting now. I'm still learning, but I want to understand how something gets from my laptop to a system other people can use.</p><p>Outside coursework, I read and watch a lot of stories. They keep me curious about people and perspectives, which matters when the data or software is supposed to help someone in the real world.</p></div><div class="toolkit"><div><h3>Data & analysis</h3><p>Python · SQL · pandas · Excel · Power BI · statistics · scikit-learn</p></div><div><h3>Web & APIs</h3><p>HTML · CSS · JavaScript · React / Next.js · FastAPI · Django REST · Node.js</p></div><div><h3>Systems</h3><p>PostgreSQL · MySQL · Git · Docker Compose · Nginx · Socket.IO</p></div><div><h3>Learning now</h3><p>Linux commands · shell scripting · AWS and cloud fundamentals</p></div></div></div>
+      <div class="next-steps"><span>Where I am going next</span><h3>From my laptop to the cloud.</h3><p>Right now I'm working through Linux commands and shell scripting. Next I want to take one of my APIs, containerise it properly, deploy it on AWS and understand every step instead of only following a tutorial. After that: GitHub Actions for the build, then Terraform once I understand the manual setup. There is a lot I still have to learn, which is honestly the part I like.</p></div>
     </div></section>
-    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-shell"><p class="eyebrow reveal">The lookout / open channel</p><h2 class="reveal" id="contact-heading">Keep the line<br><em>open.</em></h2><p class="contact-intro reveal">A project question, an idea, or a film I should watch next — I’d like to hear it.</p><div class="contact-links reveal"><a class="button button-primary" href="mailto:ryanneshar1@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></div></section>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading"><div class="section-shell"><p class="eyebrow">The lookout / open channel</p><h2 id="contact-heading">Keep the line<br>open.</h2><p class="contact-intro">A project question, an idea, or a film I should watch next — I’d like to hear it.</p><div class="contact-links"><a class="button button-primary" href="mailto:ryanneshar1@gmail.com">Email me <span>↗</span></a><a class="button button-ghost" href="https://github.com/RyanCfe" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div></div></section>
   </main>
   <footer><span>Ryan N. / Mumbai / 2026</span><span>Built with HTML, SVG, CSS & JavaScript.</span><a href="#top">Back to the lookout ↑</a></footer>
   <script>
@@ -624,8 +622,6 @@
 
       const toggle=document.querySelector('#sky-toggle');
       toggle.addEventListener('click',()=>{let dawn=document.body.classList.toggle('dawn');toggle.setAttribute('aria-pressed',String(dawn));toggle.textContent=dawn?'☀  Night mode':'☾  Dawn mode';});
-      const reveal=document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window&&!reduced.matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.08});reveal.forEach(el=>observer.observe(el));} else reveal.forEach(el=>el.classList.add('visible'));
       let queued=false; addEventListener('scroll',()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{let max=document.documentElement.scrollHeight-innerHeight;document.querySelector('#progress').style.transform='scaleX('+(max>0?scrollY/max:0)+')';queued=false})},{passive:true});
     })();
 
